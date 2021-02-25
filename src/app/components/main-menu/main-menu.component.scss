@@ -1,4 +1,8 @@
-:host {
+.main-menu-container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
   box-shadow: var(--default-shadow);
 }
 
@@ -15,7 +19,12 @@
 }
 
 .header-navigation {
+  display: none;
   background-color: white;
+
+  &--is-open {
+    display: block;
+  }
 }
 
 .header-navigation__list {
@@ -63,3 +72,33 @@
   }
 }
 
+@media (min-width: 768px) {
+  .main-menu-container {
+    flex-direction: row;
+  }
+
+  .toolbar__button {
+    display: none;
+  }
+
+  .header-navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-navigation__list {
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    padding: 0 16px;
+  }
+
+  .header-navigation__link {
+    width: max-content;
+  }
+}
+
+@media (min-width: 1366px) {
+  .main-menu-container {
+    padding: 0 calc(50% - 1366px / 2);
+  }
+}

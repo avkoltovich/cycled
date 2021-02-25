@@ -1,17 +1,19 @@
-<mat-toolbar class="toolbar">
-  <img src="assets/svg/full-logo.svg" width="120" height="36" alt="Cycled">
-  <button mat-icon-button (click)="onClickMenuButton()">
-    <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>
-    <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>
-  </button>
-</mat-toolbar>
-<nav *ngIf="isMenuOpen" class="header-navigation">
-  <ul class="header-navigation__list">
-    <li class="header-navigation__item">
-      <a class="header-navigation__link" href="#">Регистрация</a>
-    </li>
-    <li class="header-navigation__item">
-      <a class="header-navigation__link header-navigation__link--blue" href="#">Войти</a>
-    </li>
-  </ul>
-</nav>
+<div class="main-menu-container">
+  <mat-toolbar class="toolbar">
+    <img src="assets/svg/full-logo.svg" width="120" height="36" alt="Cycled">
+    <button class="toolbar__button" mat-icon-button (click)="onClickMenuButton()">
+      <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>
+      <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>
+    </button>
+  </mat-toolbar>
+  <nav [class.header-navigation--is-open]="isMenuOpen" class="header-navigation">
+    <ul class="header-navigation__list">
+      <li class="header-navigation__item">
+        <a class="header-navigation__link" href="#">Регистрация</a>
+      </li>
+      <li class="header-navigation__item">
+        <a class="header-navigation__link header-navigation__link--blue" href="#">Войти</a>
+      </li>
+    </ul>
+  </nav>
+</div>
