@@ -8,11 +8,13 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { WorkoutCardComponent } from './components/workout-card/workout-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    WorkoutCardComponent
   ],
   imports: [
     BrowserModule,
