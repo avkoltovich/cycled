@@ -1,6 +1,6 @@
 # Cycled
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Приложение создано для того, чтобы делиться велосипедными тренировками и гонками.
 
 ## Development server
 
