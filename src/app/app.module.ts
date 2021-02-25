@@ -9,12 +9,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { WorkoutCardComponent } from './components/workout-card/workout-card.component';
+import { MatCardModule } from '@angular/material/card';
+import { WorkoutCardListComponent } from './components/workout-card-list/workout-card-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    WorkoutCardComponent
+    WorkoutCardComponent,
+    WorkoutCardListComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { WorkoutCardComponent } from './components/workout-card/workout-card.com
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
