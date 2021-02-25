@@ -1,5 +1,8 @@
-.main-menu {
-  display: flex;
+:host {
+  box-shadow: var(--default-shadow);
+}
+
+.toolbar {
   justify-content: space-between;
 
   color: var(--font-color);
@@ -7,6 +10,56 @@
   background-color: white;
 }
 
-.main-menu__icon {
+.toolbar__icon {
   color: var(--font-color);
 }
+
+.header-navigation {
+  background-color: white;
+}
+
+.header-navigation__list {
+  display: grid;
+  width: max-content;
+  grid-gap: 16px;
+  padding: 16px 0 32px;
+  margin: 0 auto;
+
+  list-style: none;
+}
+
+.header-navigation__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  padding: 0 16px;
+
+  color: var(--white);
+  font-size: 16px;
+  line-height: 38px;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+
+  border-radius: 4px;
+  background-color: var(--orange);
+  box-shadow: var(--default-shadow);
+
+  transform: translate3d(0, 0, 0);
+  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: var(--marine);
+  }
+
+  &--blue {
+    background-color: var(--blue);
+  }
+
+  &--blue:hover {
+    background-color: var(--light-blue);
+  }
+}
+

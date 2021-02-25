@@ -1,1 +1,12 @@
+:host {
+  padding-top: 56px;
+}
 
+.app__main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+}
