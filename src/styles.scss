@@ -37,3 +37,13 @@ $cycled-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --background: #F0F2F3;
+  --font-color: #222222;
+  --heading-font-color: #001C27;
+}
+
+body {
+  background-color: var(--background);
+}
