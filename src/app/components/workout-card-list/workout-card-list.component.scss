@@ -1,7 +1,17 @@
 .workout-list {
   display: grid;
   grid-gap: 16px;
-  padding: 0 16px;
+  padding: 32px;
+}
+
+.workout-list__date {
+  margin-top: 0;
+
+  font-family: "JetBrains", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--orange);
 }
 
 @media (min-width: 768px) {

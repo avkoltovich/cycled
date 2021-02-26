@@ -1,0 +1,75 @@
+::ng-deep .workout-card {
+  color: var(--font-color);
+
+  .mat-card-header {
+    margin-bottom: 24px;
+  }
+
+  .workout-card__time {
+    font-family: "JetBrains", monospace;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  mat-card-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .mat-card-header-text {
+    margin: 0;
+  }
+
+  .workout-card__type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+
+    border-radius: 50%;
+
+    &--rc {
+      background-color: var(--recovery);
+    }
+  }
+
+  .workout-card__route {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  .workout-card__dl-inner {
+    display: flex;
+    margin-bottom: 8px;
+
+    font-size: 16px;
+  }
+
+  dt {
+    margin-right: 8px;
+
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 0;
+
+    font-weight: 300;
+  }
+
+  .workout-card__icon {
+    color: var(--font-color-light)
+  }
+}

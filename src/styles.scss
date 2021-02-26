@@ -36,62 +36,6 @@ $cycled-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 200;
-  src: url("/assets/fonts/AdelleSansCYRTh.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 300;
-  src: url("/assets/fonts/AdelleSansCYRLt.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/assets/fonts/AdelleSansCYR.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 500;
-  src: url("/assets/fonts/AdelleSansCYRSb.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 600;
-  src: url("/assets/fonts/AdelleSansCYR-Bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 700;
-  src: url("/assets/fonts/AdelleSansCYREb.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Adelle";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 800;
-  src: url("/assets/fonts/AdelleSansCYRHv.woff2") format("woff2");
-}
-
-@font-face {
   font-family: "JetBrains";
   font-display: swap;
   font-style: normal;
@@ -168,16 +112,16 @@ body {
   --white: #ffffff;
   --background: #F0F2F3;
   --font-color: #222222;
-  --heading-font-color: #001C27;
+  --font-color-light: #667277;
+  --header-font-color: #001C27;
+  --bullet-color: #667277;
 
   --orange: #FC6719;
   --marine: #01B2CC;
   --blue: #0093D1;
   --light-blue: #05B5FF;
 
-  --default-shadow: 0 3px 5px -1px rgb(34 34 34 / 16%), 0 6px 10px 0 rgb(34 34 34 / 10%), 0 1px 18px 0 rgb(34 34 34 / 8%);
-}
+  --recovery: #338CFF;
 
-body.mat-typography {
-  font-family: "Adelle", sans-serif;
+  --default-shadow: 0 3px 5px -1px rgb(34 34 34 / 16%), 0 6px 10px 0 rgb(34 34 34 / 10%), 0 1px 18px 0 rgb(34 34 34 / 8%);
 }

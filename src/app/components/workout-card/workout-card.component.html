@@ -1,19 +1,31 @@
-<mat-card>
+<mat-card class="workout-card">
   <mat-card-header>
-    <div mat-card-avatar></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title class="workout-card__title title">
+      <div class="title__row">
+        <span class="workout-card__type workout-card__type--rc">R</span>
+        <span class="workout-card__time">08:00</span>
+      </div>
+      <span class="workout-card__route">Горячий Ключ — Кутаис</span>
+    </mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
+    <dl>
+      <div class="workout-card__dl-inner">
+        <dt>Дистанция:</dt>
+        <dd>50 км</dd>
+      </div>
+      <div class="workout-card__dl-inner">
+        <dt>Велосипед:</dt>
+        <dd>Шоссе</dd>
+      </div>
+    </dl>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button mat-button>
+      <mat-icon class="workout-card__icon">thumb_up_alt</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon class="workout-card__icon">share</mat-icon>
+    </button>
   </mat-card-actions>
 </mat-card>
