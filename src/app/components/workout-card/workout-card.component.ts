@@ -14,6 +14,7 @@ export interface WorkoutCard {
   date: string
   routeFrom: string
   routeTo: string
+  oneWayRoute: boolean
   distance: number
   speed: number
   bikeType: string

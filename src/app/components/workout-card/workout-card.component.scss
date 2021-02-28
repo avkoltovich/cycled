@@ -77,6 +77,9 @@
     grid-template-columns: 1fr 32px;
     grid-template-rows: 1fr 1fr;
     gap: 0 16px;
+    grid-template-areas:
+    "from icon"
+    "to icon";
 
     font-size: 24px;
     font-weight: 300;
@@ -99,8 +102,17 @@
     line-height: 1.1;
   }
 
-  .route__to-icon {
-    transform: rotate(180deg);
+  .route__from {
+    grid-area: from;
+  }
+
+  .route__to {
+    grid-area: to;
+  }
+
+  .route__icon-wrapper {
+    align-self: center;
+    grid-area: icon;
   }
 
   .workout-card__dl-inner {

@@ -7,9 +7,12 @@
       </div>
       <div class="workout-card__route route">
         <span class="route__from">{{ workout.routeFrom }}</span>
-        <mat-icon class="route__from-icon">trending_flat</mat-icon>
         <span class="route__to">{{ workout.routeTo }}</span>
-        <mat-icon class="route__to-icon">trending_flat</mat-icon>
+        <div class="route__icon-wrapper">
+          <ng-container *ngIf="workout.oneWayRoute; else routeIconSingleWay">
+            <mat-icon>sync_alt</mat-icon>
+          </ng-container>
+        </div>
       </div>
     </mat-card-title>
   </mat-card-header>
@@ -38,3 +41,9 @@
     </button>
   </mat-card-actions>
 </mat-card>
+
+<ng-template #routeIconSingleWay>
+  <mat-icon>repeat</mat-icon>
+  <!--  <mat-icon class="route__from-icon">trending_flat</mat-icon>-->
+  <!--  <mat-icon class="route__to-icon">trending_flat</mat-icon>-->
+</ng-template>
