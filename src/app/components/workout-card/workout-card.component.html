@@ -2,13 +2,13 @@
   <mat-card-header>
     <mat-card-title class="workout-card__title title">
       <div class="title__row">
-        <span class="workout-card__type workout-card__type--rc">R</span>
+        <span [className]="'workout-card__type ' + workoutType">{{ getWorkoutType(workout.workoutType) }}</span>
         <span class="workout-card__time">08:00</span>
       </div>
       <div class="workout-card__route route">
-        <span class="route__from">Горячий Ключ</span>
+        <span class="route__from">{{ workout.routeFrom }}</span>
         <mat-icon class="route__from-icon">trending_flat</mat-icon>
-        <span class="route__to">Кутаис</span>
+        <span class="route__to">{{ workout.routeTo }}</span>
         <mat-icon class="route__to-icon">trending_flat</mat-icon>
       </div>
     </mat-card-title>
@@ -17,15 +17,15 @@
     <dl>
       <div class="workout-card__dl-inner">
         <dt><mat-icon>moving</mat-icon>Дистанция:</dt>
-        <dd>50 км</dd>
+        <dd>{{ workout.distance }} км</dd>
       </div>
       <div class="workout-card__dl-inner">
         <dt><mat-icon>speed</mat-icon>Скорость:</dt>
-        <dd>30 км/ч</dd>
+        <dd>{{ workout.speed }} км/ч</dd>
       </div>
       <div class="workout-card__dl-inner">
         <dt><mat-icon>pedal_bike</mat-icon>Велосипед:</dt>
-        <dd>Шоссе</dd>
+        <dd>{{ workout.bikeType }}</dd>
       </div>
     </dl>
   </mat-card-content>

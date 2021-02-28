@@ -49,6 +49,18 @@
     &--rc {
       background-color: var(--recovery);
     }
+
+    &--ed {
+      background-color: var(--endurance);
+    }
+
+    &--tp {
+      background-color: var(--tempo);
+    }
+
+    &--tr {
+      background-color: var(--trashold);
+    }
   }
 
   .workout-card__route {

@@ -11,13 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { WorkoutCardComponent } from './components/workout-card/workout-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { WorkoutCardListComponent } from './components/workout-card-list/workout-card-list.component';
+import { WorkoutCalendarComponent } from './components/workout-calendar/workout-calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
     WorkoutCardComponent,
-    WorkoutCardListComponent
+    WorkoutCardListComponent,
+    WorkoutCalendarComponent
   ],
   imports: [
     BrowserModule,

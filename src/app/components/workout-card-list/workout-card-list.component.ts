@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core'
+import { WorkoutCard } from '../workout-card/workout-card.component'
+
+export interface WorkoutCardList {
+  date: string
+  workouts: WorkoutCard[]
+}
 
 @Component({
   selector: 'app-workout-card-list',
@@ -6,6 +12,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './workout-card-list.component.scss' ]
 })
 export class WorkoutCardListComponent implements OnInit {
+
+  @Input()
+  public workoutList: WorkoutCardList
 
   constructor() {
   }
