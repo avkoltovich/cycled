@@ -11,6 +11,13 @@
   width: 100%;
 }
 
+.app__add-workout {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 500;
+}
+
 @media (min-width: 768px) {
   .app-container {
     padding-top: 64px;
