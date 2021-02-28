@@ -1,5 +1,5 @@
 <section class="workout-list-wrapper">
-  <h2 class="workout-list__date">понедельник,<br> 8 марта</h2>
+  <h2 class="workout-list__date">{{ workoutListDate.dayOfWeek }},<br> {{ workoutListDate.date }}</h2>
   <ul class="workout-list">
     <li *ngFor="let workout of workoutList.workouts">
       <app-workout-card [workout]="workout"></app-workout-card>
