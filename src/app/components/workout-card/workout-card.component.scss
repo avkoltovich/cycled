@@ -112,3 +112,14 @@
     color: var(--icon-color);
   }
 }
+
+::ng-deep {
+  .workout-card.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: var(--default-shadow);
+  }
+
+  .workout-card.mat-card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
