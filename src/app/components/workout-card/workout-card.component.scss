@@ -5,6 +5,10 @@
     margin-bottom: 24px;
   }
 
+  .mat-card-header .mat-card-title {
+    margin-bottom: 0;
+  }
+
   .workout-card__time {
     font-family: "JetBrains", monospace;
     font-weight: 700;
@@ -20,10 +24,11 @@
   .title__row {
     display: flex;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .mat-card-header-text {
+    width: 100%;
     margin: 0;
   }
 
@@ -47,22 +52,54 @@
   }
 
   .workout-card__route {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: 1fr 32px;
+    grid-template-rows: 32px 32px;
+    gap: 0 16px;
+
     font-size: 24px;
     font-weight: 300;
-    line-height: 1.2;
+
+    .material-icons {
+      font-size: 32px;
+      color: var(--icon-color);
+    }
+
+    .mat-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .route__from,
+  .route__to {
+    align-self: center;
+  }
+
+  .route__to-icon {
+    transform: rotate(180deg);
   }
 
   .workout-card__dl-inner {
     display: flex;
+    align-items: center;
     margin-bottom: 8px;
 
     font-size: 16px;
   }
 
   dt {
+    display: flex;
+    align-items: center;
     margin-right: 8px;
 
-    font-weight: bold;
+    font-weight: 500;
+
+    mat-icon {
+      margin-right: 8px;
+      color: var(--icon-color);
+    }
   }
 
   dd {
@@ -72,6 +109,6 @@
   }
 
   .workout-card__icon {
-    color: var(--font-color-light)
+    color: var(--icon-color);
   }
 }

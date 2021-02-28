@@ -5,17 +5,26 @@
         <span class="workout-card__type workout-card__type--rc">R</span>
         <span class="workout-card__time">08:00</span>
       </div>
-      <span class="workout-card__route">Горячий Ключ — Кутаис</span>
+      <div class="workout-card__route route">
+        <span class="route__from">Горячий Ключ</span>
+        <mat-icon class="route__from-icon">trending_flat</mat-icon>
+        <span class="route__to">Кутаис</span>
+        <mat-icon class="route__to-icon">trending_flat</mat-icon>
+      </div>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <dl>
       <div class="workout-card__dl-inner">
-        <dt>Дистанция:</dt>
+        <dt><mat-icon>moving</mat-icon>Дистанция:</dt>
         <dd>50 км</dd>
       </div>
       <div class="workout-card__dl-inner">
-        <dt>Велосипед:</dt>
+        <dt><mat-icon>speed</mat-icon>Скорость:</dt>
+        <dd>30 км/ч</dd>
+      </div>
+      <div class="workout-card__dl-inner">
+        <dt><mat-icon>pedal_bike</mat-icon>Велосипед:</dt>
         <dd>Шоссе</dd>
       </div>
     </dl>
