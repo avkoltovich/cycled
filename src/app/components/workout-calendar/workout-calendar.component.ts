@@ -3,11 +3,11 @@ import { WorkoutCardList } from '../workout-card-list/workout-card-list.componen
 
 const mockWorkoutCalendar: WorkoutCardList[] = [
   {
-    date: 'test',
+    date: '2021-08-28T07:42:09Z',
     workouts: [
       {
         workoutType: 'rc',
-        date: 'test',
+        date: '2021-08-28T07:42:09Z',
         routeFrom: 'Горячий Ключ',
         routeTo: 'Кутаис',
         distance: 50,
@@ -16,7 +16,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       },
       {
         workoutType: 'ed',
-        date: 'test',
+        date: '2021-08-28T07:42:09Z',
         routeFrom: 'Катюша',
         routeTo: 'Кореновск',
         distance: 100,
@@ -25,7 +25,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       },
       {
         workoutType: 'tp',
-        date: 'test',
+        date: '2021-08-28T07:42:09Z',
         routeFrom: 'Катюша',
         routeTo: 'Кореновск',
         distance: 100,
@@ -34,7 +34,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       },
       {
         workoutType: 'tr',
-        date: 'test',
+        date: '2021-08-28T07:42:09Z',
         routeFrom: 'Катюша',
         routeTo: 'Кореновск',
         distance: 100,

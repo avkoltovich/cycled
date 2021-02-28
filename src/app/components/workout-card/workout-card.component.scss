@@ -61,6 +61,14 @@
     &--tr {
       background-color: var(--trashold);
     }
+
+    &--vo {
+      background-color: var(--vo2max);
+    }
+
+    &--an {
+      background-color: var(--anaerobic);
+    }
   }
 
   .workout-card__route {

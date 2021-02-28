@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title class="workout-card__title title">
       <div class="title__row">
-        <span [className]="'workout-card__type ' + workoutType">{{ getWorkoutType(workout.workoutType) }}</span>
+        <span [className]="'workout-card__type ' + workoutTypeCssClass">{{ getWorkoutType(workout.workoutType) }}</span>
         <span class="workout-card__time">08:00</span>
       </div>
       <div class="workout-card__route route">

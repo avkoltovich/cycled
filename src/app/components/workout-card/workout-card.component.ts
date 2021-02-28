@@ -4,7 +4,9 @@ const workoutTypeMap = {
   rc: 'R',
   ed: 'E',
   tp: 'T',
-  tr: 'T'
+  tr: 'T',
+  vo: 'V',
+  an: 'A'
 }
 
 export interface WorkoutCard {
@@ -27,13 +29,13 @@ export class WorkoutCardComponent implements OnInit {
   @Input()
   public workout: WorkoutCard
 
-  public workoutType: string
+  public workoutTypeCssClass: string
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.workoutType = `workout-card__type--${ this.workout.workoutType }`
+    this.workoutTypeCssClass = `workout-card__type--${ this.workout.workoutType }`
   }
 
   public getWorkoutType(type: string): string {
