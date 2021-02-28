@@ -8,7 +8,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'rc',
         date: '2021-08-28T07:00:09Z',
-        routePoints: [ 'Горячий Ключ', 'Кутаис' ],
+        routePoints: [ 'Горячий Ключ', 'Кутаис', 'Горячий Ключ' ],
         oneWayRoute: false,
         distance: 50,
         speed: 30,
@@ -44,7 +44,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'vo',
         date: '2021-08-28T07:30:09Z',
-        routePoints: [ 'Пашковский Хлебзавод', 'Горячий Ключ' ],
+        routePoints: [ 'Пашковский Хлебзавод', 'Горячий Ключ', 'Пашковский Хлебзавод' ],
         oneWayRoute: false,
         distance: 50,
         speed: 25,
