@@ -42,4 +42,9 @@ export class WorkoutCardComponent implements OnInit {
     return workoutTypeMap[ type ]
   }
 
+  public getWorkoutTime(dateISO: string): string {
+    const date = new Date(dateISO)
+    return new Intl.DateTimeFormat('ru-RU', { hour: 'numeric', minute: 'numeric' }).format(date)
+  }
+
 }
