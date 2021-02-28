@@ -1,0 +1,65 @@
+.power-zones-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--header-font-color);
+}
+
+.power-zones-list {
+  padding-left: 0;
+  margin-bottom: 16px;
+
+  list-style: none;
+}
+
+.power-zones-item {
+  display: flex;
+  align-items: center;
+  height: 32px;
+
+  font-size: 16px;
+
+  b {
+    margin-right: 8px;
+
+    color: var(--header-font-color);
+  }
+}
+
+.power-zones-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: var(--white);
+
+  border-radius: 50%;
+
+  &--rc {
+    background-color: var(--recovery);
+  }
+
+  &--ed {
+    background-color: var(--endurance);
+  }
+
+  &--tp {
+    background-color: var(--tempo);
+  }
+
+  &--tr {
+    background-color: var(--trashold);
+  }
+
+  &--vo {
+    background-color: var(--vo2max);
+  }
+
+  &--an {
+    background-color: var(--anaerobic);
+  }
+}
