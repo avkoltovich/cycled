@@ -12,8 +12,7 @@ const workoutTypeMap = {
 export interface WorkoutCard {
   workoutType: string
   date: string
-  routeFrom: string
-  routeTo: string
+  routePoints: string[]
   oneWayRoute: boolean
   distance: number
   speed: number

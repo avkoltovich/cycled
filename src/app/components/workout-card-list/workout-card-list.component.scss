@@ -26,9 +26,18 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .workout-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (min-width: 1366px) {
+  .workout-list-wrapper {
+    padding: 0 calc(50% - 1366px / 2);
+  }
+
   .workout-list {
     grid-template-columns: repeat(4, 1fr);
-    padding: 0 calc(50% - 1366px / 2);
   }
 }

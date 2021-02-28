@@ -6,12 +6,8 @@
         <span class="workout-card__time">{{ getWorkoutTime(workout.date) }}</span>
       </div>
       <div class="workout-card__route route">
-        <span class="route__from">{{ workout.routeFrom }}</span>
-        <span class="route__to">{{ workout.routeTo }}</span>
-        <div class="route__icon-wrapper">
-          <ng-container *ngIf="workout.oneWayRoute; else routeIconSingleWay">
-            <mat-icon>sync_alt</mat-icon>
-          </ng-container>
+        <div class="route__point" *ngFor="let point of workout.routePoints">
+          <span class="route__point-name">{{ point }}</span>
         </div>
       </div>
     </mat-card-title>
@@ -19,15 +15,24 @@
   <mat-card-content>
     <dl>
       <div class="workout-card__dl-inner">
-        <dt><mat-icon>moving</mat-icon>Дистанция:</dt>
-        <dd>{{ workout.distance }} км</dd>
-      </div>
-      <div class="workout-card__dl-inner">
-        <dt><mat-icon>speed</mat-icon>Скорость:</dt>
+        <dt>
+          <mat-icon>speed</mat-icon>
+          Скорость:
+        </dt>
         <dd>{{ workout.speed }} км/ч</dd>
       </div>
       <div class="workout-card__dl-inner">
-        <dt><mat-icon>pedal_bike</mat-icon>Велосипед:</dt>
+        <dt>
+          <mat-icon>moving</mat-icon>
+          Дистанция:
+        </dt>
+        <dd>{{ workout.distance }} км</dd>
+      </div>
+      <div class="workout-card__dl-inner">
+        <dt>
+          <mat-icon>pedal_bike</mat-icon>
+          Велосипед:
+        </dt>
         <dd>{{ workout.bikeType }}</dd>
       </div>
     </dl>

@@ -8,8 +8,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'rc',
         date: '2021-08-28T07:00:09Z',
-        routeFrom: 'Горячий Ключ',
-        routeTo: 'Кутаис',
+        routePoints: [ 'Горячий Ключ', 'Кутаис' ],
         oneWayRoute: false,
         distance: 50,
         speed: 30,
@@ -18,8 +17,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'ed',
         date: '2021-08-28T05:15:09Z',
-        routeFrom: 'Катюша',
-        routeTo: 'Кореновск',
+        routePoints: [ 'Катюша', 'Кореновск' ],
         oneWayRoute: false,
         distance: 100,
         speed: 30,
@@ -28,8 +26,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'tp',
         date: '2021-08-28T05:42:09Z',
-        routeFrom: 'Яблоновский',
-        routeTo: 'Шенджий',
+        routePoints: [ 'Яблоновский', 'Шенджий' ],
         oneWayRoute: false,
         distance: 100,
         speed: 30,
@@ -38,8 +35,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'tr',
         date: '2021-08-28T06:00:09Z',
-        routeFrom: 'ДБ Екатерининский',
-        routeTo: 'Мачуги',
+        routePoints: [ 'ДБ Екатерининский', 'Мачуги' ],
         oneWayRoute: true,
         distance: 50,
         speed: 25,
@@ -48,8 +44,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
       {
         workoutType: 'vo',
         date: '2021-08-28T07:30:09Z',
-        routeFrom: 'Пашковский Хлебзавод',
-        routeTo: 'Горячий Ключ',
+        routePoints: [ 'Пашковский Хлебзавод', 'Горячий Ключ' ],
         oneWayRoute: false,
         distance: 50,
         speed: 25,
@@ -62,7 +57,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
 @Component({
   selector: 'app-workout-calendar',
   templateUrl: './workout-calendar.component.html',
-  styleUrls: ['./workout-calendar.component.scss']
+  styleUrls: [ './workout-calendar.component.scss' ],
 })
 export class WorkoutCalendarComponent implements OnInit {
 

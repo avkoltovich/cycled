@@ -73,46 +73,60 @@
 
   .workout-card__route {
     display: grid;
-    width: fit-content;
-    grid-template-columns: 1fr 32px;
-    grid-template-rows: 1fr 1fr;
-    gap: 0 16px;
-    grid-template-areas:
-    "from icon"
-    "to icon";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 32px;
 
     font-size: 24px;
     font-weight: 300;
-
-    .material-icons {
-      font-size: 32px;
-      color: var(--icon-color);
-    }
-
-    .mat-icon {
-      width: 32px;
-      height: 32px;
-    }
   }
 
-  .route__from,
-  .route__to {
-    align-self: center;
+  .route__point {
+    position: relative;
 
-    line-height: 1.1;
+    display: flex;
+    width: 100%;
+    padding: 10px 8px 10px 12px;
+
+    color: var(--header-font-color);
+
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
   }
 
-  .route__from {
-    grid-area: from;
+  .route__point:not(:first-of-type)::after {
+    position: absolute;
+    z-index: 10;
+    top: -30px;
+    left: 3px;
+
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    color: var(--icon-color);
+
+    content: 'south';
   }
 
-  .route__to {
-    grid-area: to;
-  }
+  .route__point-name {
+    max-width: 220px;
 
-  .route__icon-wrapper {
-    align-self: center;
-    grid-area: icon;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    overflow: hidden;
   }
 
   .workout-card__dl-inner {
@@ -129,6 +143,8 @@
     margin-right: 8px;
 
     font-weight: 500;
+
+    color: var(--header-font-color);
 
     mat-icon {
       margin-right: 8px;
@@ -155,5 +171,35 @@
   .workout-card.mat-card {
     padding: 20px;
     border-radius: 10px;
+  }
+}
+
+@media (min-width: 360px) {
+  .route__point-name {
+    max-width: 260px;
+  }
+}
+
+@media (min-width: 375px) {
+  .route__point-name {
+    max-width: 275px;
+  }
+}
+
+@media (min-width: 768px) {
+  .route__point-name {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .route__point-name {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .route__point-name {
+    max-width: 260px;
   }
 }
