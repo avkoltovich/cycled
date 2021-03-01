@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkoutCardList } from '../../models/models';
+import { WorkoutCardList } from './models/models';
 
 const mockWorkoutCalendar: WorkoutCardList[] = [
   {
@@ -160,11 +160,11 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
 ]
 
 @Component({
-  selector: 'app-workout-card-list-container',
-  templateUrl: './workout-card-list.container.html',
-  styleUrls: [ './workout-card-list.container.scss' ],
+  selector: 'app-workout-list-page',
+  templateUrl: './workout-list-page.component.html',
+  styleUrls: [ './workout-list-page.component.scss' ],
 })
-export class WorkoutCardListContainer implements OnInit {
+export class WorkoutListPageComponent implements OnInit {
 
   public workoutCalendar: WorkoutCardList[] = mockWorkoutCalendar;
 

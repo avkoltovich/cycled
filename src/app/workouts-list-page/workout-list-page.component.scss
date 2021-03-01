@@ -1,0 +1,13 @@
+:host {
+  position: relative;
+
+  height: 100%;
+
+  .workout-card-list-container__add-workout-button {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 500;
+  }
+}
+

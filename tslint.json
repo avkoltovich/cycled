@@ -117,7 +117,7 @@
       ]
     },
     "no-trailing-whitespace": false,
-    "component-class-suffix": false,
+    "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
     "no-conflicting-lifecycle": true,
