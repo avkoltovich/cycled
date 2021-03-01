@@ -11,7 +11,7 @@
 
   .workout-card__time {
     font-family: "JetBrains", monospace;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 24px;
     color: var(--header-font-color);
   }
@@ -90,13 +90,32 @@
   }
 
   .workout-card__route {
+    position: relative;
+
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    gap: 32px;
+    gap: 16px;
+    padding: 8px 0;
+    margin: 8px 0;
 
     font-size: 24px;
     font-weight: 300;
+  }
+
+  .workout-card__route::after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 10px;
+
+    display: block;
+    width: 2px;
+    height: 100%;
+
+    background-color: var(--border-color);
+
+    content: "";
   }
 
   .route__point {
@@ -104,37 +123,26 @@
 
     display: flex;
     width: 100%;
-    padding: 10px 8px 10px 12px;
+    align-items: center;
+    padding-left: 32px;
 
     color: var(--header-font-color);
-
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
   }
 
-  .route__point:not(:first-of-type)::after {
+  .route__point::before {
     position: absolute;
     z-index: 10;
-    top: -30px;
-    left: 3px;
+    top: calc(50% - 3px);
+    left: 8px;
 
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+    display: block;
+    width: 6px;
+    height: 6px;
 
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    color: var(--icon-color);
+    border-radius: 50%;
+    background-color: var(--icon-color);
 
-    content: 'south';
+    content: "";
   }
 
   .route__point-name {
