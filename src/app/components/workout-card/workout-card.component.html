@@ -3,6 +3,7 @@
     <mat-card-title class="workout-card__title title">
       <div class="title__row">
         <button
+          mat-button
           [className]="'workout-card__type ' + workoutTypeCssClass"
           [title]="getWorkoutFullType(workout.workoutType)"
           (click)="onPowerZoneBadgeClick()"
