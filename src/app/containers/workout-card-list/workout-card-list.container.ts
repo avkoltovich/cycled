@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkoutCardList } from '../workout-card-list/workout-card-list.component';
+import { WorkoutCardList } from '../../models/models';
 
 const mockWorkoutCalendar: WorkoutCardList[] = [
   {
@@ -13,6 +13,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: 'CX',
+        members: []
       },
       {
         workoutType: 'tp',
@@ -22,6 +23,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: 'MTB',
+        members: []
       },
       {
         workoutType: 'tr',
@@ -31,6 +33,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 25,
         bikeType: 'Шоссе',
+        members: []
       },
       {
         workoutType: 'ed',
@@ -40,6 +43,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: 'CX',
+        members: []
       },
       {
         workoutType: 'vo',
@@ -49,6 +53,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 100,
         speed: 25,
         bikeType: 'Шоссе',
+        members: []
       },
       {
         workoutType: 'rc',
@@ -58,6 +63,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: 'Шоссе',
+        members: []
       },
       {
         workoutType: 'tr',
@@ -67,6 +73,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 25,
         bikeType: 'Шоссе',
+        members: []
       },
     ]
   },
@@ -81,6 +88,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: 'CX',
+        members: []
       },
       {
         workoutType: 'tp',
@@ -90,6 +98,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: 'MTB',
+        members: []
       },
       {
         workoutType: 'rc',
@@ -99,6 +108,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: 'Шоссе',
+        members: []
       },
       {
         workoutType: 'ed',
@@ -108,6 +118,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 100,
         speed: 25,
         bikeType: 'Шоссе',
+        members: []
       }
     ]
   },
@@ -122,6 +133,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: 'CX',
+        members: []
       },
       {
         workoutType: 'ed',
@@ -131,6 +143,7 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: 'MTB',
+        members: []
       },
       {
         workoutType: 'tr',
@@ -140,21 +153,23 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: 'Шоссе',
+        members: []
       }
     ]
   }
 ]
 
 @Component({
-  selector: 'app-workout-calendar',
-  templateUrl: './workout-calendar.component.html',
-  styleUrls: [ './workout-calendar.component.scss' ],
+  selector: 'app-workout-card-list-container',
+  templateUrl: './workout-card-list.container.html',
+  styleUrls: [ './workout-card-list.container.scss' ],
 })
-export class WorkoutCalendarComponent implements OnInit {
+export class WorkoutCardListContainer implements OnInit {
 
-  public workoutCalendar: WorkoutCardList[] = mockWorkoutCalendar
+  public workoutCalendar: WorkoutCardList[] = mockWorkoutCalendar;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

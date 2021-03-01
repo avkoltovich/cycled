@@ -1,10 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { WorkoutCard } from '../workout-card/workout-card.component'
-
-export interface WorkoutCardList {
-  date: string
-  workouts: WorkoutCard[]
-}
+import { Component, Input, OnInit } from '@angular/core';
+import { WorkoutCardList } from '../../models/models';
 
 interface WorkoutListDate {
   dayOfWeek: string,

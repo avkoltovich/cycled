@@ -10,8 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { WorkoutCardComponent } from './components/workout-card/workout-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { WorkoutCardListContainer } from './containers/workout-card-list/workout-card-list.container';
 import { WorkoutCardListComponent } from './components/workout-card-list/workout-card-list.component';
-import { WorkoutCalendarComponent } from './components/workout-calendar/workout-calendar.component';
 import { PowerZonesDialogComponent } from './dialogs/power-zones-dialog/power-zones-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddWorkoutButtonComponent } from './components/add-workout-button/add-workout-button.component';
@@ -22,7 +22,7 @@ import { AddWorkoutButtonComponent } from './components/add-workout-button/add-w
     MainMenuComponent,
     WorkoutCardComponent,
     WorkoutCardListComponent,
-    WorkoutCalendarComponent,
+    WorkoutCardListContainer,
     PowerZonesDialogComponent,
     AddWorkoutButtonComponent
   ],

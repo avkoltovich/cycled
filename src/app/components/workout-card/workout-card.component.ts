@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { MatDialog } from '@angular/material/dialog'
-import { PowerZonesDialogComponent } from '../../dialogs/power-zones-dialog/power-zones-dialog.component'
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PowerZonesDialogComponent } from '../../dialogs/power-zones-dialog/power-zones-dialog.component';
+import { WorkoutCard } from '../../models/models';
 
 const workoutShortTypeMap = {
   rc: 'R',
@@ -9,7 +10,7 @@ const workoutShortTypeMap = {
   tr: 'T',
   vo: 'V',
   an: 'A'
-}
+};
 
 const workoutFullTypeMap = {
   rc: 'Recovery',
@@ -18,16 +19,6 @@ const workoutFullTypeMap = {
   tr: 'Threshold',
   vo: 'VO2 Max',
   an: 'Anaerobic'
-}
-
-export interface WorkoutCard {
-  workoutType: string
-  date: string
-  routePoints: string[]
-  oneWayRoute: boolean
-  distance: number
-  speed: number
-  bikeType: string
 }
 
 @Component({
