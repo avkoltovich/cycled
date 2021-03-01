@@ -14,7 +14,7 @@ import { WorkoutCardListComponent } from './components/workout-card-list/workout
 import { WorkoutCalendarComponent } from './components/workout-calendar/workout-calendar.component';
 import { PowerZonesDialogComponent } from './dialogs/power-zones-dialog/power-zones-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddWorkoutComponent } from './components/add-workout/add-workout.component';
+import { AddWorkoutButtonComponent } from './components/add-workout-button/add-workout-button.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { AddWorkoutComponent } from './components/add-workout/add-workout.compon
     WorkoutCardListComponent,
     WorkoutCalendarComponent,
     PowerZonesDialogComponent,
-    AddWorkoutComponent
+    AddWorkoutButtonComponent
   ],
   imports: [
     BrowserModule,
