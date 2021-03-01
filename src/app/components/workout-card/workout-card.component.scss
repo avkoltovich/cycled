@@ -157,6 +157,11 @@
 
   mat-card-content {
     margin-top: auto;
+    margin-bottom: 24px;
+  }
+
+  dl {
+    margin-bottom: 24px;
   }
 
   .workout-card__dl-inner {
@@ -190,6 +195,52 @@
 
   .workout-card__icon {
     color: var(--icon-color);
+  }
+
+  .workout-card__members {
+    display: flex;
+    align-items: center;
+  }
+
+  .workout-card__members-list {
+    display: flex;
+    padding-left: 0;
+    margin: 0 8px 0 0;
+
+    list-style: none;
+  }
+
+  .workout-card__members-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      border-radius: 50%;
+      border: 2px solid var(--white);
+    }
+  }
+
+  .workout-card__members-item:not(:first-child) {
+    margin-left: -8px;
+  }
+
+  .workout-card__members-text {
+    font-weight: 300;
+  }
+
+  mat-card-actions {
+    padding-top: 0;
   }
 }
 
