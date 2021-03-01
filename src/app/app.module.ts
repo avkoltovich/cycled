@@ -10,11 +10,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+
 import { WorkoutCardComponent } from './components/workouts-list-page/components/workout-card/workout-card.component';
 import { WorkoutCardListComponent } from './components/workouts-list-page/components/workout-card-list/workout-card-list.component';
 import { PowerZonesDialogComponent } from './components/workouts-list-page/dialogs/power-zones-dialog/power-zones-dialog.component';
 import { AddWorkoutButtonComponent } from './components/workouts-list-page/components/add-workout-button/add-workout-button.component';
 import { WorkoutListPageComponent } from './components/workouts-list-page/workout-list-page.component';
+import { AddWorkoutPageComponent } from './components/add-workout-page/add-workout-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,8 @@ import { WorkoutListPageComponent } from './components/workouts-list-page/workou
     WorkoutCardListComponent,
     WorkoutListPageComponent,
     PowerZonesDialogComponent,
-    AddWorkoutButtonComponent
+    AddWorkoutButtonComponent,
+    AddWorkoutPageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,11 @@ import { WorkoutListPageComponent } from './components/workouts-list-page/workou
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
