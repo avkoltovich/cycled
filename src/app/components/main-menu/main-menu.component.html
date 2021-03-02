@@ -1,6 +1,8 @@
 <div class="main-menu-container">
   <mat-toolbar class="toolbar">
-    <img src="assets/svg/full-logo.svg" width="120" height="36" alt="Cycled">
+    <a routerLink="" class="main-menu__link">
+      <img src="assets/svg/full-logo.svg" width="120" height="36" alt="Cycled">
+    </a>
     <button class="toolbar__button" mat-icon-button (click)="onClickMenuButton()">
       <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>
       <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>

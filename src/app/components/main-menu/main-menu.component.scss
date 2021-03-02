@@ -6,6 +6,17 @@
   box-shadow: var(--default-shadow);
 }
 
+.main-menu__link {
+  display: flex;
+  align-items: center;
+
+  -webkit-tap-highlight-color: transparent;
+
+  img {
+    display: block;
+  }
+}
+
 .toolbar {
   justify-content: space-between;
 
