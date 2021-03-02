@@ -20,7 +20,7 @@
     <mat-step [stepControl]="bikeTypeFormGroup">
       <form [formGroup]="bikeTypeFormGroup">
         <ng-template matStepLabel>Тип велосипеда</ng-template>
-        <mat-radio-group class="add-workout__checkbox-wrapper" formControlName="type" color="primary">
+        <mat-radio-group class="add-workout__checkbox-wrapper" formControlName="bikeType" color="primary">
           <mat-radio-button value="any" checked>Любой</mat-radio-button>
           <mat-radio-button value="road">Шоссе</mat-radio-button>
           <mat-radio-button value="cycloCross">CX</mat-radio-button>
@@ -55,7 +55,7 @@
     </mat-step>
     <mat-step state="done">
       <ng-template matStepLabel>Завершение</ng-template>
-      <p>Заезд готов к публикации.</p>
+      <app-workout-main-info [workout]="workout"></app-workout-main-info>
       <div>
         <button mat-button (click)="stepper.reset()">Сброс</button>
         <button mat-button class="add-workout__submit-button" (click)="onSubmit()">Сохранить</button>
