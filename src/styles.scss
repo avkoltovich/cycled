@@ -12,8 +12,43 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
+// http://mcg.mbitson.com/ - генератор цветовых схем
+
+$my-orange: (
+  50 : #ffede3,
+  100 : #fed1ba,
+  200 : #feb38c,
+  300 : #fd955e,
+  400 : #fc7e3c,
+  500 : #fc6719,
+  600 : #fc5f16,
+  700 : #fb5412,
+  800 : #fb4a0e,
+  900 : #fa3908,
+  A100 : #ffffff,
+  A200 : #fff1ef,
+  A400 : #ffc6bc,
+  A700 : #ffb1a2,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
 $cycled-primary: mat-palette($mat-blue);
-$cycled-accent: mat-palette($mat-deep-orange);
+$cycled-accent: mat-palette($my-orange);
 
 // The warn palette is optional (defaults to red).
 $cycled-warn: mat-palette($mat-red);
@@ -128,7 +163,7 @@ body {
   --endurance: #338CFF;
   --tempo: #59BF59;
   --trashold: #FFCC3F;
-  --vo2max: #FF6639;
+  --vo2max: #FC6719;
   --anaerobic: #FF330C;
 
   --default-shadow: 0 3px 5px -1px rgb(34 34 34 / 16%), 0 6px 10px 0 rgb(34 34 34 / 10%), 0 1px 18px 0 rgb(34 34 34 / 8%);
