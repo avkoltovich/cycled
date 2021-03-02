@@ -1,7 +1,7 @@
 <div class="add-workout-container">
   <h2 class="add-workout__title">Добавить заезд</h2>
   <mat-vertical-stepper class="add-workout__stepper" [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="routeFormGroup" state="done">
+    <mat-step [stepControl]="routeFormGroup">
       <form [formGroup]="routeFormGroup">
         <ng-template matStepLabel>Маршрут</ng-template>
         <div class="add-workout__input-wrapper">
@@ -17,7 +17,7 @@
         <button mat-button matStepperNext>Далее</button>
       </form>
     </mat-step>
-    <mat-step [stepControl]="bikeTypeFormGroup" state="done">
+    <mat-step [stepControl]="bikeTypeFormGroup">
       <form [formGroup]="bikeTypeFormGroup">
         <ng-template matStepLabel>Тип велосипеда</ng-template>
         <mat-radio-group class="add-workout__checkbox-wrapper" formControlName="type" color="primary">

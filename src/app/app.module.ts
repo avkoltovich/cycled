@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
+import { WorkoutMainInfoComponent } from './components/workouts-list-page/components/workout-main-info/workout-main-info.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatRadioModule } from '@angular/material/radio';
     WorkoutListPageComponent,
     PowerZonesDialogComponent,
     AddWorkoutButtonComponent,
-    AddWorkoutPageComponent
+    AddWorkoutPageComponent,
+    WorkoutMainInfoComponent
   ],
   imports: [
     BrowserModule,
