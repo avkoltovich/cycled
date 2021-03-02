@@ -1,8 +1,80 @@
+::ng-deep {
+  .add-workout-container {
+
+    .mat-step-label {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .mat-step-label-selected {
+      font-weight: 500;
+    }
+
+    .mat-button {
+      margin-top: 16px;
+      margin-right: 16px;
+
+      background-color: var(--background);
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+}
+
 .add-workout-container {
-  padding: 16px;
+  padding: 0 16px 16px;
+
+  font-size: 16px;
+
+  .add-workout__title {
+    margin: 32px 0;
+
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--header-font-color);
+  }
 
   .add-workout__stepper {
     border-radius: 10px;
     box-shadow: var(--default-shadow);
+
+    overflow: hidden;
+  }
+
+  .add-workout__input-wrapper {
+    display: grid;
+    width: 180px;
+    gap: 8px;
+  }
+
+  .add-workout__checkbox-wrapper {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .add-workout__checkbox {
+    width: 100%;
+  }
+
+  .add-workout__submit-button {
+    color: var(--white);
+
+    background-color: var(--orange);
+  }
+}
+
+@media (min-width: 1366px) {
+  .add-workout-container {
+    padding: 0 calc(50vw - 1366px / 2 + 16px);
   }
 }

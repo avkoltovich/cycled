@@ -17,10 +17,13 @@ import { PowerZonesDialogComponent } from './components/workouts-list-page/dialo
 import { AddWorkoutButtonComponent } from './components/workouts-list-page/components/add-workout-button/add-workout-button.component';
 import { WorkoutListPageComponent } from './components/workouts-list-page/workout-list-page.component';
 import { AddWorkoutPageComponent } from './components/add-workout-page/add-workout-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -45,9 +48,14 @@ import { MatInputModule } from '@angular/material/input';
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTooltipModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}
