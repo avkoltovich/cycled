@@ -13,22 +13,30 @@
             <mat-label>Куда</mat-label>
             <input matInput placeholder="Введите точку финиша" formControlName="to" required>
           </mat-form-field>
+          <mat-checkbox class="add-workout__checkbox" color="primary" formControlName="isCycledRoute">
+            Возврат на точку старта
+          </mat-checkbox>
         </div>
         <button mat-button matStepperNext>Далее</button>
       </form>
     </mat-step>
     <mat-step [stepControl]="bikeTypeFormGroup">
-      <form [formGroup]="bikeTypeFormGroup">
+      <form [formGroup]="bikeTypeFormGroup" class="add-workout__bike-type-form">
         <ng-template matStepLabel>Тип велосипеда</ng-template>
-        <mat-radio-group class="add-workout__checkbox-wrapper" formControlName="bikeType" color="primary">
-          <mat-radio-button value="any" checked>Любой</mat-radio-button>
+        <mat-radio-group
+          class="add-workout__checkbox-wrapper"
+          formControlName="bikeType"
+          color="primary"
+          [required]="true"
+        >
+          <mat-radio-button value="any">Любой</mat-radio-button>
           <mat-radio-button value="road">Шоссе</mat-radio-button>
-          <mat-radio-button value="cycloCross">CX</mat-radio-button>
-          <mat-radio-button value="mountainBike">MTB</mat-radio-button>
+          <mat-radio-button value="cx">CX</mat-radio-button>
+          <mat-radio-button value="mtb">MTB</mat-radio-button>
         </mat-radio-group>
         <div>
           <button mat-button matStepperPrevious>Назад</button>
-          <button mat-button matStepperNext>Далее</button>
+          <button mat-button matStepperNext (click)="onSecondStep()">Далее</button>
         </div>
       </form>
     </mat-step>
@@ -54,8 +62,8 @@
       </form>
     </mat-step>
     <mat-step state="done">
-      <ng-template matStepLabel>Завершение</ng-template>
-      <app-workout-main-info [workout]="workout"></app-workout-main-info>
+      <ng-template matStepLabel>Публикация</ng-template>
+      <app-workout-main-info class="add-workout__main-info" [workout]="workout"></app-workout-main-info>
       <div>
         <button mat-button (click)="stepper.reset()">Сброс</button>
         <button mat-button class="add-workout__submit-button" (click)="onSubmit()">Сохранить</button>

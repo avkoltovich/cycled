@@ -26,6 +26,22 @@
     input[type=number] {
       -moz-appearance: textfield;
     }
+
+    .mat-stepper-vertical-line::before {
+      left: -1px;
+
+      border-left-width: 2px;
+    }
+  }
+
+  .add-workout__bike-type-form.ng-touched.ng-invalid {
+    .mat-radio-label-content {
+      color: #f44336;
+    }
+
+    .mat-radio-outer-circle {
+      border-color: #f44336;
+    }
   }
 }
 
@@ -53,7 +69,6 @@
   .add-workout__input-wrapper {
     display: grid;
     width: 180px;
-    gap: 8px;
   }
 
   .add-workout__checkbox-wrapper {
@@ -63,7 +78,7 @@
   }
 
   .add-workout__checkbox {
-    width: 100%;
+    margin: 16px 0;
   }
 
   .add-workout__submit-button {
