@@ -40,6 +40,9 @@ export class WorkoutMainInfoComponent implements OnChanges {
   public isSpeedHidden: boolean
   public isDurationHidden: boolean
   public workoutTypeCssClass: string
+  public workoutShortType: string
+  public workoutDateString: string
+  public workoutFullType: string
 
   @Input()
   public workout: WorkoutCard | null
@@ -90,6 +93,9 @@ export class WorkoutMainInfoComponent implements OnChanges {
       this.isDurationHidden = !isDurationValueNotEmpty
 
       this.workoutTypeCssClass = `workout-card__type--${ this.workout.workoutType }`
+      this.workoutShortType = this.getWorkoutShortType(this.workout.workoutType)
+      this.workoutFullType = this.getWorkoutFullType(this.workout.workoutType)
+      this.workoutDateString = this.getWorkoutDateString(this.workout.date)
     }
   }
 
@@ -125,7 +131,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
     return workoutFullTypeMap[ type ]
   }
 
-  public getWorkoutTime(dateISO: string): string {
+  public getWorkoutDateString(dateISO: string): string {
     const date = new Date(dateISO)
     if (this.isOnlyTimeShow) {
       return new Intl.DateTimeFormat('ru-RU', { hour: 'numeric', minute: 'numeric' }).format(date)

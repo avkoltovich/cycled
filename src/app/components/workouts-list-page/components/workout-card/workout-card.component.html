@@ -1,6 +1,10 @@
 <mat-card class="workout-card">
   <mat-card-content>
-    <app-workout-main-info class="workout-card__main-info" [workout]="workout"></app-workout-main-info>
+    <app-workout-main-info
+      class="workout-card__main-info"
+      [isOnlyTimeShow]="isOnlyTimeShow"
+      [workout]="workout"
+    ></app-workout-main-info>
     <div class="workout-card__members">
       <ul class="workout-card__members-list">
         <li class="workout-card__members-item">

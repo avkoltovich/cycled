@@ -10,5 +10,8 @@ export class WorkoutCardComponent {
 
   @Input()
   public workout: WorkoutCard
+
+  @Input()
+  public isOnlyTimeShow = true
 }
 

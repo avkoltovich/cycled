@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { WorkoutCardList } from '../../models/models';
+import { Component, Input, OnInit } from '@angular/core'
+import { WorkoutCardList } from '../../models/models'
 
 interface WorkoutListDate {
   dayOfWeek: string,
@@ -21,7 +21,7 @@ export class WorkoutCardListComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.workoutListDate = this.getWorkoutListDate(this.workoutList.date)
   }
 

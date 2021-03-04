@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { WorkoutCardList } from './models/models';
+import { Component, OnInit } from '@angular/core'
+import { WorkoutCardList } from './models/models'
 
 const mockWorkoutCalendar: WorkoutCardList[] = [
   {
@@ -153,6 +153,21 @@ const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: 'Шоссе',
+        members: []
+      }
+    ]
+  },
+  {
+    date: '2021-03-09T07:42:09Z',
+    workouts: [
+      {
+        workoutType: 'an',
+        date: '2021-08-28T05:15:09Z',
+        routePoints: [ 'Тахтамукай', 'Калужская' ],
+        oneWayRoute: false,
+        distance: 60,
+        speed: 25,
+        bikeType: 'CX',
         members: []
       }
     ]
