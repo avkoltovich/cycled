@@ -1,6 +1,18 @@
 <div class="add-workout-container">
   <h2 class="add-workout__title">Добавить заезд</h2>
   <mat-vertical-stepper class="add-workout__stepper" [linear]="isLinear">
+    <mat-step [stepControl]="dateFormGroup">
+      <form [formGroup]="dateFormGroup">
+        <ng-template matStepLabel>Дата</ng-template>
+        <mat-form-field class="example-full-width">
+          <mat-label>Дата тренировки</mat-label>
+          <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-flat-button matStepperNext color="primary">Далее</button>
+      </form>
+    </mat-step>
     <mat-step [stepControl]="routeFormGroup">
       <form [formGroup]="routeFormGroup">
         <ng-template matStepLabel>Маршрут</ng-template>
@@ -17,7 +29,8 @@
             Возврат на точку старта
           </mat-checkbox>
         </div>
-        <button mat-button matStepperNext>Далее</button>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-flat-button matStepperNext color="primary">Далее</button>
       </form>
     </mat-step>
     <mat-step [stepControl]="bikeTypeFormGroup">
@@ -36,7 +49,7 @@
         </mat-radio-group>
         <div>
           <button mat-button matStepperPrevious>Назад</button>
-          <button mat-button matStepperNext (click)="onSecondStep()">Далее</button>
+          <button mat-flat-button matStepperNext (click)="onSecondStep()" color="primary">Далее</button>
         </div>
       </form>
     </mat-step>
@@ -58,15 +71,15 @@
           </mat-form-field>
         </div>
         <button mat-button matStepperPrevious>Назад</button>
-        <button mat-button matStepperNext>Далее</button>
+        <button mat-flat-button matStepperNext color="primary">Далее</button>
       </form>
     </mat-step>
     <mat-step [editable]="false">
       <ng-template matStepLabel>Публикация</ng-template>
       <app-workout-main-info class="add-workout__main-info" [workout]="workout"></app-workout-main-info>
       <div>
-        <button mat-button routerLink="">Отмена</button>
-        <button mat-button class="add-workout__submit-button" (click)="onSubmit()">Сохранить</button>
+        <button mat-button routerLink="" type="button">Отмена</button>
+        <button mat-flat-button color="accent" type="button" (click)="onSubmit()">Сохранить</button>
       </div>
     </mat-step>
   </mat-vertical-stepper>

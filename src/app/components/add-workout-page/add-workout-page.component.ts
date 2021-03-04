@@ -27,6 +27,11 @@ const bikeTypeMap = {
 })
 export class AddWorkoutPageComponent implements OnInit {
   public isLinear = true
+
+  public dateFormGroup: FormGroup = this.formBuilder.group({
+    date: [ new Date(), Validators.required ]
+  })
+
   public routeFormGroup: FormGroup = this.formBuilder.group({
     from: [ null, Validators.required ],
     to: [ null, Validators.required ],
@@ -56,14 +61,13 @@ export class AddWorkoutPageComponent implements OnInit {
         oneWayRoute: false,
         distance: details.distance,
         speed: details.speed,
+        duration: details.duration,
         bikeType: bikeTypeMap[ type.bikeType ],
         members: [],
       }
     })
   )
-  /**
-   * TODO Сделать проверку в компоненте с блоком информации по тренировке на отсутствие данных, чтобы не мокать ничего заранее
-   */
+
   public workout: WorkoutCard = {
     workoutType: 'rc',
     date: new Date().toISOString(),
@@ -75,7 +79,10 @@ export class AddWorkoutPageComponent implements OnInit {
     members: [],
   }
 
+  public minDate: Date
+
   constructor(private formBuilder: FormBuilder) {
+    this.minDate = new Date()
   }
 
   public ngOnInit(): void {
