@@ -1,3 +1,14 @@
+<div class="workout-main-info__row">
+  <button
+    mat-button
+    [matTooltip]="getWorkoutFullType(workout.workoutType)"
+    [className]="'workout-card__type ' + workoutTypeCssClass"
+    (click)="onPowerZoneBadgeClick()"
+  >
+    {{ getWorkoutShortType(workout.workoutType) }}
+  </button>
+  <span class="workout-card__time">{{ getWorkoutTime(workout.date) }}</span>
+</div>
 <div class="workout-main-info__route route" *ngIf="!isCardHidden">
   <div class="route__point" *ngFor="let point of workout.routePoints">
     <span class="route__point-name">{{ point }}</span>

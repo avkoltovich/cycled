@@ -1,3 +1,73 @@
+.workout-main-info__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.workout-card__time {
+  font-family: "JetBrains", monospace;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--header-font-color);
+}
+
+.workout-card__type {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  cursor: help;
+  -webkit-tap-highlight-color: transparent;
+
+  &--rc {
+    background-color: var(--recovery);
+  }
+
+  &--ed {
+    background-color: var(--endurance);
+  }
+
+  &--tp {
+    background-color: var(--tempo);
+  }
+
+  &--tr {
+    background-color: var(--trashold);
+  }
+
+  &--vo {
+    background-color: var(--vo2max);
+  }
+
+  &--an {
+    background-color: var(--anaerobic);
+  }
+
+  &::after {
+    position: absolute;
+    z-index: 10;
+
+    width: 60px;
+    height: 60px;
+
+    content: "";
+  }
+}
+
 .workout-main-info__route {
   position: relative;
 

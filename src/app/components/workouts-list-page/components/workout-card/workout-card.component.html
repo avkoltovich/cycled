@@ -1,19 +1,4 @@
 <mat-card class="workout-card">
-  <mat-card-header>
-    <mat-card-title class="workout-card__title title">
-      <div class="title__row">
-        <button
-          mat-button
-          [matTooltip]="getWorkoutFullType(workout.workoutType)"
-          [className]="'workout-card__type ' + workoutTypeCssClass"
-          (click)="onPowerZoneBadgeClick()"
-        >
-          {{ getWorkoutShortType(workout.workoutType) }}
-        </button>
-        <span class="workout-card__time">{{ getWorkoutTime(workout.date) }}</span>
-      </div>
-    </mat-card-title>
-  </mat-card-header>
   <mat-card-content>
     <app-workout-main-info class="workout-card__main-info" [workout]="workout"></app-workout-main-info>
     <div class="workout-card__members">
