@@ -1,10 +1,10 @@
-<div class="workout-main-info__route route">
+<div class="workout-main-info__route route" *ngIf="!isCardHidden">
   <div class="route__point" *ngFor="let point of workout.routePoints">
     <span class="route__point-name">{{ point }}</span>
   </div>
 </div>
 <dl>
-  <div class="workout-main-info__dl-inner">
+  <div class="workout-main-info__dl-inner" *ngIf="!isSpeedHidden">
     <dt>
       <mat-icon>speed</mat-icon>
       Скорость:
@@ -17,6 +17,13 @@
       Дистанция:
     </dt>
     <dd>{{ workout.distance }} км</dd>
+  </div>
+  <div class="workout-main-info__dl-inner" *ngIf="!isDurationHidden">
+    <dt>
+      <mat-icon>access_time</mat-icon>
+      Длительность:
+    </dt>
+    <dd>{{ workout.duration }} мин</dd>
   </div>
   <div class="workout-main-info__dl-inner">
     <dt>

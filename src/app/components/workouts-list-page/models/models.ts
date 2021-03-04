@@ -4,7 +4,8 @@ export interface WorkoutCard {
   routePoints: string[]
   oneWayRoute: boolean
   distance: number
-  speed: number
+  speed?: number | null
+  duration?: number | null
   bikeType: string
   members: any[]
 }
