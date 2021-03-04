@@ -1,5 +1,5 @@
 export interface WorkoutCard {
-  workoutType: string
+  workoutType: string | null
   date: string
   routePoints: string[]
   oneWayRoute: boolean

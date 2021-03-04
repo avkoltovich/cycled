@@ -76,7 +76,12 @@
     </mat-step>
     <mat-step [editable]="false">
       <ng-template matStepLabel>Публикация</ng-template>
-      <app-workout-main-info class="add-workout__main-info" [workout]="workout"></app-workout-main-info>
+      <app-workout-main-info
+        class="add-workout__main-info"
+        [workout]="workout"
+        [isOnlyTimeShow]="false"
+        [isShowWorkoutType]="true"
+      ></app-workout-main-info>
       <div>
         <button mat-button routerLink="" type="button">Отмена</button>
         <button mat-flat-button color="accent" type="button" (click)="onSubmit()">Сохранить</button>

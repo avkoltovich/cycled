@@ -1,6 +1,7 @@
 <div class="workout-main-info__row">
   <button
     mat-button
+    *ngIf="isShowWorkoutType"
     [matTooltip]="getWorkoutFullType(workout.workoutType)"
     [className]="'workout-card__type ' + workoutTypeCssClass"
     (click)="onPowerZoneBadgeClick()"

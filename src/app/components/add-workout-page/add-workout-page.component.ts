@@ -55,7 +55,7 @@ export class AddWorkoutPageComponent implements OnInit {
   ]).pipe(
     tap(([ route, type, details ]) => {
       this.workout = {
-        workoutType: 'rc',
+        workoutType: null,
         date: new Date().toISOString(),
         routePoints: route.isCycledRoute ? [ route.from, route.to, route.from ] : [ route.from, route.to ],
         oneWayRoute: false,
@@ -69,7 +69,7 @@ export class AddWorkoutPageComponent implements OnInit {
   )
 
   public workout: WorkoutCard = {
-    workoutType: 'rc',
+    workoutType: null,
     date: new Date().toISOString(),
     routePoints: [ '' ],
     oneWayRoute: false,
