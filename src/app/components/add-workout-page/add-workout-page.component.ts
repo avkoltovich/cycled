@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
 import { WorkoutCard } from '../workouts-list-page/models/models'
 import { combineLatest } from 'rxjs'
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper'
 
 const bikeTypeMap = {
   any: 'Любой',
@@ -14,7 +15,15 @@ const bikeTypeMap = {
 @Component({
   selector: 'app-add-workout-page',
   templateUrl: './add-workout-page.component.html',
-  styleUrls: [ './add-workout-page.component.scss' ]
+  styleUrls: [ './add-workout-page.component.scss' ],
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {
+        displayDefaultIndicatorType: false
+      }
+    }
+  ]
 })
 export class AddWorkoutPageComponent implements OnInit {
   public isLinear = true
@@ -29,8 +38,8 @@ export class AddWorkoutPageComponent implements OnInit {
   })
 
   public detailsFormGroup: FormGroup = this.formBuilder.group({
-    speed: [ null, Validators.required ],
     distance: [ null, Validators.required ],
+    speed: [ null ],
     duration: [ null ]
   })
 

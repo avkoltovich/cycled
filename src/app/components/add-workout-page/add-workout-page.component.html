@@ -1,6 +1,6 @@
 <div class="add-workout-container">
   <h2 class="add-workout__title">Добавить заезд</h2>
-  <mat-vertical-stepper class="add-workout__stepper" [linear]="isLinear" #stepper>
+  <mat-vertical-stepper class="add-workout__stepper" [linear]="isLinear">
     <mat-step [stepControl]="routeFormGroup">
       <form [formGroup]="routeFormGroup">
         <ng-template matStepLabel>Маршрут</ng-template>
@@ -40,17 +40,17 @@
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="detailsFormGroup" state="done">
+    <mat-step [stepControl]="detailsFormGroup">
       <form [formGroup]="detailsFormGroup">
         <ng-template matStepLabel>Характеристики заезда</ng-template>
         <div class="add-workout__input-wrapper">
           <mat-form-field>
-            <mat-label>Темп, км/ч</mat-label>
-            <input type="number" matInput placeholder="Введите скорость" min="0" formControlName="speed" required>
-          </mat-form-field>
-          <mat-form-field>
             <mat-label>Дистанция, км</mat-label>
             <input type="number" matInput placeholder="Введите дистанцию" min="0" formControlName="distance" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Темп, км/ч</mat-label>
+            <input type="number" matInput placeholder="Введите скорость" min="0" formControlName="speed">
           </mat-form-field>
           <mat-form-field>
             <mat-label>Длительность, мин</mat-label>
@@ -61,11 +61,11 @@
         <button mat-button matStepperNext>Далее</button>
       </form>
     </mat-step>
-    <mat-step state="done">
+    <mat-step [editable]="false">
       <ng-template matStepLabel>Публикация</ng-template>
       <app-workout-main-info class="add-workout__main-info" [workout]="workout"></app-workout-main-info>
       <div>
-        <button mat-button (click)="stepper.reset()">Сброс</button>
+        <button mat-button routerLink="">Отмена</button>
         <button mat-button class="add-workout__submit-button" (click)="onSubmit()">Сохранить</button>
       </div>
     </mat-step>
