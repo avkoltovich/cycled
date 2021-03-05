@@ -50,20 +50,28 @@ export class AddWorkoutPageComponent implements OnInit {
   })
 
   public workoutSummary = combineLatest([
+    this.dateFormGroup.valueChanges,
     this.routeFormGroup.valueChanges,
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-    tap(([ route, type, details ]) => {
+    tap(([ dateForm, routeForm, typeForm, detailsForm ]) => {
+      const dateObject = {
+        year: dateForm.date.getFullYear(),
+        month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
+        date: dateForm.date.getDate().toString().padStart(2, '0')
+      }
+      const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
+
       this.workout = {
         workoutType: null,
-        date: new Date().toISOString(),
-        routePoints: route.isCycledRoute ? [ route.from, route.to, route.from ] : [ route.from, route.to ],
+        date: new Date(dateString).toISOString(),
+        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
         oneWayRoute: false,
-        distance: details.distance,
-        speed: details.speed,
-        duration: details.duration,
-        bikeType: bikeTypeMap[ type.bikeType ],
+        distance: detailsForm.distance,
+        speed: detailsForm.speed,
+        duration: detailsForm.duration,
+        bikeType: bikeTypeMap[ typeForm.bikeType ],
         members: [],
       }
     })
