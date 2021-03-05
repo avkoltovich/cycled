@@ -60,21 +60,17 @@ export class WorkoutMainInfoComponent implements OnChanges {
     if (typeof this.workout === 'undefined' || this.workout === null) {
       this.isCardHidden = true
     } else {
-      const isSpeedValueNotEmpty = this.isNumberValueNotEmpty(this.workout.speed)
-
-      const isDurationValueNotEmpty = this.isNumberValueNotEmpty(this.workout.duration)
-
       if (typeof this.workout.workoutType === 'undefined' || this.workout.workoutType === null) {
-        if (isSpeedValueNotEmpty) {
+        if (this.isNumberValueNotEmpty(this.workout.speed)) {
           this.workout = {
             ...this.workout,
-            duration: isDurationValueNotEmpty
+            duration: this.isNumberValueNotEmpty(this.workout.duration)
               ? this.workout.duration
               : this.getWorkoutDurationBySpeed(this.workout.distance, this.workout.speed),
             workoutType: this.getWorkoutTypeShortBySpeed(this.workout.speed)
           }
-        } else if (isDurationValueNotEmpty) {
-          const averageSpeed = this.getWorkoutAveregeSpeed(this.workout.distance, this.workout.duration)
+        } else if (this.isNumberValueNotEmpty(this.workout.duration)) {
+          const averageSpeed = this.getWorkoutAverageSpeed(this.workout.distance, this.workout.duration)
 
           this.workout = {
             ...this.workout,
@@ -89,8 +85,8 @@ export class WorkoutMainInfoComponent implements OnChanges {
         }
       }
 
-      this.isSpeedHidden = !isSpeedValueNotEmpty
-      this.isDurationHidden = !isDurationValueNotEmpty
+      this.isSpeedHidden = !this.isNumberValueNotEmpty(this.workout.speed)
+      this.isDurationHidden = !this.isNumberValueNotEmpty(this.workout.duration)
 
       this.workoutTypeCssClass = `workout-card__type--${ this.workout.workoutType }`
       this.workoutShortType = this.getWorkoutShortType(this.workout.workoutType)
@@ -115,7 +111,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
     }
   }
 
-  private getWorkoutAveregeSpeed(distance: number, duration: number): number {
+  private getWorkoutAverageSpeed(distance: number, duration: number): number {
     return Math.floor(distance / (duration / 60))
   }
 
