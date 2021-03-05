@@ -26,7 +26,36 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatRadioModule } from '@angular/material/radio'
 import { WorkoutMainInfoComponent } from './components/workouts-list-page/components/workout-main-info/workout-main-info.component'
 import { MatDatepickerModule } from '@angular/material/datepicker'
-import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core'
+import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core'
+
+export class CustomDateAdapter extends NativeDateAdapter {
+
+  parse(value: any): Date | null {
+    if ((typeof value === 'string') && (value.indexOf('.') > -1)) {
+      const str = value.split('.')
+
+      const year = Number(str[ 2 ])
+      const month = Number(str[ 1 ]) - 1
+      const date = Number(str[ 0 ])
+
+      return new Date(year, month, date)
+    }
+
+    const timestamp = typeof value === 'number' ? value : Date.parse(value)
+
+    return isNaN(timestamp) ? null : new Date(timestamp)
+  }
+
+  format(date, displayFormat): string {
+    date = new Date(Date.UTC(
+      date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(),
+      date.getMinutes(), date.getSeconds(), date.getMilliseconds()))
+    displayFormat = Object.assign({}, displayFormat, { timeZone: 'utc' })
+
+    const dtf = new Intl.DateTimeFormat(this.locale, displayFormat)
+    return dtf.format(date).replace(/[\u200e\u200f]/g, '')
+  }
+}
 
 @NgModule({
   declarations: [
@@ -66,6 +95,10 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core'
     {
       provide: MAT_DATE_LOCALE,
       useValue: 'ru-RU'
+    },
+    {
+      provide: DateAdapter,
+      useClass: CustomDateAdapter
     }
   ],
   bootstrap: [ AppComponent ]

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
 import { WorkoutCard } from '../workouts-list-page/models/models'
@@ -25,8 +25,9 @@ const bikeTypeMap = {
     }
   ]
 })
-export class AddWorkoutPageComponent implements OnInit, AfterViewInit {
+export class AddWorkoutPageComponent implements OnInit {
   public isLinear = true
+  public minDate: Date
 
   public dateFormGroup = new FormGroup({
     date: new FormControl(null, Validators.required),
@@ -88,17 +89,12 @@ export class AddWorkoutPageComponent implements OnInit, AfterViewInit {
     members: [],
   }
 
-  public minDate: Date
-
   constructor() {
+    this.workoutSummary.subscribe()
     this.minDate = new Date()
   }
 
   public ngOnInit(): void {
-    this.workoutSummary.subscribe()
-  }
-
-  public ngAfterViewInit(): void {
     this.dateFormGroup.controls.date.patchValue(new Date())
     this.dateFormGroup.controls.time.patchValue('08:00')
     this.bikeTypeFormGroup.controls.bikeType.patchValue('any')
