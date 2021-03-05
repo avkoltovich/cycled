@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { AfterViewInit, Component, OnInit } from '@angular/core'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
 import { WorkoutCard } from '../workouts-list-page/models/models'
 import { combineLatest } from 'rxjs'
@@ -25,28 +25,28 @@ const bikeTypeMap = {
     }
   ]
 })
-export class AddWorkoutPageComponent implements OnInit {
+export class AddWorkoutPageComponent implements OnInit, AfterViewInit {
   public isLinear = true
 
-  public dateFormGroup: FormGroup = this.formBuilder.group({
-    date: [ new Date(), Validators.required ],
-    time: [ '08:00', Validators.required ]
+  public dateFormGroup = new FormGroup({
+    date: new FormControl(null, Validators.required),
+    time: new FormControl(null, Validators.required)
   })
 
-  public routeFormGroup: FormGroup = this.formBuilder.group({
-    from: [ null, Validators.required ],
-    to: [ null, Validators.required ],
-    isCycledRoute: [ false ]
+  public routeFormGroup = new FormGroup({
+    from: new FormControl(null, Validators.required),
+    to: new FormControl(null, Validators.required),
+    isCycledRoute: new FormControl(false)
   })
 
-  public bikeTypeFormGroup: FormGroup = this.formBuilder.group({
-    bikeType: [ null, Validators.required ]
+  public bikeTypeFormGroup = new FormGroup({
+    bikeType: new FormControl(null, Validators.required)
   })
 
-  public detailsFormGroup: FormGroup = this.formBuilder.group({
-    distance: [ null, Validators.required ],
-    speed: [ null ],
-    duration: [ null ]
+  public detailsFormGroup = new FormGroup({
+    distance: new FormControl(null, Validators.required),
+    speed: new FormControl(null),
+    duration: new FormControl(null)
   })
 
   public workoutSummary = combineLatest([
@@ -84,18 +84,24 @@ export class AddWorkoutPageComponent implements OnInit {
     oneWayRoute: false,
     distance: 0,
     speed: 0,
-    bikeType: 'Любой',
+    bikeType: null,
     members: [],
   }
 
   public minDate: Date
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor() {
     this.minDate = new Date()
   }
 
   public ngOnInit(): void {
     this.workoutSummary.subscribe()
+  }
+
+  public ngAfterViewInit(): void {
+    this.dateFormGroup.controls.date.patchValue(new Date())
+    this.dateFormGroup.controls.time.patchValue('08:00')
+    this.bikeTypeFormGroup.controls.bikeType.patchValue('any')
   }
 
   public onSecondStep(): void {
