@@ -70,6 +70,16 @@
     overflow: hidden;
   }
 
+  .add-workout__date-form {
+    display: flex;
+    flex-direction: column;
+
+    button,
+    mat-form-field {
+      width: fit-content;
+    }
+  }
+
   .add-workout__input-wrapper {
     display: grid;
     width: 180px;

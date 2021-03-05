@@ -2,9 +2,9 @@
   <h2 class="add-workout__title">Добавить заезд</h2>
   <mat-vertical-stepper class="add-workout__stepper" [linear]="isLinear">
     <mat-step [stepControl]="dateFormGroup">
-      <form [formGroup]="dateFormGroup">
+      <form class="add-workout__date-form" [formGroup]="dateFormGroup">
         <ng-template matStepLabel>Дата</ng-template>
-        <mat-form-field class="example-full-width">
+        <mat-form-field>
           <mat-label>Дата тренировки</mat-label>
           <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="date">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
