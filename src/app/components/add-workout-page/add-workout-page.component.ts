@@ -29,7 +29,8 @@ export class AddWorkoutPageComponent implements OnInit {
   public isLinear = true
 
   public dateFormGroup: FormGroup = this.formBuilder.group({
-    date: [ new Date(), Validators.required ]
+    date: [ new Date(), Validators.required ],
+    time: [ '08:00', Validators.required ]
   })
 
   public routeFormGroup: FormGroup = this.formBuilder.group({

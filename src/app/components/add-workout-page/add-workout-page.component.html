@@ -6,9 +6,13 @@
         <ng-template matStepLabel>Дата</ng-template>
         <mat-form-field>
           <mat-label>Дата тренировки</mat-label>
-          <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="date">
+          <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="date" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Время</mat-label>
+          <input type="time" matInput formControlName="time" required>
         </mat-form-field>
         <button mat-flat-button matStepperNext color="primary">Далее</button>
       </form>
