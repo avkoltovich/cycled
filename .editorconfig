@@ -1,6 +1,6 @@
 [*]
 charset = utf-8
-end_of_line = crlf
+end_of_line = lf
 indent_size = 4
 indent_style = space
 insert_final_newline = true
@@ -616,6 +616,7 @@ ij_json_spaces_within_brackets = false
 ij_json_wrap_long_lines = false
 
 [{*.htm, *.html, *.ng, *.sht, *.shtm, *.shtml}]
+indent_size = 2
 ij_html_add_new_line_before_tags = body, div, p, form, h1, h2, h3
 ij_html_align_attributes = true
 ij_html_align_text = false

@@ -1,6 +1,10 @@
 <div class="add-workout-container">
   <h2 class="add-workout__title">Добавить заезд</h2>
-  <mat-vertical-stepper class="add-workout__stepper" [linear]="isLinear">
+  <mat-vertical-stepper
+          class="add-workout__stepper"
+          [linear]="isLinear"
+          (selectionChange)="onSelectionChange($event)"
+  >
     <mat-step [stepControl]="dateFormGroup">
       <form class="add-workout__date-form" [formGroup]="dateFormGroup">
         <ng-template matStepLabel>Дата</ng-template>
@@ -41,19 +45,16 @@
       <form [formGroup]="bikeTypeFormGroup" class="add-workout__bike-type-form">
         <ng-template matStepLabel>Тип велосипеда</ng-template>
         <mat-radio-group
-          class="add-workout__checkbox-wrapper"
-          formControlName="bikeType"
-          color="primary"
-          [required]="true"
+                class="add-workout__checkbox-wrapper"
+                formControlName="bikeType"
+                color="primary"
+                [required]="true"
         >
-          <mat-radio-button value="any">Любой</mat-radio-button>
-          <mat-radio-button value="road">Шоссе</mat-radio-button>
-          <mat-radio-button value="cx">CX</mat-radio-button>
-          <mat-radio-button value="mtb">MTB</mat-radio-button>
+          <mat-radio-button *ngFor="let type of bikeTypes" [value]="type">{{ bikeTypeMap[type] }}</mat-radio-button>
         </mat-radio-group>
         <div>
           <button mat-button matStepperPrevious>Назад</button>
-          <button mat-flat-button matStepperNext (click)="onSecondStep()" color="primary">Далее</button>
+          <button mat-flat-button matStepperNext color="primary">Далее</button>
         </div>
       </form>
     </mat-step>
@@ -81,10 +82,10 @@
     <mat-step [editable]="false">
       <ng-template matStepLabel>Публикация</ng-template>
       <app-workout-main-info
-        class="add-workout__main-info"
-        [workout]="workout"
-        [isOnlyTimeShow]="false"
-        [isShowWorkoutType]="true"
+              class="add-workout__main-info"
+              [workout]="workout"
+              [isOnlyTimeShow]="false"
+              [isShowWorkoutType]="true"
       ></app-workout-main-info>
       <div>
         <button mat-button routerLink="" type="button">Отмена</button>

@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
 import { WorkoutCard } from '../workouts-list-page/models/models'
 import { combineLatest } from 'rxjs'
-import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper'
+import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
 import { bikeTypeMap } from '../../helpers/constants'
 
 
@@ -23,6 +23,9 @@ import { bikeTypeMap } from '../../helpers/constants'
 export class AddWorkoutPageComponent implements OnInit {
   public isLinear = true
   public minDate: Date
+  public bikeTypeMap = bikeTypeMap
+  public bikeTypes = Object.keys(this.bikeTypeMap)
+  private currentStepElement: HTMLElement | null = null
 
   public dateFormGroup = new FormGroup({
     date: new FormControl(null, Validators.required),
@@ -95,8 +98,15 @@ export class AddWorkoutPageComponent implements OnInit {
     this.bikeTypeFormGroup.controls.bikeType.patchValue('any')
   }
 
-  public onSecondStep(): void {
-    this.bikeTypeFormGroup.markAsTouched()
+  public onSelectionChange(event: StepperSelectionEvent): void {
+    const { selectedStep } = event
+    this.currentStepElement = selectedStep.stepLabel.template.elementRef.nativeElement.parentElement
+    /**
+     * Хак для плавности анимации
+     */
+    setTimeout(() => {
+      this.currentStepElement.scrollIntoView({ behavior: 'smooth' })
+    }, 50)
   }
 
   public onSubmit(): void {
