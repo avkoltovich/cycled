@@ -104,7 +104,9 @@ export class AddWorkoutPageComponent implements OnInit {
   }
 
   public onAnimationDone(): void {
-    this.currentStepElement.scrollIntoView({ behavior: 'smooth' })
+    if (this.currentStepElement !== null) {
+      this.currentStepElement.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   public onSubmit(): void {
