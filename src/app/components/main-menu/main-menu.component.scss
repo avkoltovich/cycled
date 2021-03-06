@@ -53,9 +53,7 @@
   width: 180px;
   padding: 0 16px;
 
-  font-size: 20px;
   line-height: 46px;
-  font-weight: 500;
   box-shadow: var(--default-shadow);
 }
 
@@ -99,8 +97,11 @@
   .header-navigation__link {
     width: max-content;
 
-    font-size: 18px;
     line-height: 38px;
+  }
+
+  .main-menu-background--is-menu-open {
+    display: none;
   }
 }
 

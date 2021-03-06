@@ -84,7 +84,7 @@
 
   .workout-card.mat-card {
     display: flex;
-    padding: 20px;
+    padding: 24px;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
@@ -97,6 +97,7 @@
   }
 }
 
+// TODO: адаптивность под мобильники
 @media (min-width: 360px) {
   .route__point-name {
     max-width: 260px;

@@ -1,0 +1,32 @@
+<section class="auth-page-container">
+  <div class="auth-page__title-wrapper">
+    <button class="auth-page__button-back" routerLink="">
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+    <h2 class="auth-page__title">Авторизация</h2>
+  </div>
+  <form class="auth-page__form">
+    <button mat-button class="auth-page__button auth-page__button--google" type="button">
+      <img class="auth-page__logo" src="./assets/svg/google-logo.svg" width="24" height="24">
+      Войти через Google
+    </button>
+    <div class="auth-page__divider">
+      <span>или</span>
+    </div>
+    <mat-form-field>
+      <mat-label>Логин</mat-label>
+      <input matInput required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Пароль</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-flat-button class="auth-page__button auth-page__button--login" type="button" color="primary">Войти
+    </button>
+  </form>
+</section>
+

@@ -27,6 +27,8 @@ import { MatRadioModule } from '@angular/material/radio'
 import { WorkoutMainInfoComponent } from './components/workouts-list-page/components/workout-main-info/workout-main-info.component'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core'
+import { SignInComponent } from './components/auth-page/sign-in-page/sign-in.component'
+import { SignUpComponent } from './components/auth-page/sign-up-page/sign-up.component'
 
 export class CustomDateAdapter extends NativeDateAdapter {
 
@@ -67,7 +69,9 @@ export class CustomDateAdapter extends NativeDateAdapter {
     PowerZonesDialogComponent,
     AddWorkoutButtonComponent,
     AddWorkoutPageComponent,
-    WorkoutMainInfoComponent
+    WorkoutMainInfoComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
