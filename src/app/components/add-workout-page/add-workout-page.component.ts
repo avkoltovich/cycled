@@ -4,13 +4,8 @@ import { tap } from 'rxjs/operators'
 import { WorkoutCard } from '../workouts-list-page/models/models'
 import { combineLatest } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper'
+import { bikeTypeMap } from '../../helpers/constants'
 
-const bikeTypeMap = {
-  any: 'Любой',
-  road: 'Шоссе',
-  cx: 'CX',
-  mtb: 'MTB'
-}
 
 @Component({
   selector: 'app-add-workout-page',

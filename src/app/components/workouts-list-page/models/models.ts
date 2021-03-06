@@ -14,3 +14,8 @@ export interface WorkoutCardList {
   date: string
   workouts: WorkoutCard[]
 }
+
+export interface WorkoutListDate {
+  dayOfWeek: string,
+  date: string
+}

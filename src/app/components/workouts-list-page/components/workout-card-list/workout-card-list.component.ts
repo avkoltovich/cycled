@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { WorkoutCardList } from '../../models/models'
-
-interface WorkoutListDate {
-  dayOfWeek: string,
-  date: string
-}
+import { WorkoutCardList, WorkoutListDate } from '../../models/models'
 
 @Component({
   selector: 'app-workout-card-list',

@@ -2,33 +2,8 @@ import { Component, Input, OnChanges } from '@angular/core'
 import { WorkoutCard } from '../../models/models'
 import { PowerZonesDialogComponent } from '../../dialogs/power-zones-dialog/power-zones-dialog.component'
 import { MatDialog } from '@angular/material/dialog'
+import { workoutFullTypeMap, workoutShortTypeMap, WorkoutType } from '../../../../helpers/constants'
 
-enum WorkoutType {
-  rc = 'rc',
-  ed = 'ed',
-  tp = 'tp',
-  tr = 'tr',
-  vo = 'vo',
-  an = 'an'
-}
-
-const workoutShortTypeMap = {
-  rc: 'R',
-  ed: 'E',
-  tp: 'T',
-  tr: 'T',
-  vo: 'V',
-  an: 'A'
-}
-
-const workoutFullTypeMap = {
-  rc: 'Recovery',
-  ed: 'Endurance',
-  tp: 'Tempo',
-  tr: 'Threshold',
-  vo: 'VO2 Max',
-  an: 'Anaerobic'
-}
 
 @Component({
   selector: 'app-workout-main-info',
