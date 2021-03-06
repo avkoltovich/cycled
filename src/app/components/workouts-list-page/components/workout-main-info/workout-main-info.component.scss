@@ -125,7 +125,7 @@
 }
 
 .route__point-name {
-  max-width: 220px;
+  max-width: 208px;
 
   line-height: 1.2;
   white-space: nowrap;
@@ -166,5 +166,33 @@ dd {
 @media (min-width: 360px) {
   .workout-card__time {
     font-size: 24px;
+  }
+
+  .route__point-name {
+    max-width: 248px;
+  }
+}
+
+@media (min-width: 375px) {
+  .route__point-name {
+    max-width: 262px;
+  }
+}
+
+@media (min-width: 768px) {
+  .route__point-name {
+    max-width: 268px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .route__point-name {
+    max-width: 238px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .route__point-name {
+    max-width: 248px;
   }
 }

@@ -98,32 +98,4 @@
 }
 
 // TODO: адаптивность под мобильники
-@media (min-width: 360px) {
-  .route__point-name {
-    max-width: 260px;
-  }
-}
 
-@media (min-width: 375px) {
-  .route__point-name {
-    max-width: 275px;
-  }
-}
-
-@media (min-width: 768px) {
-  .route__point-name {
-    max-width: 280px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .route__point-name {
-    max-width: 250px;
-  }
-}
-
-@media (min-width: 1366px) {
-  .route__point-name {
-    max-width: 260px;
-  }
-}
