@@ -4,6 +4,7 @@
           class="add-workout__stepper"
           [linear]="isLinear"
           (selectionChange)="onSelectionChange($event)"
+          (animationDone)="onAnimationDone()"
   >
     <mat-step [stepControl]="dateFormGroup">
       <form class="add-workout__date-form" [formGroup]="dateFormGroup">

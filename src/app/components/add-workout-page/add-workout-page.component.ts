@@ -101,12 +101,10 @@ export class AddWorkoutPageComponent implements OnInit {
   public onSelectionChange(event: StepperSelectionEvent): void {
     const { selectedStep } = event
     this.currentStepElement = selectedStep.stepLabel.template.elementRef.nativeElement.parentElement
-    /**
-     * Хак для плавности анимации
-     */
-    setTimeout(() => {
-      this.currentStepElement.scrollIntoView({ behavior: 'smooth' })
-    }, 50)
+  }
+
+  public onAnimationDone(): void {
+    this.currentStepElement.scrollIntoView({ behavior: 'smooth' })
   }
 
   public onSubmit(): void {
