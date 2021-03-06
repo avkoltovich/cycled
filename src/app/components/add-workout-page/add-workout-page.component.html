@@ -1,5 +1,10 @@
 <div class="add-workout-container">
-  <h2 class="add-workout__title">Добавить заезд</h2>
+  <div class="add-workout__title-wrapper">
+    <button class="add-workout__button-back" routerLink="">
+      <mat-icon>arrow_back_ios_new</mat-icon>
+    </button>
+    <h2 class="add-workout__title">Добавить заезд</h2>
+  </div>
   <mat-vertical-stepper
           class="add-workout__stepper"
           [linear]="isLinear"

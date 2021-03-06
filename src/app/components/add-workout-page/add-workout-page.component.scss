@@ -50,6 +50,24 @@
 
   font-size: 16px;
 
+  .add-workout__title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .add-workout__button-back {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 16px 16px 16px 0;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+  }
+
   .add-workout__title {
     margin: 32px 0;
 
