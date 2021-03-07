@@ -30,7 +30,7 @@
   border-radius: 50%;
   outline: none;
 
-  cursor: help;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
   &--rc {
@@ -165,7 +165,7 @@ dd {
 
 @media (min-width: 360px) {
   .workout-card__time {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .route__point-name {
