@@ -42,6 +42,7 @@
   .add-workout__title-wrapper {
     display: flex;
     align-items: center;
+    padding-right: 40px;
   }
 
   .add-workout__button-back {
@@ -58,7 +59,7 @@
   }
 
   .add-workout__title {
-    margin: 32px 0;
+    margin: 32px auto;
 
     font-weight: 700;
     font-size: 24px;

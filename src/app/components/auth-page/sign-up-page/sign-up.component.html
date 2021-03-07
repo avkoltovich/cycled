@@ -14,10 +14,6 @@
       <span>или</span>
     </div>
     <mat-form-field>
-      <mat-label>Логин</mat-label>
-      <input matInput required>
-    </mat-form-field>
-    <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput placeholder="user@example.ru" [formControl]="email" required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
