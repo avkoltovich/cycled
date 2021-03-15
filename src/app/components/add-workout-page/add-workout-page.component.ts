@@ -38,6 +38,10 @@ export class AddWorkoutPageComponent implements OnInit {
     isCycledRoute: new FormControl(false)
   })
 
+  public venueFormGroup = new FormGroup({
+    place: new FormControl(null, Validators.required)
+  })
+
   public bikeTypeFormGroup = new FormGroup({
     bikeType: new FormControl(null, Validators.required)
   })
@@ -51,28 +55,30 @@ export class AddWorkoutPageComponent implements OnInit {
   public workoutSummary = combineLatest([
     this.dateFormGroup.valueChanges,
     this.routeFormGroup.valueChanges,
+    this.venueFormGroup.valueChanges,
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-    tap(([ dateForm, routeForm, typeForm, detailsForm ]) => {
-      const dateObject = {
-        year: dateForm.date.getFullYear(),
-        month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
-        date: dateForm.date.getDate().toString().padStart(2, '0')
-      }
-      const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
+          tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
+            const dateObject = {
+              year: dateForm.date.getFullYear(),
+              month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
+              date: dateForm.date.getDate().toString().padStart(2, '0')
+            }
+            const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
 
-      this.workout = {
-        workoutType: null,
-        date: new Date(dateString).toISOString(),
-        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
-        oneWayRoute: false,
-        distance: detailsForm.distance,
-        speed: detailsForm.speed,
-        duration: detailsForm.duration,
-        bikeType: bikeTypeMap[ typeForm.bikeType ],
-        members: [],
-      }
+            this.workout = {
+              workoutType: null,
+              date: new Date(dateString).toISOString(),
+              routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ]:[ routeForm.from, routeForm.to ],
+              oneWayRoute: false,
+              venue: venueForm.place,
+              distance: detailsForm.distance,
+              speed: detailsForm.speed,
+              duration: detailsForm.duration,
+              bikeType: bikeTypeMap[typeForm.bikeType],
+              members: [],
+            }
     })
   )
 
@@ -81,6 +87,7 @@ export class AddWorkoutPageComponent implements OnInit {
     date: new Date().toISOString(),
     routePoints: [ '' ],
     oneWayRoute: false,
+    venue: '',
     distance: 0,
     speed: 0,
     bikeType: null,
@@ -105,7 +112,7 @@ export class AddWorkoutPageComponent implements OnInit {
 
   public onAnimationDone(): void {
     if (this.currentStepElement !== null) {
-      this.currentStepElement.scrollIntoView({ behavior: 'smooth' })
+      this.currentStepElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
   }
 

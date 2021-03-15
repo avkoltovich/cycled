@@ -3,6 +3,7 @@ export interface WorkoutCard {
   date: string
   routePoints: string[]
   oneWayRoute: boolean
+  venue: string
   distance: number
   speed?: number | null
   duration?: number | null

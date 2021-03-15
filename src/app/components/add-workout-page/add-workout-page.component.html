@@ -47,6 +47,19 @@
         <button mat-flat-button matStepperNext color="primary">Далее</button>
       </form>
     </mat-step>
+    <mat-step [stepControl]="venueFormGroup">
+      <form [formGroup]="venueFormGroup">
+        <ng-template matStepLabel>Место сбора</ng-template>
+        <div class="add-workout__input-wrapper">
+          <mat-form-field class="add-workout__venue-form">
+            <mat-label>Место сбора</mat-label>
+            <textarea matInput formControlName="place"></textarea>
+          </mat-form-field>
+        </div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-flat-button matStepperNext color="primary">Далее</button>
+      </form>
+    </mat-step>
     <mat-step [stepControl]="bikeTypeFormGroup">
       <form [formGroup]="bikeTypeFormGroup" class="add-workout__bike-type-form">
         <ng-template matStepLabel>Тип велосипеда</ng-template>
