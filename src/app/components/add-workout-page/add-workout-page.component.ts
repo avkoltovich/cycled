@@ -59,26 +59,26 @@ export class AddWorkoutPageComponent implements OnInit {
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-          tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
-            const dateObject = {
-              year: dateForm.date.getFullYear(),
-              month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
-              date: dateForm.date.getDate().toString().padStart(2, '0')
-            }
-            const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
+    tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
+      const dateObject = {
+        year: dateForm.date.getFullYear(),
+        month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
+        date: dateForm.date.getDate().toString().padStart(2, '0')
+      }
+      const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
 
-            this.workout = {
-              workoutType: null,
-              date: new Date(dateString).toISOString(),
-              routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ]:[ routeForm.from, routeForm.to ],
-              oneWayRoute: false,
-              venue: venueForm.place,
-              distance: detailsForm.distance,
-              speed: detailsForm.speed,
-              duration: detailsForm.duration,
-              bikeType: bikeTypeMap[typeForm.bikeType],
-              members: [],
-            }
+      this.workout = {
+        workoutType: null,
+        date: new Date(dateString).toISOString(),
+        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
+        oneWayRoute: false,
+        venue: venueForm.place,
+        distance: detailsForm.distance,
+        speed: detailsForm.speed,
+        duration: detailsForm.duration,
+        bikeType: bikeTypeMap[ typeForm.bikeType ],
+        members: [],
+      }
     })
   )
 
