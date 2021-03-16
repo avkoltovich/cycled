@@ -15,9 +15,12 @@
     <span class="route__point-name">{{ point }}</span>
   </div>
 </div>
-<span class="workout-main-info__venue">
-  <mat-icon>place</mat-icon><b>Место сбора: </b><span>{{ workout.venue }}</span>
-</span>
+<div class="workout-main-info__venue">
+  <mat-icon>place</mat-icon>
+  <div>
+    <b>Сбор:</b><br><span class="workout-main-info__details">{{ workout.venue }}</span>
+  </div>
+</div>
 <dl>
   <div class="workout-main-info__dl-inner" *ngIf="!isSpeedHidden">
     <dt>
