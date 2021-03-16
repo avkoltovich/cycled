@@ -136,7 +136,8 @@
 
 .workout-main-info__venue {
   display: flex;
-  margin-bottom: 16px;
+  margin-top: 28px;
+  margin-bottom: 22px;
 
   font-size: 16px;
 
@@ -149,8 +150,14 @@
   }
 
   b {
+    margin-right: 8px;
+
     font-weight: 500;
   }
+}
+
+.workout-main-info__venue-details {
+  display: flex;
 }
 
 .workout-main-info__details {
