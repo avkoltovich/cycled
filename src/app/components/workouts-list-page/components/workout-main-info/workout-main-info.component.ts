@@ -1,9 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core'
-import { WorkoutCard } from '../../models/models'
+import { bikeTypeMap, WorkoutCard, workoutFullTypeMap, workoutShortTypeMap, WorkoutType } from '../../models/models'
 import { PowerZonesDialogComponent } from '../../dialogs/power-zones-dialog/power-zones-dialog.component'
 import { MatDialog } from '@angular/material/dialog'
-import { workoutFullTypeMap, workoutShortTypeMap, WorkoutType } from '../../../../helpers/constants'
-
 
 @Component({
   selector: 'app-workout-main-info',
@@ -18,6 +16,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
   public workoutShortType: string
   public workoutDateString: string
   public workoutFullType: string
+  public bikeTypeMap = bikeTypeMap
 
   @Input()
   public workout: WorkoutCard | null
@@ -63,7 +62,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
       this.isSpeedHidden = !this.isNumberValueNotEmpty(this.workout.speed)
       this.isDurationHidden = !this.isNumberValueNotEmpty(this.workout.duration)
 
-      this.workoutTypeCssClass = `workout-card__type--${ this.workout.workoutType }`
+      this.workoutTypeCssClass = `workout-card__type--${ this.workout.workoutType.toLowerCase() }`
       this.workoutShortType = this.getWorkoutShortType(this.workout.workoutType)
       this.workoutFullType = this.getWorkoutFullType(this.workout.workoutType)
       this.workoutDateString = this.getWorkoutDateString(this.workout.date)
@@ -74,7 +73,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
     return workoutShortTypeMap[ type ]
   }
 
-  private getWorkoutTypeShortBySpeed(speed: number): string {
+  private getWorkoutTypeShortBySpeed(speed: number): WorkoutType {
     if (speed <= 25) {
       return WorkoutType.rc
     } else if (speed <= 35) {

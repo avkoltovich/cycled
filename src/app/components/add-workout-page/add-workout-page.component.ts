@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
-import { WorkoutCard } from '../workouts-list-page/models/models'
+import { BikeType, bikeTypeMap, WorkoutCard } from '../workouts-list-page/models/models'
 import { combineLatest } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
-import { bikeTypeMap } from '../../helpers/constants'
+import { ISO8601 } from '../../../shared/models/base.model'
 
 
 @Component({
@@ -69,14 +69,14 @@ export class AddWorkoutPageComponent implements OnInit {
 
       this.workout = {
         workoutType: null,
-        date: new Date(dateString).toISOString(),
+        date: new Date(dateString).toISOString() as ISO8601,
         routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
         oneWayRoute: false,
         venue: venueForm.place,
         distance: detailsForm.distance,
         speed: detailsForm.speed,
         duration: detailsForm.duration,
-        bikeType: bikeTypeMap[ typeForm.bikeType ],
+        bikeType: typeForm.bikeType,
         members: [],
       }
     })
@@ -84,7 +84,7 @@ export class AddWorkoutPageComponent implements OnInit {
 
   public workout: WorkoutCard = {
     workoutType: null,
-    date: new Date().toISOString(),
+    date: new Date().toISOString() as ISO8601,
     routePoints: [ '' ],
     oneWayRoute: false,
     venue: '',
@@ -102,7 +102,7 @@ export class AddWorkoutPageComponent implements OnInit {
   public ngOnInit(): void {
     this.dateFormGroup.controls.date.patchValue(new Date())
     this.dateFormGroup.controls.time.patchValue('08:00')
-    this.bikeTypeFormGroup.controls.bikeType.patchValue('any')
+    this.bikeTypeFormGroup.controls.bikeType.patchValue(BikeType.any)
   }
 
   public onSelectionChange(event: StepperSelectionEvent): void {
