@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
-import { BikeType, bikeTypeMap, WorkoutCard } from '../workouts-list-page/models/models'
 import { combineLatest } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
-import { ISO8601 } from '../../../shared/models/base.model'
+import { ISO8601 } from '../../models/base.model'
+import { BikeType, bikeTypeMap, WorkoutCard } from 'src/app/models/workout.model'
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core'
-import { bikeTypeMap, WorkoutCard, workoutFullTypeMap, workoutShortTypeMap, WorkoutType } from '../../models/models'
 import { PowerZonesDialogComponent } from '../../dialogs/power-zones-dialog/power-zones-dialog.component'
 import { MatDialog } from '@angular/material/dialog'
+import { bikeTypeMap, WorkoutCard, workoutFullTypeMap, workoutShortTypeMap, WorkoutType } from '../../../../models/workout.model'
 
 @Component({
   selector: 'app-workout-main-info',

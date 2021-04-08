@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { WorkoutCardList, WorkoutListDate } from '../../models/models'
+import { WorkoutCardList, WorkoutListDate } from '../../../../models/workout.model'
 
 @Component({
   selector: 'app-workout-card-list',

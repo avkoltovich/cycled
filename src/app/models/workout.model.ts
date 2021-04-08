@@ -1,4 +1,4 @@
-import { ISO8601 } from '../../../../shared/models/base.model'
+import { ISO8601 } from './base.model'
 
 export enum WorkoutType {
   rc = 'RC',

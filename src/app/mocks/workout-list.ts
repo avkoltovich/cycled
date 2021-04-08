@@ -1,5 +1,5 @@
-import { BikeType, WorkoutCardList, WorkoutType } from '../components/workouts-list-page/models/models'
-import { ISO8601 } from '../../shared/models/base.model'
+import { ISO8601 } from '../models/base.model'
+import { BikeType, WorkoutCardList, WorkoutType } from '../models/workout.model'
 
 export const mockWorkoutCalendar: WorkoutCardList[] = [
   {

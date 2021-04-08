@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { WorkoutCardList } from './models/models'
 import { mockWorkoutCalendar } from '../../mocks/workout-list'
+import { WorkoutCardList } from '../../models/workout.model'
 
 
 @Component({
