@@ -14,7 +14,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: BikeType.cx,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.tp,
@@ -25,7 +54,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: BikeType.mtb,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.tr,
@@ -36,7 +94,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 25,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.ed,
@@ -47,7 +134,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: BikeType.cx,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.vo,
@@ -58,7 +174,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 100,
         speed: 25,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.rc,
@@ -69,7 +214,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.tr,
@@ -80,7 +254,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 25,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
     ]
   },
@@ -96,7 +299,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: BikeType.cx,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.tp,
@@ -107,7 +339,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: BikeType.mtb,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.rc,
@@ -118,7 +379,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.ed,
@@ -129,7 +419,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 100,
         speed: 25,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       }
     ]
   },
@@ -145,7 +464,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: BikeType.cx,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.ed,
@@ -156,7 +504,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 20,
         bikeType: BikeType.mtb,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       },
       {
         workoutType: WorkoutType.tr,
@@ -167,7 +544,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 50,
         speed: 30,
         bikeType: BikeType.road,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       }
     ]
   },
@@ -183,7 +589,36 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         distance: 60,
         speed: 25,
         bikeType: BikeType.cx,
-        members: []
+        members: [
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Илья',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Василий',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Олег',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          },
+          {
+            id: '1',
+            login: 'login',
+            email: 'mail@mail.ru',
+            name: 'Пётр',
+            lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+          }
+        ]
       }
     ]
   }

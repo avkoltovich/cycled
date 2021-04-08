@@ -1,4 +1,5 @@
 import { ISO8601 } from './base.model'
+import { UserModel } from './user.model'
 
 export enum WorkoutType {
   rc = 'RC',
@@ -51,7 +52,7 @@ export interface WorkoutCard {
   speed?: number | null
   duration?: number | null
   bikeType: BikeType
-  members: any[]
+  members: UserModel[]
 }
 
 export interface WorkoutCardList {
