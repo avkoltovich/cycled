@@ -5,5 +5,6 @@ export interface UserModel {
   login: string
   email: string
   name: string
+  createTime: ISO8601
   lastAuthTime: ISO8601
 }

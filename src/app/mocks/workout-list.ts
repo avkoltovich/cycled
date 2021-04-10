@@ -20,6 +20,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -27,6 +28,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -34,6 +36,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -41,6 +44,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -60,6 +64,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -67,6 +72,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -74,6 +80,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -81,6 +88,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -100,6 +108,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -107,6 +116,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -114,6 +124,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -121,6 +132,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -140,6 +152,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -147,6 +160,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -154,6 +168,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -161,6 +176,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -180,6 +196,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -187,6 +204,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -194,6 +212,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -201,6 +220,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -220,6 +240,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -227,6 +248,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -234,6 +256,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -241,6 +264,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -260,6 +284,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -267,6 +292,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -274,6 +300,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -281,6 +308,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -305,6 +333,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -312,6 +341,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -319,6 +349,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -326,6 +357,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -345,6 +377,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -352,6 +385,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -359,6 +393,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -366,6 +401,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -385,6 +421,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -392,6 +429,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -399,6 +437,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -406,6 +445,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -425,6 +465,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -432,6 +473,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -439,6 +481,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -446,6 +489,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -470,6 +514,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -477,6 +522,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -484,6 +530,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -491,6 +538,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -510,6 +558,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -517,6 +566,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -524,6 +574,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -531,6 +582,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -550,6 +602,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -557,6 +610,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -564,6 +618,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -571,6 +626,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
@@ -595,6 +651,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -602,6 +659,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -609,6 +667,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
@@ -616,6 +675,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
+            createTime: '2021-08-28T05:42:09Z' as ISO8601,
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
