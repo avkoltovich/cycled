@@ -82,7 +82,7 @@ export class AddWorkoutPageComponent implements OnInit {
     })
   )
 
-  public workout: WorkoutCard = {
+  public workout: Omit<WorkoutCard, '_id'> = {
     workoutType: null,
     date: new Date().toISOString() as ISO8601,
     routePoints: [ '' ],

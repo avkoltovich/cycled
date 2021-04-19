@@ -19,7 +19,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
   public bikeTypeMap = bikeTypeMap
 
   @Input()
-  public workout: WorkoutCard | null
+  public workout: Omit<WorkoutCard, '_id'> | null
 
   @Input()
   public isOnlyTimeShow = true

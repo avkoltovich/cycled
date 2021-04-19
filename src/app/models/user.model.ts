@@ -1,7 +1,7 @@
 import { ISO8601 } from './base.model'
 
 export interface UserModel {
-  id: string
+  _id: string
   login: string
   email: string
   name: string

@@ -1,7 +1,7 @@
 import { ISO8601 } from './base.model'
 import { UserModel } from './user.model'
 
-export enum WorkoutType {
+export const enum WorkoutType {
   rc = 'RC',
   ed = 'ED',
   tp = 'TP',
@@ -10,7 +10,7 @@ export enum WorkoutType {
   an = 'AN'
 }
 
-export enum BikeType {
+export const enum BikeType {
   any = 'ANY',
   road = 'ROAD',
   cx = 'CX',
@@ -43,6 +43,7 @@ export const workoutFullTypeMap = {
 }
 
 export interface WorkoutCard {
+  _id: string
   workoutType: WorkoutType | null
   date: ISO8601
   routePoints: string[]

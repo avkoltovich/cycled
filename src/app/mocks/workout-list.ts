@@ -6,9 +6,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
     date: '2021-03-07T07:42:09Z',
     workouts: [
       {
+        _id: '123',
         workoutType: WorkoutType.ed,
         date: '2021-08-28T05:15:09Z' as ISO8601,
-        routePoints: [ 'Тахтамукай', 'Калужская' ],
+        routePoints: ['Тахтамукай', 'Калужская'],
         oneWayRoute: false,
         venue: 'Напротив хлебзавода',
         distance: 60,
@@ -16,7 +17,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.cx,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -24,7 +25,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -32,7 +33,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -40,7 +41,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -50,9 +51,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.tp,
         date: '2021-08-28T05:42:09Z' as ISO8601,
-        routePoints: [ 'Смоленская', 'Крепостная' ],
+        routePoints: ['Смоленская', 'Крепостная'],
         oneWayRoute: false,
         venue: 'На Марсе',
         distance: 50,
@@ -60,7 +62,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.mtb,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -68,7 +70,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -76,7 +78,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -84,7 +86,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -94,9 +96,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.tr,
         date: '2021-08-28T06:00:09Z' as ISO8601,
-        routePoints: [ 'ДБ Екатерининский', 'Мачуги' ],
+        routePoints: ['ДБ Екатерининский', 'Мачуги'],
         oneWayRoute: true,
         venue: 'Напротив дворца бракосочетания',
         distance: 50,
@@ -104,7 +107,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -112,7 +115,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -120,7 +123,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -128,7 +131,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -138,9 +141,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.ed,
         date: '2021-08-28T05:42:09Z' as ISO8601,
-        routePoints: [ 'Смоленская', 'Крепостная' ],
+        routePoints: ['Смоленская', 'Крепостная'],
         oneWayRoute: false,
         venue: 'Где-то там',
         distance: 50,
@@ -148,7 +152,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.cx,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -156,7 +160,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -164,7 +168,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -172,7 +176,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -182,9 +186,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.vo,
         date: '2021-08-28T07:30:09Z' as ISO8601,
-        routePoints: [ 'Пашковский Хлебзавод', 'Горячий Ключ' ],
+        routePoints: ['Пашковский Хлебзавод', 'Горячий Ключ'],
         oneWayRoute: false,
         venue: 'Вот там вот',
         distance: 100,
@@ -192,7 +197,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -200,7 +205,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -208,7 +213,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -216,7 +221,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -226,9 +231,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.rc,
         date: '2021-08-28T07:00:09Z' as ISO8601,
-        routePoints: [ 'Горячий Ключ', 'Кутаис', 'Горячий Ключ' ],
+        routePoints: ['Горячий Ключ', 'Кутаис', 'Горячий Ключ'],
         oneWayRoute: false,
         venue: 'На магазине',
         distance: 50,
@@ -236,7 +242,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -244,7 +250,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -252,7 +258,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -260,7 +266,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -270,9 +276,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.tr,
         date: '2021-08-28T06:00:09Z' as ISO8601,
-        routePoints: [ 'ДБ Екатерининский', 'Мачуги' ],
+        routePoints: ['ДБ Екатерининский', 'Мачуги'],
         oneWayRoute: true,
         venue: 'Напротив дворца бракосочетания',
         distance: 50,
@@ -280,7 +287,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -288,7 +295,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -296,7 +303,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -304,7 +311,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -319,9 +326,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
     date: '2021-03-08T07:42:09Z',
     workouts: [
       {
+        _id: '123',
         workoutType: WorkoutType.an,
         date: '2021-08-28T05:15:09Z' as ISO8601,
-        routePoints: [ 'Тахтамукай', 'Калужская', 'Тахтамукай' ],
+        routePoints: ['Тахтамукай', 'Калужская', 'Тахтамукай'],
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 60,
@@ -329,7 +337,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.cx,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -337,7 +345,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -345,7 +353,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -353,7 +361,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -363,9 +371,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.tp,
         date: '2021-08-28T05:42:09Z' as ISO8601,
-        routePoints: [ 'Смоленская', 'Крепостная', 'Смоленская' ],
+        routePoints: ['Смоленская', 'Крепостная', 'Смоленская'],
         oneWayRoute: false,
         venue: 'Перед подъемом',
         distance: 50,
@@ -373,7 +382,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.mtb,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -381,7 +390,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -389,7 +398,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -397,7 +406,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -407,9 +416,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.rc,
         date: '2021-08-28T07:00:09Z' as ISO8601,
-        routePoints: [ 'Горячий Ключ', 'Кутаис', 'Горячий Ключ' ],
+        routePoints: ['Горячий Ключ', 'Кутаис', 'Горячий Ключ'],
         oneWayRoute: false,
         venue: 'Магазин',
         distance: 50,
@@ -417,7 +427,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -425,7 +435,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -433,7 +443,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -441,7 +451,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -451,9 +461,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.ed,
         date: '2021-08-28T07:30:09Z' as ISO8601,
-        routePoints: [ 'Пашковский Хлебзавод', 'Горячий Ключ', 'Пашковский Хлебзавод' ],
+        routePoints: ['Пашковский Хлебзавод', 'Горячий Ключ', 'Пашковский Хлебзавод'],
         oneWayRoute: false,
         venue: 'На развилке',
         distance: 100,
@@ -461,7 +472,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -469,7 +480,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -477,7 +488,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -485,7 +496,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -500,9 +511,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
     date: '2021-03-09T07:42:09Z',
     workouts: [
       {
+        _id: '123',
         workoutType: WorkoutType.an,
         date: '2021-08-28T05:15:09Z' as ISO8601,
-        routePoints: [ 'Тахтамукай', 'Калужская' ],
+        routePoints: ['Тахтамукай', 'Калужская'],
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 60,
@@ -510,7 +522,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.cx,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -518,7 +530,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -526,7 +538,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -534,7 +546,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -544,9 +556,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.ed,
         date: '2021-08-28T05:42:09Z' as ISO8601,
-        routePoints: [ 'Смоленская', 'Крепостная' ],
+        routePoints: ['Смоленская', 'Крепостная'],
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 50,
@@ -554,7 +567,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.mtb,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -562,7 +575,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -570,7 +583,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -578,7 +591,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -588,9 +601,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         ]
       },
       {
+        _id: '123',
         workoutType: WorkoutType.tr,
         date: '2021-08-28T07:00:09Z' as ISO8601,
-        routePoints: [ 'Горячий Ключ', 'Кутаис' ],
+        routePoints: ['Горячий Ключ', 'Кутаис'],
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 50,
@@ -598,7 +612,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.road,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -606,7 +620,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -614,7 +628,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -622,7 +636,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
@@ -637,9 +651,10 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
     date: '2021-03-10T07:42:09Z',
     workouts: [
       {
+        _id: '123',
         workoutType: WorkoutType.an,
         date: '2021-08-28T05:15:09Z' as ISO8601,
-        routePoints: [ 'Тахтамукай', 'Калужская' ],
+        routePoints: ['Тахтамукай', 'Калужская'],
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 60,
@@ -647,7 +662,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         bikeType: BikeType.cx,
         members: [
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Илья',
@@ -655,7 +670,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Василий',
@@ -663,7 +678,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Олег',
@@ -671,7 +686,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           },
           {
-            id: '1',
+            _id: '1',
             login: 'login',
             email: 'mail@mail.ru',
             name: 'Пётр',
