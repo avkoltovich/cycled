@@ -13,6 +13,6 @@ export class WorkoutService {
   }
 
   public create(body: Omit<WorkoutModel, '_id'>): Observable<WorkoutModel> {
-    return this.http.post<WorkoutModel>(API_URL, body)
+    return this.http.post<WorkoutModel>(`${ API_URL }/workout/create`, body)
   }
 }
