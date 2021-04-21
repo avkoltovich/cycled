@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { WorkoutCardList, WorkoutListDate } from '../../../../models/workout.model'
+import { WorkoutCalendar, WorkoutListDate } from '../../../../models/workout.model'
 
 @Component({
   selector: 'app-workout-card-list',
   templateUrl: './workout-card-list.component.html',
-  styleUrls: [ './workout-card-list.component.scss' ]
+  styleUrls: ['./workout-card-list.component.scss']
 })
 export class WorkoutCardListComponent implements OnInit {
 
   @Input()
-  public workoutList: WorkoutCardList
+  public workoutList: WorkoutCalendar
 
   public workoutListDate: WorkoutListDate
 

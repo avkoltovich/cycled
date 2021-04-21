@@ -1,8 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { WorkoutModel } from '../models/workout.model'
-import { HttpClient } from '@angular/common/http'
-import { API_URL } from '../shared/constants'
 import { Observable } from 'rxjs'
+import { WorkoutModel } from '../models/workout.model'
+import { API_URL } from '../shared/constants'
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,12 @@ export class WorkoutService {
   }
 
   public create(body: Omit<WorkoutModel, '_id'>): Observable<WorkoutModel> {
-    return this.http.post<WorkoutModel>(`${ API_URL }/workout/create`, body)
+    const headers = new HttpHeaders()
+
+    return this.http.post<WorkoutModel>(`${ API_URL }/workout/create`, body, { headers })
+  }
+
+  public getAll(): Observable<WorkoutModel[]> {
+    return this.http.get<WorkoutModel[]>(`${ API_URL }/workout/list`)
   }
 }

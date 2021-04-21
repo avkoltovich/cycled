@@ -1,7 +1,7 @@
 import { ISO8601 } from '../models/base.model'
-import { BikeType, WorkoutCardList, WorkoutType } from '../models/workout.model'
+import { BikeType, WorkoutCalendar, WorkoutType } from '../models/workout.model'
 
-export const mockWorkoutCalendar: WorkoutCardList[] = [
+export const mockWorkoutCalendar: WorkoutCalendar[] = [
   {
     date: '2021-03-07T07:42:09Z',
     workouts: [
@@ -709,6 +709,469 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
             lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
           }
         ]
+      }
+    ]
+  }
+]
+
+export const workoutsForTest = [
+  {
+    _id: '123',
+    workoutType: WorkoutType.ed,
+    date: '2021-08-20T05:15:09Z' as ISO8601,
+    routePoints: ['Тахтамукай', 'Калужская'],
+    oneWayRoute: false,
+    venue: 'Напротив хлебзавода',
+    distance: 60,
+    duration: null,
+    speed: 25,
+    bikeType: BikeType.cx,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.tp,
+    date: '2021-08-30T05:42:09Z' as ISO8601,
+    routePoints: ['Смоленская', 'Крепостная'],
+    oneWayRoute: false,
+    venue: 'На Марсе',
+    distance: 50,
+    duration: null,
+    speed: 20,
+    bikeType: BikeType.mtb,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.tr,
+    date: '2021-08-28T06:00:09Z' as ISO8601,
+    routePoints: ['ДБ Екатерининский', 'Мачуги'],
+    oneWayRoute: true,
+    venue: 'Напротив дворца бракосочетания',
+    distance: 50,
+    duration: null,
+    speed: 25,
+    bikeType: BikeType.road,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.ed,
+    date: '2021-08-20T05:42:09Z' as ISO8601,
+    routePoints: ['Смоленская', 'Крепостная'],
+    oneWayRoute: false,
+    venue: 'Где-то там',
+    distance: 50,
+    duration: null,
+    speed: 20,
+    bikeType: BikeType.cx,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.vo,
+    date: '2021-06-28T07:30:09Z' as ISO8601,
+    routePoints: ['Пашковский Хлебзавод', 'Горячий Ключ'],
+    oneWayRoute: false,
+    venue: 'Вот там вот',
+    distance: 100,
+    duration: null,
+    speed: 25,
+    bikeType: BikeType.road,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.rc,
+    date: '2021-06-28T07:00:09Z' as ISO8601,
+    routePoints: ['Горячий Ключ', 'Кутаис', 'Горячий Ключ'],
+    oneWayRoute: false,
+    venue: 'На магазине',
+    distance: 50,
+    duration: null,
+    speed: 30,
+    bikeType: BikeType.road,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.tr,
+    date: '2021-08-21T06:00:09Z' as ISO8601,
+    routePoints: ['ДБ Екатерининский', 'Мачуги'],
+    oneWayRoute: true,
+    venue: 'Напротив дворца бракосочетания',
+    distance: 50,
+    duration: null,
+    speed: 25,
+    bikeType: BikeType.road,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.an,
+    date: '2021-08-21T05:15:09Z' as ISO8601,
+    routePoints: ['Тахтамукай', 'Калужская'],
+    oneWayRoute: false,
+    venue: 'Где-то',
+    distance: 60,
+    duration: null,
+    speed: 25,
+    bikeType: BikeType.cx,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.an,
+    date: '2021-08-28T05:15:09Z' as ISO8601,
+    routePoints: ['Тахтамукай', 'Калужская'],
+    oneWayRoute: false,
+    venue: 'Где-то',
+    distance: 60,
+    duration: null,
+    speed: 25,
+    bikeType: BikeType.cx,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      }
+    ]
+  },
+  {
+    _id: '123',
+    workoutType: WorkoutType.rc,
+    date: '2021-08-28T07:00:09Z' as ISO8601,
+    routePoints: ['Горячий Ключ', 'Кутаис', 'Горячий Ключ'],
+    oneWayRoute: false,
+    venue: 'Магазин',
+    distance: 50,
+    duration: null,
+    speed: 30,
+    bikeType: BikeType.road,
+    members: [
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Илья',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Василий',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Олег',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
+      },
+      {
+        _id: '1',
+        login: 'login',
+        email: 'mail@mail.ru',
+        name: 'Пётр',
+        createTime: '2021-08-28T05:42:09Z' as ISO8601,
+        lastAuthTime: '2021-08-28T05:42:09Z' as ISO8601
       }
     ]
   }

@@ -1,4 +1,4 @@
-<ng-container *ngFor="let list of workoutCalendar">
+<ng-container *ngFor="let list of workoutCalendar | async">
   <app-workout-card-list [workoutList]="list"></app-workout-card-list>
 </ng-container>
 <app-add-workout-button class="workout-card-list-container__add-workout-button"></app-add-workout-button>
