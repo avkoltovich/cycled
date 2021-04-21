@@ -16,7 +16,7 @@
     <button mat-flat-button class="workout-card__button workout-card__button--join">
       <mat-icon class="workout-card__icon" matTooltip="Присоединиться">person_add_alt_1</mat-icon>
     </button>
-    <button mat-flat-button class="workout-card__button workout-card__button--share" matTooltip="Поделиться">
+    <button mat-flat-button class="workout-card__button workout-card__button--share" matTooltip="Поделиться" (click)="onShareButtonClick(workout._id)">
       <mat-icon class="workout-card__icon">share</mat-icon>
     </button>
   </mat-card-actions>
