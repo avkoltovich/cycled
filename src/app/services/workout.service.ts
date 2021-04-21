@@ -21,4 +21,18 @@ export class WorkoutService {
   public getAll(): Observable<WorkoutModel[]> {
     return this.http.get<WorkoutModel[]>(`${ API_URL }/workout/list`)
   }
+
+  public getById(id: string): Observable<WorkoutModel[]> {
+    return this.http.get<WorkoutModel[]>(`${ API_URL }/workout/${ id }`)
+  }
+
+  public delete(id: string): Observable<WorkoutModel[] | null> {
+    return this.http.delete<WorkoutModel[] | null>(`${ API_URL }/workout/${ id }`)
+  }
+
+  public update(id: string, body: Omit<WorkoutModel, '_id'>): Observable<WorkoutModel> {
+    const headers = new HttpHeaders()
+
+    return this.http.patch<WorkoutModel>(`${ API_URL }/workout/${ id }`, body, { headers })
+  }
 }
