@@ -42,7 +42,7 @@ export const workoutFullTypeMap = {
   [ WorkoutType.an ]: 'Anaerobic'
 }
 
-export interface WorkoutCard {
+export interface WorkoutModel {
   _id: string
   workoutType: WorkoutType | null
   date: ISO8601
@@ -50,15 +50,15 @@ export interface WorkoutCard {
   oneWayRoute: boolean
   venue: string
   distance: number
-  speed?: number | null
-  duration?: number | null
+  speed: number | null
+  duration: number | null
   bikeType: BikeType
   members: UserModel[]
 }
 
 export interface WorkoutCardList {
   date: string
-  workouts: WorkoutCard[]
+  workouts: WorkoutModel[]
 }
 
 export interface WorkoutListDate {

@@ -29,6 +29,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core'
 import { SignInComponent } from './components/auth-page/sign-in-page/sign-in.component'
 import { SignUpComponent } from './components/auth-page/sign-up-page/sign-up.component'
+import { HttpClientModule } from '@angular/common/http'
 
 export class CustomDateAdapter extends NativeDateAdapter {
 
@@ -92,6 +93,7 @@ export class CustomDateAdapter extends NativeDateAdapter {
     MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
     MatDatepickerModule,

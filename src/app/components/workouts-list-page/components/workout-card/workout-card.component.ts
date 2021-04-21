@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { WorkoutCard } from '../../../../models/workout.model'
+import { WorkoutModel } from '../../../../models/workout.model'
 
 @Component({
   selector: 'app-workout-card',
@@ -8,7 +8,7 @@ import { WorkoutCard } from '../../../../models/workout.model'
 })
 export class WorkoutCardComponent {
   @Input()
-  public workout: WorkoutCard
+  public workout: WorkoutModel
 
   @Input()
   public isOnlyTimeShow = true

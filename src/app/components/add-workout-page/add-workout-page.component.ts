@@ -4,7 +4,8 @@ import { tap } from 'rxjs/operators'
 import { combineLatest } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
 import { ISO8601 } from '../../models/base.model'
-import { BikeType, bikeTypeMap, WorkoutCard } from 'src/app/models/workout.model'
+import { BikeType, bikeTypeMap, WorkoutModel } from 'src/app/models/workout.model'
+import { WorkoutService } from '../../services/workout.service'
 
 
 @Component({
@@ -82,19 +83,20 @@ export class AddWorkoutPageComponent implements OnInit {
     })
   )
 
-  public workout: Omit<WorkoutCard, '_id'> = {
+  public workout: Omit<WorkoutModel, '_id'> = {
     workoutType: null,
     date: new Date().toISOString() as ISO8601,
     routePoints: [ '' ],
     oneWayRoute: false,
     venue: '',
     distance: 0,
-    speed: 0,
+    speed: null,
+    duration: null,
     bikeType: null,
     members: [],
   }
 
-  constructor() {
+  constructor(private workoutService: WorkoutService) {
     this.workoutSummary.subscribe()
     this.minDate = new Date()
   }
@@ -117,5 +119,6 @@ export class AddWorkoutPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
+    this.workoutService.create(this.workout).subscribe()
   }
 }

@@ -13,6 +13,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Напротив хлебзавода',
         distance: 60,
+        duration: null,
         speed: 25,
         bikeType: BikeType.cx,
         members: [
@@ -58,6 +59,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'На Марсе',
         distance: 50,
+        duration: null,
         speed: 20,
         bikeType: BikeType.mtb,
         members: [
@@ -103,6 +105,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: true,
         venue: 'Напротив дворца бракосочетания',
         distance: 50,
+        duration: null,
         speed: 25,
         bikeType: BikeType.road,
         members: [
@@ -148,6 +151,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Где-то там',
         distance: 50,
+        duration: null,
         speed: 20,
         bikeType: BikeType.cx,
         members: [
@@ -193,6 +197,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Вот там вот',
         distance: 100,
+        duration: null,
         speed: 25,
         bikeType: BikeType.road,
         members: [
@@ -238,6 +243,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'На магазине',
         distance: 50,
+        duration: null,
         speed: 30,
         bikeType: BikeType.road,
         members: [
@@ -283,6 +289,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: true,
         venue: 'Напротив дворца бракосочетания',
         distance: 50,
+        duration: null,
         speed: 25,
         bikeType: BikeType.road,
         members: [
@@ -333,6 +340,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 60,
+        duration: null,
         speed: 25,
         bikeType: BikeType.cx,
         members: [
@@ -378,6 +386,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Перед подъемом',
         distance: 50,
+        duration: null,
         speed: 20,
         bikeType: BikeType.mtb,
         members: [
@@ -423,6 +432,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Магазин',
         distance: 50,
+        duration: null,
         speed: 30,
         bikeType: BikeType.road,
         members: [
@@ -468,6 +478,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'На развилке',
         distance: 100,
+        duration: null,
         speed: 25,
         bikeType: BikeType.road,
         members: [
@@ -518,6 +529,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 60,
+        duration: null,
         speed: 25,
         bikeType: BikeType.cx,
         members: [
@@ -563,6 +575,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 50,
+        duration: null,
         speed: 20,
         bikeType: BikeType.mtb,
         members: [
@@ -608,6 +621,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 50,
+        duration: null,
         speed: 30,
         bikeType: BikeType.road,
         members: [
@@ -658,6 +672,7 @@ export const mockWorkoutCalendar: WorkoutCardList[] = [
         oneWayRoute: false,
         venue: 'Где-то',
         distance: 60,
+        duration: null,
         speed: 25,
         bikeType: BikeType.cx,
         members: [
