@@ -1,31 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { WorkoutCalendar, WorkoutListDate } from '../../../../models/workout.model'
+import { Component, Input, ViewEncapsulation } from '@angular/core'
+import { WorkoutListByDay } from '../../../../models/workout.model'
 
 @Component({
   selector: 'app-workout-card-list',
   templateUrl: './workout-card-list.component.html',
-  styleUrls: ['./workout-card-list.component.scss']
+  styleUrls: ['./workout-card-list.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class WorkoutCardListComponent implements OnInit {
+export class WorkoutCardListComponent {
 
   @Input()
-  public workoutList: WorkoutCalendar
-
-  public workoutListDate: WorkoutListDate
+  public workoutList: WorkoutListByDay | null = null
 
   constructor() {
   }
 
-  public ngOnInit(): void {
-    this.workoutListDate = this.getWorkoutListDate(this.workoutList.date)
-  }
-
-  public getWorkoutListDate(dateISO: string): WorkoutListDate {
+  public getWorkoutListDate(dateISO: string): string {
     const date = new Date(dateISO)
 
-    return {
-      dayOfWeek: new Intl.DateTimeFormat('ru-RU', { weekday: 'long' }).format(date),
-      date: new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' }).format(date)
-    }
+    return new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' }).format(date)
   }
 }

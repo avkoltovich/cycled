@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { Injectable, NgModule } from '@angular/core'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -32,15 +32,16 @@ import { SignUpComponent } from './components/auth-page/sign-up-page/sign-up.com
 import { HttpClientModule } from '@angular/common/http'
 import { WorkoutPageComponent } from './components/workout-page/workout-page.component'
 
+@Injectable()
 export class CustomDateAdapter extends NativeDateAdapter {
 
   parse(value: any): Date | null {
     if ((typeof value === 'string') && (value.indexOf('.') > -1)) {
       const str = value.split('.')
 
-      const year = Number(str[ 2 ])
-      const month = Number(str[ 1 ]) - 1
-      const date = Number(str[ 0 ])
+      const year = Number(str[2])
+      const month = Number(str[1]) - 1
+      const date = Number(str[0])
 
       return new Date(year, month, date)
     }
@@ -109,7 +110,7 @@ export class CustomDateAdapter extends NativeDateAdapter {
       useClass: CustomDateAdapter
     }
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

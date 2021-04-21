@@ -1,7 +1,7 @@
 import { ISO8601 } from '../models/base.model'
-import { BikeType, WorkoutCalendar, WorkoutType } from '../models/workout.model'
+import { BikeType, WorkoutListByDay, WorkoutType } from '../models/workout.model'
 
-export const mockWorkoutCalendar: WorkoutCalendar[] = [
+export const mockWorkoutCalendar: WorkoutListByDay[] = [
   {
     date: '2021-03-07T07:42:09Z',
     workouts: [

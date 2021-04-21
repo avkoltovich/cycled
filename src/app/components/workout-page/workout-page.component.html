@@ -1,3 +1,9 @@
 <section class="workout-page-wrapper">
-    <app-workout-card [workout]="workout | async"></app-workout-card>
+    <app-workout-card-list [workoutList]="workoutList | async"></app-workout-card-list>
+    <div class="workout-page__button-wrapper">
+        <button mat-stroked-button class="workout-page__button" type="button" routerLink="">
+        <mat-icon class="workout-page__icon">list</mat-icon> 
+        Все тренировки
+    </button>
+    </div>
 </section>

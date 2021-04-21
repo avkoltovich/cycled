@@ -1,0 +1,37 @@
+.workout-page__button-wrapper {
+  width: 100%;
+  padding: 0 16px;
+}
+
+.workout-page__button {
+  display: flex;
+  justify-content: center;
+  height: 36px;
+  width: 100%;
+  max-width: 340px;
+  margin-top: 36px;
+  margin-right: auto;
+  margin-left: auto;
+
+  cursor: pointer;
+}
+
+.workout-page__icon {
+  margin-right: 8px;
+  color: var(--icon-color);
+}
+
+::ng-deep {
+  .workout-page-wrapper .workout-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .workout-page-wrapper .workout-card {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .workout-page-wrapper .workout-list-wrapper {
+    width: 100%;
+  }
+}

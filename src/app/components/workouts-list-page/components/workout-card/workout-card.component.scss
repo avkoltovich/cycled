@@ -1,4 +1,6 @@
 ::ng-deep .workout-card {
+  max-width: 340px;
+
   color: var(--font-color);
 
   mat-card-content {
@@ -66,10 +68,9 @@
     border-radius: 10px;
   }
 
-  .workout-card.mat-card > .mat-card-actions:last-child {
+  .workout-card.mat-card>.mat-card-actions:last-child {
     margin-bottom: 0;
   }
 }
 
 // TODO: адаптивность под мобильники
-

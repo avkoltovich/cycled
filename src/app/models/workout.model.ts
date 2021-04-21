@@ -1,3 +1,4 @@
+import { checkEqualDates } from '../utils/date'
 import { ISO8601 } from './base.model'
 import { UserModel } from './user.model'
 
@@ -56,7 +57,7 @@ export interface WorkoutModel {
   members: UserModel[]
 }
 
-export interface WorkoutCalendar {
+export interface WorkoutListByDay {
   date: string
   workouts: WorkoutModel[]
 }
@@ -64,4 +65,37 @@ export interface WorkoutCalendar {
 export interface WorkoutListDate {
   dayOfWeek: string,
   date: string
+}
+
+export const generateWorkoutCalendar = (workouts: WorkoutModel[]): WorkoutListByDay[] => {
+  const sortedWorkouts = workouts.slice().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  const workoutCalendar: WorkoutListByDay[] = []
+
+  let currentDate = null
+  let currentCalendarItemIndex = 0
+
+  sortedWorkouts.forEach((workout) => {
+    if (currentDate === null) {
+      currentDate = workout.date
+
+      workoutCalendar.push({
+        date: workout.date,
+        workouts: [workout]
+      })
+    } else {
+      if (checkEqualDates(currentDate, workout.date)) {
+        workoutCalendar[currentCalendarItemIndex].workouts.push(workout)
+      } else {
+        currentDate = workout.date
+        currentCalendarItemIndex += 1
+
+        workoutCalendar.push({
+          date: workout.date,
+          workouts: [workout]
+        })
+      }
+    }
+  })
+
+  return workoutCalendar
 }

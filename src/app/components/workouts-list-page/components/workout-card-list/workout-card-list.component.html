@@ -1,5 +1,5 @@
-<section class="workout-list-wrapper">
-  <h2 class="workout-list__date">{{ workoutListDate.date }}</h2>
+<section class="workout-list-wrapper" *ngIf="workoutList !== null">
+  <h2 class="workout-list__date">{{ getWorkoutListDate(workoutList.date) }}</h2>
   <ul class="workout-list">
     <li *ngFor="let workout of workoutList.workouts">
       <app-workout-card [workout]="workout"></app-workout-card>
