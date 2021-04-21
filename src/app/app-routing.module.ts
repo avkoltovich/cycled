@@ -5,6 +5,7 @@ import { WorkoutListPageComponent } from './components/workouts-list-page/workou
 import { AddWorkoutPageComponent } from './components/add-workout-page/add-workout-page.component'
 import { SignInComponent } from './components/auth-page/sign-in-page/sign-in.component'
 import { SignUpComponent } from './components/auth-page/sign-up-page/sign-up.component'
+import { WorkoutPageComponent } from './components/workout-page/workout-page.component'
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: SignUpComponent
+  },
+  {
+    path: 'workout/:id',
+    component: WorkoutPageComponent
   },
 ]
 

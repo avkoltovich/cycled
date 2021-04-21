@@ -30,6 +30,7 @@ import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter } 
 import { SignInComponent } from './components/auth-page/sign-in-page/sign-in.component'
 import { SignUpComponent } from './components/auth-page/sign-up-page/sign-up.component'
 import { HttpClientModule } from '@angular/common/http'
+import { WorkoutPageComponent } from './components/workout-page/workout-page.component'
 
 export class CustomDateAdapter extends NativeDateAdapter {
 
@@ -72,7 +73,8 @@ export class CustomDateAdapter extends NativeDateAdapter {
     AddWorkoutPageComponent,
     WorkoutMainInfoComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    WorkoutPageComponent
   ],
   imports: [
     BrowserModule,

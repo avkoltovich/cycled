@@ -1,9 +1,9 @@
-<mat-card class="workout-card">
+<mat-card class="workout-card" *ngIf="workout !== null">
   <mat-card-content>
     <app-workout-main-info
-      class="workout-card__main-info"
-      [isOnlyTimeShow]="isOnlyTimeShow"
-      [workout]="workout"
+            class="workout-card__main-info"
+            [isOnlyTimeShow]="isOnlyTimeShow"
+            [workout]="workout"
     ></app-workout-main-info>
     <div class="workout-card__members">
       <mat-icon class="workout-card__members-icon">group</mat-icon>

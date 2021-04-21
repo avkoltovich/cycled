@@ -8,7 +8,7 @@ import { WorkoutModel } from '../../../../models/workout.model'
 })
 export class WorkoutCardComponent {
   @Input()
-  public workout: WorkoutModel
+  public workout: WorkoutModel | null
 
   @Input()
   public isOnlyTimeShow = true
