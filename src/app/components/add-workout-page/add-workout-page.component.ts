@@ -70,9 +70,10 @@ export class AddWorkoutPageComponent implements OnInit {
       const dateString = `${dateObject.year}-${dateObject.month}-${dateObject.date}T${dateForm.time}:00`
 
       this.workout = {
+        ...this.workout,
         workoutType: null,
         date: new Date(dateString).toISOString() as ISO8601,
-        routePoints: routeForm.isCycledRoute ? [routeForm.from, routeForm.to, routeForm.from] : [routeForm.from, routeForm.to],
+        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
         oneWayRoute: false,
         venue: venueForm.place,
         distance: detailsForm.distance,
@@ -95,6 +96,7 @@ export class AddWorkoutPageComponent implements OnInit {
     duration: null,
     bikeType: null,
     members: [],
+    authorId: '1234'
   }
 
   constructor(private workoutService: WorkoutService,

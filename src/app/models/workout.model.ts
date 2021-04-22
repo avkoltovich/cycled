@@ -55,6 +55,7 @@ export interface WorkoutModel {
   duration: number | null
   bikeType: BikeType
   members: UserModel[]
+  authorId: string
 }
 
 export interface WorkoutListByDay {
