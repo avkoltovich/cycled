@@ -106,9 +106,13 @@
               [isOnlyTimeShow]="false"
               [isShowWorkoutType]="true"
       ></app-workout-main-info>
-      <div>
-        <button mat-button routerLink="" type="button">Отмена</button>
-        <button mat-flat-button color="accent" type="button" (click)="onSubmit()">Сохранить</button>
+      <div class="add-workout__final-controls">
+        <button class="add-workout__button" mat-flat-button color="accent" type="button" (click)="onSubmit()">
+          Сохранить
+        </button>
+        <button class="add-workout__button add-workout__button--reset" mat-flat-button routerLink="" type="button">
+          Отмена
+        </button>
       </div>
     </mat-step>
   </mat-vertical-stepper>

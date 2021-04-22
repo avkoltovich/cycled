@@ -31,6 +31,10 @@
 
       border-left-width: 2px;
     }
+
+    .mat-step:last-child .mat-vertical-content-container {
+      margin-left: 0;
+    }
   }
 }
 
@@ -107,10 +111,10 @@
     margin: 16px 0;
   }
 
-  .add-workout__submit-button {
-    color: var(--white);
-
-    background-color: var(--orange);
+  .add-workout__button {
+    &--reset {
+      background-color: var(--background);
+    }
   }
 
   .add-workout__main-info {
@@ -118,6 +122,12 @@
 
     display: block;
     margin-top: 24px;
+  }
+
+  .add-workout__final-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
   }
 }
 
