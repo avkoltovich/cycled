@@ -62,34 +62,34 @@ export class EditWorkoutComponent implements OnInit {
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-          tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
-            const dateObject = {
-              year: dateForm.date.getFullYear(),
-              month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
-              date: dateForm.date.getDate().toString().padStart(2, '0')
-            }
-            const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
+    tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
+      const dateObject = {
+        year: dateForm.date.getFullYear(),
+        month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
+        date: dateForm.date.getDate().toString().padStart(2, '0')
+      }
+      const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
 
-            this.workout = {
-              ...this.workout,
-              workoutType: null,
-              date: new Date(dateString).toISOString() as ISO8601,
-              routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ]:[ routeForm.from, routeForm.to ],
-              oneWayRoute: false,
-              venue: venueForm.place,
-              distance: detailsForm.distance,
-              speed: detailsForm.speed,
-              duration: detailsForm.duration,
-              bikeType: typeForm.bikeType,
-              members: [],
-            }
-          })
+      this.workout = {
+        ...this.workout,
+        workoutType: null,
+        date: new Date(dateString).toISOString() as ISO8601,
+        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
+        oneWayRoute: false,
+        venue: venueForm.place,
+        distance: detailsForm.distance,
+        speed: detailsForm.speed,
+        duration: detailsForm.duration,
+        bikeType: typeForm.bikeType,
+        members: [],
+      }
+    })
   )
 
   public workout: Omit<WorkoutModel, '_id'> = {
     workoutType: null,
     date: new Date().toISOString() as ISO8601,
-    routePoints: [''],
+    routePoints: [ '' ],
     oneWayRoute: false,
     venue: '',
     distance: 0,
@@ -114,12 +114,15 @@ export class EditWorkoutComponent implements OnInit {
     const date = new Date(workout.date)
 
     this.dateFormGroup.get('date').patchValue(date)
-    this.dateFormGroup.get('time').patchValue(date.getTime())
+    this.dateFormGroup.get('time').patchValue(new Intl.DateTimeFormat('ru-RU', {
+      hour: 'numeric',
+      minute: 'numeric'
+    }).format(date))
 
     this.bikeTypeFormGroup.get('bikeType').patchValue(workout.bikeType)
 
-    this.routeFormGroup.get('from').patchValue(workout.routePoints[0])
-    this.routeFormGroup.get('to').patchValue(workout.routePoints[1])
+    this.routeFormGroup.get('from').patchValue(workout.routePoints[ 0 ])
+    this.routeFormGroup.get('to').patchValue(workout.routePoints[ 1 ])
     this.routeFormGroup.get('isCycledRoute').patchValue(!workout.oneWayRoute)
 
     this.venueFormGroup.get('place').patchValue(workout.venue)
@@ -130,7 +133,7 @@ export class EditWorkoutComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    if (this.existWorkout!==null) {
+    if (this.existWorkout !== null) {
       this.setExistWorkout(this.existWorkout)
     } else {
       this.dateFormGroup.get('date').patchValue(new Date())
@@ -151,11 +154,20 @@ export class EditWorkoutComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.workoutNetworkService.create(this.workout).subscribe({
-      next: () => {
-        this.workoutModelService.updateWorkouts()
-        this.router.navigate([ '' ])
-      }
-    })
+    if (this.existWorkout === null) {
+      this.workoutNetworkService.create(this.workout).subscribe({
+        next: () => {
+          this.workoutModelService.updateWorkouts()
+          this.router.navigate([ '' ])
+        }
+      })
+    } else {
+      this.workoutNetworkService.update(this.existWorkout._id, this.workout).subscribe({
+        next: () => {
+          this.workoutModelService.updateWorkouts()
+          this.router.navigate([ '' ])
+        }
+      })
+    }
   }
 }

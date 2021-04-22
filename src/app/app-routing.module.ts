@@ -6,6 +6,7 @@ import { AddWorkoutPageComponent } from './pages/add-workout-page/add-workout-pa
 import { SignInComponent } from './pages/auth-page/sign-in-page/sign-in.component'
 import { SignUpComponent } from './pages/auth-page/sign-up-page/sign-up.component'
 import { WorkoutPageComponent } from './pages/workout-page/workout-page.component'
+import { EditWorkoutPageComponent } from './pages/edit-workout-page/edit-workout-page.component'
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'workout/:id',
     component: WorkoutPageComponent
+  },
+  {
+    path: 'edit-workout/:id',
+    component: EditWorkoutPageComponent
   },
 ]
 
