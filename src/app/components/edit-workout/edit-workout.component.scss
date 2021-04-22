@@ -1,0 +1,138 @@
+::ng-deep {
+  .edit-workout-container {
+    .mat-step-label {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .mat-step-label-selected {
+      font-weight: 500;
+    }
+
+    .mat-button {
+      margin-top: 16px;
+      margin-right: 16px;
+
+      background-color: var(--background);
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    .mat-stepper-vertical-line::before {
+      left: -1px;
+
+      border-left-width: 2px;
+    }
+
+    .mat-step:last-child .mat-vertical-content-container {
+      margin-left: 0;
+    }
+  }
+}
+
+.edit-workout-container {
+  padding: 0 16px 16px;
+
+  font-size: 16px;
+
+  .edit-workout__title-wrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+  }
+
+  .edit-workout__button-back {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 16px 16px 16px 0;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+  }
+
+  .edit-workout__title {
+    margin: 32px auto;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--header-font-color);
+  }
+
+  .edit-workout__stepper {
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+
+    border-radius: 10px;
+    box-shadow: var(--default-shadow);
+
+    overflow: hidden;
+  }
+
+  .edit-workout__date-form {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: fit-content;
+    }
+
+    mat-form-field {
+      width: 180px;
+    }
+  }
+
+  .edit-workout__input-wrapper {
+    display: grid;
+    width: 180px;
+  }
+
+  .edit-workout__checkbox-wrapper {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .edit-workout__checkbox {
+    margin: 16px 0;
+  }
+
+  .edit-workout__button {
+    &--reset {
+      background-color: var(--background);
+    }
+  }
+
+  .edit-workout__main-info {
+    position: relative;
+
+    display: block;
+    margin-top: 24px;
+  }
+
+  .edit-workout__final-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .edit-workout-container {
+    padding: 0 calc(50vw - 1366px / 2 + 16px);
+  }
+}

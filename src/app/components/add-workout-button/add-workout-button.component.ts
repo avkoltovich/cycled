@@ -5,12 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './add-workout-button.component.html',
   styleUrls: [ './add-workout-button.component.scss' ]
 })
-export class AddWorkoutButtonComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+export class AddWorkoutButtonComponent {
 }

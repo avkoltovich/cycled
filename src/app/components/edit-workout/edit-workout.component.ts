@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { tap } from 'rxjs/operators'
 import { combineLatest } from 'rxjs'
@@ -11,9 +11,9 @@ import { WorkoutModelService } from '../../services/workout-model.service'
 
 
 @Component({
-  selector: 'app-add-workout-page',
-  templateUrl: './add-workout-page.component.html',
-  styleUrls: ['./add-workout-page.component.scss'],
+  selector: 'app-edit-workout-page',
+  templateUrl: './edit-workout-page.component.html',
+  styleUrls: ['./edit-workout-page.component.scss'],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
@@ -23,7 +23,7 @@ import { WorkoutModelService } from '../../services/workout-model.service'
     }
   ]
 })
-export class AddWorkoutPageComponent implements OnInit {
+export class EditWorkoutPageComponent implements OnInit {
   public isLinear = true
   public minDate: Date
   public bikeTypeMap = bikeTypeMap
@@ -62,28 +62,28 @@ export class AddWorkoutPageComponent implements OnInit {
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-    tap(([dateForm, routeForm, venueForm, typeForm, detailsForm]) => {
-      const dateObject = {
-        year: dateForm.date.getFullYear(),
-        month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
-        date: dateForm.date.getDate().toString().padStart(2, '0')
-      }
-      const dateString = `${dateObject.year}-${dateObject.month}-${dateObject.date}T${dateForm.time}:00`
+          tap(([dateForm, routeForm, venueForm, typeForm, detailsForm]) => {
+            const dateObject = {
+              year: dateForm.date.getFullYear(),
+              month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
+              date: dateForm.date.getDate().toString().padStart(2, '0')
+            }
+            const dateString = `${dateObject.year}-${dateObject.month}-${dateObject.date}T${dateForm.time}:00`
 
-      this.workout = {
-        ...this.workout,
-        workoutType: null,
-        date: new Date(dateString).toISOString() as ISO8601,
-        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
-        oneWayRoute: false,
-        venue: venueForm.place,
-        distance: detailsForm.distance,
-        speed: detailsForm.speed,
-        duration: detailsForm.duration,
-        bikeType: typeForm.bikeType,
-        members: [],
-      }
-    })
+            this.workout = {
+              ...this.workout,
+              workoutType: null,
+              date: new Date(dateString).toISOString() as ISO8601,
+              routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
+              oneWayRoute: false,
+              venue: venueForm.place,
+              distance: detailsForm.distance,
+              speed: detailsForm.speed,
+              duration: detailsForm.duration,
+              bikeType: typeForm.bikeType,
+              members: [],
+            }
+          })
   )
 
   public workout: Omit<WorkoutModel, '_id'> = {
@@ -100,6 +100,9 @@ export class AddWorkoutPageComponent implements OnInit {
     authorId: '1234'
   }
 
+  @Input()
+  public existWorkout: WorkoutModel | null = null
+
   constructor(private workoutNetworkService: WorkoutNetworkService,
               private workoutModelService: WorkoutModelService,
               private router: Router) {
@@ -107,10 +110,33 @@ export class AddWorkoutPageComponent implements OnInit {
     this.minDate = new Date()
   }
 
+  private setExistWorkout(workout: WorkoutModel): void {
+    const date = new Date(workout.date)
+
+    this.dateFormGroup.get('date').patchValue(date)
+    this.dateFormGroup.get('time').patchValue(date.getTime())
+
+    this.bikeTypeFormGroup.get('bikeType').patchValue(workout.bikeType)
+
+    this.routeFormGroup.get('from').patchValue(workout.routePoints[ 0 ])
+    this.routeFormGroup.get('to').patchValue(workout.routePoints[ 1 ])
+    this.routeFormGroup.get('isCycledRoute').patchValue(!workout.oneWayRoute)
+
+    this.venueFormGroup.get('place').patchValue(workout.venue)
+
+    this.detailsFormGroup.get('distance').patchValue(workout.distance)
+    this.detailsFormGroup.get('speed').patchValue(workout.speed)
+    this.detailsFormGroup.get('duration').patchValue(workout.duration)
+  }
+
   public ngOnInit(): void {
-    this.dateFormGroup.controls.date.patchValue(new Date())
-    this.dateFormGroup.controls.time.patchValue('08:00')
-    this.bikeTypeFormGroup.controls.bikeType.patchValue(BikeType.any)
+    if (this.existWorkout !== null) {
+      this.setExistWorkout(this.existWorkout)
+    } else {
+      this.dateFormGroup.get('date').patchValue(new Date())
+      this.dateFormGroup.get('time').patchValue('08:00')
+      this.bikeTypeFormGroup.get('bikeType').patchValue(BikeType.any)
+    }
   }
 
   public onSelectionChange(event: StepperSelectionEvent): void {

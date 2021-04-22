@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core'
-import { WorkoutListByDay } from '../../../../models/workout.model'
+import { WorkoutListByDay } from '../../../../../models/workout.model'
 
 @Component({
   selector: 'app-workout-card-list',
