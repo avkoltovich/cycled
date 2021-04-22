@@ -31,6 +31,7 @@ import { SignInComponent } from './components/auth-page/sign-in-page/sign-in.com
 import { SignUpComponent } from './components/auth-page/sign-up-page/sign-up.component'
 import { HttpClientModule } from '@angular/common/http'
 import { WorkoutPageComponent } from './components/workout-page/workout-page.component'
+import { MatMenuModule } from '@angular/material/menu'
 
 @Injectable()
 export class CustomDateAdapter extends NativeDateAdapter {
@@ -96,7 +97,8 @@ export class CustomDateAdapter extends NativeDateAdapter {
     MatNativeDateModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [
     MatDatepickerModule,

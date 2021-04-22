@@ -7,7 +7,7 @@ import { API_URL } from '../../shared/constants'
 @Injectable({
   providedIn: 'root'
 })
-export class WorkoutService {
+export class WorkoutNetworkService {
 
   constructor(private http: HttpClient) {
   }

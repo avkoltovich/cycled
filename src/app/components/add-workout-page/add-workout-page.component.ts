@@ -5,8 +5,9 @@ import { combineLatest } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
 import { ISO8601 } from '../../models/base.model'
 import { BikeType, bikeTypeMap, WorkoutModel } from 'src/app/models/workout.model'
-import { WorkoutService } from '../../services/workout.service'
+import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { Router } from '@angular/router'
+import { WorkoutModelService } from '../../services/workout-model.service'
 
 
 @Component({
@@ -99,7 +100,8 @@ export class AddWorkoutPageComponent implements OnInit {
     authorId: '1234'
   }
 
-  constructor(private workoutService: WorkoutService,
+  constructor(private workoutNetworkService: WorkoutNetworkService,
+              private workoutModelService: WorkoutModelService,
               private router: Router) {
     this.workoutSummary.subscribe()
     this.minDate = new Date()
@@ -123,8 +125,11 @@ export class AddWorkoutPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.workoutService.create(this.workout).subscribe({
-      next: () => { this.router.navigate([ '' ]) }
+    this.workoutNetworkService.create(this.workout).subscribe({
+      next: () => {
+        this.workoutModelService.updateWorkouts()
+        this.router.navigate([ '' ])
+      }
     })
   }
 }

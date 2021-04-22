@@ -1,25 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { ISO8601 } from 'src/app/models/base.model';
-import { WorkoutService } from 'src/app/services/workout.service';
-import { generateWorkoutCalendar, WorkoutListByDay, WorkoutModel } from '../../models/workout.model';
+import { Component } from '@angular/core'
+import { map } from 'rxjs/operators'
+import { generateWorkoutCalendar, WorkoutModel } from '../../models/workout.model'
+import { WorkoutModelService } from '../../services/workout-model.service'
 
 
 @Component({
   selector: 'app-workout-list-page',
   templateUrl: './workout-list-page.component.html',
-  styleUrls: ['./workout-list-page.component.scss'],
+  styleUrls: [ './workout-list-page.component.scss' ],
 })
-export class WorkoutListPageComponent implements OnInit {
+export class WorkoutListPageComponent {
 
-  constructor(private workoutService: WorkoutService) {
+  constructor(private workoutModelService: WorkoutModelService) {
   }
 
-  public workoutCalendar = this.workoutService.getAll().pipe(
-    map((workouts: WorkoutModel[]) => generateWorkoutCalendar(workouts))
+  public workoutCalendar = this.workoutModelService.workouts.pipe(
+          map((workouts: WorkoutModel[]) => generateWorkoutCalendar(workouts))
   )
-
-  ngOnInit(): void {
-  }
-
 }
