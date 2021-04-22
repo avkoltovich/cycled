@@ -11,9 +11,9 @@ import { WorkoutModelService } from '../../services/workout-model.service'
 
 
 @Component({
-  selector: 'app-edit-workout-page',
-  templateUrl: './edit-workout-page.component.html',
-  styleUrls: ['./edit-workout-page.component.scss'],
+  selector: 'app-edit-workout',
+  templateUrl: './edit-workout.component.html',
+  styleUrls: [ './edit-workout.component.scss' ],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
@@ -23,7 +23,7 @@ import { WorkoutModelService } from '../../services/workout-model.service'
     }
   ]
 })
-export class EditWorkoutPageComponent implements OnInit {
+export class EditWorkoutComponent implements OnInit {
   public isLinear = true
   public minDate: Date
   public bikeTypeMap = bikeTypeMap
@@ -62,19 +62,19 @@ export class EditWorkoutPageComponent implements OnInit {
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-          tap(([dateForm, routeForm, venueForm, typeForm, detailsForm]) => {
+          tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
             const dateObject = {
               year: dateForm.date.getFullYear(),
               month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
               date: dateForm.date.getDate().toString().padStart(2, '0')
             }
-            const dateString = `${dateObject.year}-${dateObject.month}-${dateObject.date}T${dateForm.time}:00`
+            const dateString = `${ dateObject.year }-${ dateObject.month }-${ dateObject.date }T${ dateForm.time }:00`
 
             this.workout = {
               ...this.workout,
               workoutType: null,
               date: new Date(dateString).toISOString() as ISO8601,
-              routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
+              routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ]:[ routeForm.from, routeForm.to ],
               oneWayRoute: false,
               venue: venueForm.place,
               distance: detailsForm.distance,
@@ -118,8 +118,8 @@ export class EditWorkoutPageComponent implements OnInit {
 
     this.bikeTypeFormGroup.get('bikeType').patchValue(workout.bikeType)
 
-    this.routeFormGroup.get('from').patchValue(workout.routePoints[ 0 ])
-    this.routeFormGroup.get('to').patchValue(workout.routePoints[ 1 ])
+    this.routeFormGroup.get('from').patchValue(workout.routePoints[0])
+    this.routeFormGroup.get('to').patchValue(workout.routePoints[1])
     this.routeFormGroup.get('isCycledRoute').patchValue(!workout.oneWayRoute)
 
     this.venueFormGroup.get('place').patchValue(workout.venue)
@@ -130,7 +130,7 @@ export class EditWorkoutPageComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    if (this.existWorkout !== null) {
+    if (this.existWorkout!==null) {
       this.setExistWorkout(this.existWorkout)
     } else {
       this.dateFormGroup.get('date').patchValue(new Date())

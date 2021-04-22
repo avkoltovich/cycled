@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core'
 import { APP_URL } from 'src/shared/constants'
-import { WorkoutModel } from '../../../../../models/workout.model'
-import { WorkoutNetworkService } from '../../../../../services/workout-network.service'
-import { WorkoutModelService } from '../../../../../services/workout-model.service'
+import { WorkoutModel } from '../../models/workout.model'
+import { WorkoutNetworkService } from '../../services/workout-network.service'
+import { WorkoutModelService } from '../../services/workout-model.service'
 
 @Component({
   selector: 'app-workout-card',

@@ -69,7 +69,8 @@
                         color="primary"
                         [required]="true"
                 >
-                    <mat-radio-button *ngFor="let type of bikeTypes" [value]="type">{{ bikeTypeMap[type] }}</mat-radio-button>
+                    <mat-radio-button *ngFor="let type of bikeTypes"
+                                      [value]="type">{{ bikeTypeMap[type] }}</mat-radio-button>
                 </mat-radio-group>
                 <div>
                     <button mat-button matStepperPrevious>Назад</button>
@@ -83,7 +84,8 @@
                 <div class="edit-workout__input-wrapper">
                     <mat-form-field>
                         <mat-label>Дистанция, км</mat-label>
-                        <input type="number" matInput placeholder="Введите дистанцию" min="0" formControlName="distance" required>
+                        <input type="number" matInput placeholder="Введите дистанцию" min="0" formControlName="distance"
+                               required>
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Темп, км/ч</mat-label>
@@ -91,7 +93,8 @@
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Длительность, мин</mat-label>
-                        <input type="number" matInput placeholder="Введите длительность" min="0" formControlName="duration">
+                        <input type="number" matInput placeholder="Введите длительность" min="0"
+                               formControlName="duration">
                     </mat-form-field>
                 </div>
                 <button mat-button matStepperPrevious>Назад</button>
@@ -110,7 +113,8 @@
                 <button class="edit-workout__button" mat-flat-button color="accent" type="button" (click)="onSubmit()">
                     Сохранить
                 </button>
-                <button class="edit-workout__button edit-workout__button--reset" mat-flat-button routerLink="" type="button">
+                <button class="edit-workout__button edit-workout__button--reset" mat-flat-button routerLink=""
+                        type="button">
                     Отмена
                 </button>
             </div>
