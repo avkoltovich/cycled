@@ -143,6 +143,12 @@ body {
   background-color: var(--background);
 }
 
+.cycled-snackbar {
+  width: fit-content;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
 :root {
   --white: #ffffff;
   --background: #F0F2F3;
@@ -150,7 +156,7 @@ body {
   --font-color-light: #667277;
   --header-font-color: #001C27;
   --bullet-color: #667277;
-  --icon-color: rgba(0, 0, 0, 0.54);
+  --icon-color: #667277;
   --border-color: #E3E6E7;
 
   --orange: #FC6719;

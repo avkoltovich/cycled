@@ -3,6 +3,7 @@ import { APP_URL } from 'src/shared/constants'
 import { WorkoutModel } from '../../models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { WorkoutModelService } from '../../services/workout-model.service'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-workout-card',
@@ -17,7 +18,8 @@ export class WorkoutCardComponent {
   public isOnlyTimeShow = true
 
   constructor(private workoutNetworkService: WorkoutNetworkService,
-              private workoutModalService: WorkoutModelService) {
+              private workoutModalService: WorkoutModelService,
+              private snackBar: MatSnackBar) {
   }
 
   public buildMemberCountString(count: number): string {
@@ -29,12 +31,15 @@ export class WorkoutCardComponent {
   }
 
   public onShareButtonClick(id: string): void {
-    window.open(`${ APP_URL }/workout/${ id }`, '_blank')
+    navigator.clipboard.writeText(`${ APP_URL }/workout/${ id }`).then(() => {
+      this.snackBar.open('Ссылка на тренировку скопирована в буфер обмена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+    })
   }
 
   public onDeleteButtonClick(id: string): void {
     this.workoutNetworkService.delete(id).subscribe({
       next: () => {
+        this.snackBar.open('Тренировка успешно удалена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
         this.workoutModalService.updateWorkouts()
       }
     })

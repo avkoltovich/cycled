@@ -15,6 +15,6 @@ export class WorkoutListPageComponent {
   }
 
   public workoutCalendar = this.workoutModelService.workouts.pipe(
-          map((workouts: WorkoutModel[]) => generateWorkoutCalendar(workouts))
+    map((workouts: WorkoutModel[]) => generateWorkoutCalendar(workouts))
   )
 }

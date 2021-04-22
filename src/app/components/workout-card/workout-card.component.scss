@@ -1,5 +1,8 @@
 ::ng-deep .workout-card {
+  width: 100%;
   max-width: 340px;
+  margin-right: auto;
+  margin-left: auto;
 
   color: var(--font-color);
 
@@ -76,9 +79,17 @@
   }
 }
 
-.workout-card__menu-button {
+.workout-card__context-menu-button {
   position: absolute;
   top: 15px;
   right: 15px;
   z-index: 1;
+}
+
+::ng-deep {
+  .context-menu .context-menu__icon {
+    margin-right: 8px !important;
+
+    color: var(--icon-color);
+  }
 }

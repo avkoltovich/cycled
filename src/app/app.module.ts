@@ -34,17 +34,18 @@ import { WorkoutPageComponent } from './pages/workout-page/workout-page.componen
 import { MatMenuModule } from '@angular/material/menu'
 import { EditWorkoutComponent } from './components/edit-workout/edit-workout.component'
 import { EditWorkoutPageComponent } from './pages/edit-workout-page/edit-workout-page.component'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @Injectable()
 export class CustomDateAdapter extends NativeDateAdapter {
 
   parse(value: any): Date | null {
-    if ((typeof value==='string') && (value.indexOf('.') > -1)) {
+    if ((typeof value === 'string') && (value.indexOf('.') > -1)) {
       const str = value.split('.')
 
-      const year = Number(str[2])
-      const month = Number(str[1]) - 1
-      const date = Number(str[0])
+      const year = Number(str[ 2 ])
+      const month = Number(str[ 1 ]) - 1
+      const date = Number(str[ 0 ])
 
       return new Date(year, month, date)
     }
@@ -81,7 +82,7 @@ export class CustomDateAdapter extends NativeDateAdapter {
     SignUpComponent,
     WorkoutPageComponent,
     EditWorkoutComponent,
-    EditWorkoutPageComponent
+    EditWorkoutPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +104,8 @@ export class CustomDateAdapter extends NativeDateAdapter {
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [
     MatDatepickerModule,
@@ -117,7 +119,7 @@ export class CustomDateAdapter extends NativeDateAdapter {
       useClass: CustomDateAdapter
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
 }

@@ -8,6 +8,7 @@ import { BikeType, bikeTypeMap, WorkoutModel } from 'src/app/models/workout.mode
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { Router } from '@angular/router'
 import { WorkoutModelService } from '../../services/workout-model.service'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 
 @Component({
@@ -105,6 +106,7 @@ export class EditWorkoutComponent implements OnInit {
 
   constructor(private workoutNetworkService: WorkoutNetworkService,
               private workoutModelService: WorkoutModelService,
+              private snackBar: MatSnackBar,
               private router: Router) {
     this.workoutSummary.subscribe()
     this.minDate = new Date()
@@ -157,6 +159,7 @@ export class EditWorkoutComponent implements OnInit {
     if (this.existWorkout === null) {
       this.workoutNetworkService.create(this.workout).subscribe({
         next: () => {
+          this.snackBar.open('Тренировка успешно добавлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutModelService.updateWorkouts()
           this.router.navigate([ '' ])
         }
@@ -164,6 +167,7 @@ export class EditWorkoutComponent implements OnInit {
     } else {
       this.workoutNetworkService.update(this.existWorkout._id, this.workout).subscribe({
         next: () => {
+          this.snackBar.open('Тренировка успешно обновлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutModelService.updateWorkouts()
           this.router.navigate([ '' ])
         }
