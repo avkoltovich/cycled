@@ -1,5 +1,30 @@
 ::ng-deep {
   .edit-workout-container {
+    .edit-workout__stepper-wrapper {
+      position: relative;
+
+      max-width: 400px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .edit-workout-spinner-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+
+      background-color: var(--default-spinner-container-background);
+      border-radius: 10px;
+    }
+
     .mat-step-label {
       font-size: 18px;
       font-weight: 300;
@@ -73,6 +98,7 @@
   }
 
   .edit-workout__stepper {
+    position: relative;
     max-width: 400px;
     margin-right: auto;
     margin-left: auto;

@@ -35,6 +35,7 @@ import { MatMenuModule } from '@angular/material/menu'
 import { EditWorkoutComponent } from './components/edit-workout/edit-workout.component'
 import { EditWorkoutPageComponent } from './pages/edit-workout-page/edit-workout-page.component'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 @Injectable()
 export class CustomDateAdapter extends NativeDateAdapter {
@@ -105,7 +106,8 @@ export class CustomDateAdapter extends NativeDateAdapter {
     FormsModule,
     HttpClientModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     MatDatepickerModule,

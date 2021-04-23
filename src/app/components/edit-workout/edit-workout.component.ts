@@ -25,7 +25,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
   ]
 })
 export class EditWorkoutComponent implements OnInit {
-  public isLinear = true
+  public isLoading = false
   public minDate: Date
   public bikeTypeMap = bikeTypeMap
   public bikeTypes = Object.keys(this.bikeTypeMap)
@@ -104,6 +104,9 @@ export class EditWorkoutComponent implements OnInit {
   @Input()
   public existWorkout: WorkoutModel | null = null
 
+  @Input()
+  public isLinear = true
+
   constructor(private workoutNetworkService: WorkoutNetworkService,
               private workoutModelService: WorkoutModelService,
               private snackBar: MatSnackBar,
@@ -157,16 +160,20 @@ export class EditWorkoutComponent implements OnInit {
 
   public onSubmit(): void {
     if (this.existWorkout === null) {
+      this.isLoading = true
       this.workoutNetworkService.create(this.workout).subscribe({
         next: () => {
+          this.isLoading = false
           this.snackBar.open('Тренировка успешно добавлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutModelService.updateWorkouts()
           this.router.navigate([ '' ])
         }
       })
     } else {
+      this.isLoading = true
       this.workoutNetworkService.update(this.existWorkout._id, this.workout).subscribe({
         next: () => {
+          this.isLoading = false
           this.snackBar.open('Тренировка успешно обновлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutModelService.updateWorkouts()
           this.router.navigate([ '' ])
