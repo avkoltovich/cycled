@@ -6,12 +6,13 @@
   display: grid;
   grid-gap: 16px;
   padding-left: 0;
-  margin: 0;
+  margin: 0 auto;
 
   list-style: none;
 
   li {
     width: 100%;
+    max-width: 340px;
   }
 }
 
@@ -38,6 +39,7 @@ h2.workout-list__date {
 @media (min-width: 768px) {
   .workout-list {
     grid-template-columns: repeat(2, 1fr);
+    max-width: calc(2 * 340px + 16px);
   }
 
   .workout-list__date {
@@ -48,6 +50,7 @@ h2.workout-list__date {
 @media (min-width: 1024px) {
   .workout-list {
     grid-template-columns: repeat(3, 1fr);
+    max-width: calc(3 * 320px + 2 * 16px);
   }
 }
 
@@ -58,5 +61,12 @@ h2.workout-list__date {
 
   .workout-list {
     grid-template-columns: repeat(4, 1fr);
+    max-width: calc(4 * 320px + 3 * 16px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .workout-list {
+    max-width: calc(4 * 340px + 3 * 16px);
   }
 }
