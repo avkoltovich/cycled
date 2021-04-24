@@ -9,5 +9,12 @@
     bottom: 28px;
     z-index: 500;
   }
+
+  .workout-card-list-spinner-container {
+    position: absolute;
+    top: calc(50vh - 50px);
+    left: calc(50vw - 50px);
+    z-index: 499;
+  }
 }
 
