@@ -111,12 +111,12 @@
                 [isShowWorkoutType]="true"
         ></app-workout-main-info>
         <div class="edit-workout__final-controls">
-          <button class="edit-workout__button" mat-flat-button color="accent" type="button" (click)="onSubmit()">
-            Сохранить
-          </button>
           <button class="edit-workout__button edit-workout__button--reset" mat-flat-button routerLink=""
                   type="button">
             Отмена
+          </button>
+          <button class="edit-workout__button" mat-flat-button color="accent" type="button" (click)="onSubmit()">
+            Сохранить
           </button>
         </div>
       </mat-step>
