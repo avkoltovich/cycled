@@ -165,7 +165,7 @@ export class EditWorkoutComponent implements OnInit {
         next: () => {
           this.isLoading = false
           this.snackBar.open('Тренировка успешно добавлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          this.workoutModelService.updateWorkouts()
+          this.workoutModelService.update.next()
           this.router.navigate([ '' ])
         }
       })
@@ -175,7 +175,7 @@ export class EditWorkoutComponent implements OnInit {
         next: () => {
           this.isLoading = false
           this.snackBar.open('Тренировка успешно обновлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          this.workoutModelService.updateWorkouts()
+          this.workoutModelService.update.next()
           this.router.navigate([ '' ])
         }
       })

@@ -40,7 +40,7 @@ export class WorkoutCardComponent {
     this.workoutNetworkService.delete(id).subscribe({
       next: () => {
         this.snackBar.open('Тренировка успешно удалена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-        this.workoutModalService.updateWorkouts()
+        this.workoutModalService.update.next()
       }
     })
   }
