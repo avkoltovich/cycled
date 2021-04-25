@@ -63,29 +63,26 @@ export interface WorkoutListByDay {
   workouts: WorkoutModel[]
 }
 
-export interface WorkoutListDate {
-  dayOfWeek: string,
-  date: string
-}
-
 export const generateWorkoutCalendar = (workouts: WorkoutModel[]): WorkoutListByDay[] => {
+  const currentTime = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()).getTime()
   const sortedWorkouts = workouts.slice().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  const filteredWorkouts = sortedWorkouts.filter((item) => new Date(item.date).getTime() >= currentTime)
   const workoutCalendar: WorkoutListByDay[] = []
 
   let currentDate = null
   let currentCalendarItemIndex = 0
 
-  sortedWorkouts.forEach((workout) => {
+  filteredWorkouts.forEach((workout) => {
     if (currentDate === null) {
       currentDate = workout.date
 
       workoutCalendar.push({
         date: workout.date,
-        workouts: [workout]
+        workouts: [ workout ]
       })
     } else {
       if (checkEqualDates(currentDate, workout.date)) {
-        workoutCalendar[currentCalendarItemIndex].workouts.push(workout)
+        workoutCalendar[ currentCalendarItemIndex ].workouts.push(workout)
       } else {
         currentDate = workout.date
         currentCalendarItemIndex += 1
