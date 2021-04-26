@@ -16,8 +16,13 @@ export class WorkoutCardListComponent {
   }
 
   public getWorkoutListDate(dateISO: string): string {
+    const currentDate = new Date()
     const date = new Date(dateISO)
 
-    return new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' }).format(date)
+    if (currentDate.getFullYear() === date.getFullYear()) {
+      return new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' }).format(date)
+    } else {
+      return new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
+    }
   }
 }
