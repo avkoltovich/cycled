@@ -12,7 +12,7 @@
 </div>
 <div class="workout-main-info__route route" *ngIf="!isCardHidden">
   <div class="route__point" *ngFor="let point of workout.routePoints">
-    <span class="route__point-name">{{ point }}</span>
+    <span class="route__point-name" [matTooltip]="point">{{ point }}</span>
   </div>
 </div>
 <div class="workout-main-info__venue">
