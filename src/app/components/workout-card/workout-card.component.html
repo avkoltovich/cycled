@@ -1,17 +1,17 @@
 <mat-card class="workout-card" *ngIf="workout !== null">
-  <button class="workout-card__context-menu-button" mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu class="workout-card__context-menu context-menu" #menu="matMenu">
-    <button mat-menu-item [routerLink]="'edit-workout/' + workout._id">
-      <mat-icon class="context-menu__icon">mode_edit</mat-icon>
-      <span>Изменить</span>
-    </button>
-    <button mat-menu-item (click)="onDeleteButtonClick(workout._id)">
-      <mat-icon class="context-menu__icon">delete</mat-icon>
-      <span>Удалить</span>
-    </button>
-  </mat-menu>
+  <!--  <button class="workout-card__context-menu-button" mat-icon-button [matMenuTriggerFor]="menu">-->
+  <!--    <mat-icon>more_vert</mat-icon>-->
+  <!--  </button>-->
+  <!--  <mat-menu class="workout-card__context-menu context-menu" #menu="matMenu">-->
+  <!--    <button mat-menu-item [routerLink]="'edit-workout/' + workout._id">-->
+  <!--      <mat-icon class="context-menu__icon">mode_edit</mat-icon>-->
+  <!--      <span>Изменить</span>-->
+  <!--    </button>-->
+  <!--    <button mat-menu-item (click)="onDeleteButtonClick(workout._id)">-->
+  <!--      <mat-icon class="context-menu__icon">delete</mat-icon>-->
+  <!--      <span>Удалить</span>-->
+  <!--    </button>-->
+  <!--  </mat-menu>-->
   <mat-card-content>
     <app-workout-main-info
             class="workout-card__main-info"
