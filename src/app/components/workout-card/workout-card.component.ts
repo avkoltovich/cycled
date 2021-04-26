@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core'
 import { APP_URL } from 'src/shared/constants'
 import { WorkoutModel } from '../../models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
-import { WorkoutModelService } from '../../services/workout-model.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
@@ -18,7 +17,6 @@ export class WorkoutCardComponent {
   public isOnlyTimeShow = true
 
   constructor(private workoutNetworkService: WorkoutNetworkService,
-              private workoutModalService: WorkoutModelService,
               private snackBar: MatSnackBar) {
   }
 
@@ -40,7 +38,7 @@ export class WorkoutCardComponent {
     this.workoutNetworkService.delete(id).subscribe({
       next: () => {
         this.snackBar.open('Тренировка успешно удалена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-        this.workoutModalService.update.next()
+        this.workoutNetworkService.updateAll.next()
       }
     })
   }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
 import { WorkoutModel } from '../models/workout.model'
 import { API_URL } from '../../shared/constants'
 
@@ -8,6 +8,7 @@ import { API_URL } from '../../shared/constants'
   providedIn: 'root'
 })
 export class WorkoutNetworkService {
+  public updateAll = new Subject()
 
   constructor(private http: HttpClient) {
   }

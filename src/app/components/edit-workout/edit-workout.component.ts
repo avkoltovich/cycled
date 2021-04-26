@@ -7,7 +7,6 @@ import { ISO8601 } from '../../models/base.model'
 import { BikeType, bikeTypeMap, WorkoutModel } from 'src/app/models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { Router } from '@angular/router'
-import { WorkoutModelService } from '../../services/workout-model.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
 
 
@@ -108,7 +107,6 @@ export class EditWorkoutComponent implements OnInit {
   public isLinear = true
 
   constructor(private workoutNetworkService: WorkoutNetworkService,
-              private workoutModelService: WorkoutModelService,
               private snackBar: MatSnackBar,
               private router: Router) {
     this.workoutSummary.subscribe()
@@ -165,7 +163,7 @@ export class EditWorkoutComponent implements OnInit {
         next: () => {
           this.isLoading = false
           this.snackBar.open('Тренировка успешно добавлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          this.workoutModelService.update.next()
+          this.workoutNetworkService.updateAll.next()
           this.router.navigate([ '' ])
         }
       })
@@ -175,7 +173,7 @@ export class EditWorkoutComponent implements OnInit {
         next: () => {
           this.isLoading = false
           this.snackBar.open('Тренировка успешно обновлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          this.workoutModelService.update.next()
+          this.workoutNetworkService.updateAll.next()
           this.router.navigate([ '' ])
         }
       })

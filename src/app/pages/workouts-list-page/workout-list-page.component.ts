@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
-import { map, tap } from 'rxjs/operators'
+import { map, startWith, switchMap, tap } from 'rxjs/operators'
 import { generateWorkoutCalendar, WorkoutModel } from '../../models/workout.model'
-import { WorkoutModelService } from '../../services/workout-model.service'
+import { WorkoutNetworkService } from '../../services/workout-network.service'
 
 
 @Component({
@@ -12,11 +12,14 @@ import { WorkoutModelService } from '../../services/workout-model.service'
 export class WorkoutListPageComponent {
   public isLoading = true
 
-  constructor(private workoutModelService: WorkoutModelService) {
+  constructor(private workoutNetworkService: WorkoutNetworkService) {
   }
 
-  public workoutCalendar = this.workoutModelService.workouts.pipe(
-    map((workouts: WorkoutModel[]) => generateWorkoutCalendar(workouts)),
-    tap(() => this.isLoading = false)
+  public workoutCalendar = this.workoutNetworkService.updateAll.pipe(
+    startWith(null),
+    switchMap(() => this.workoutNetworkService.getAll().pipe(
+      map((workouts: WorkoutModel[]) => generateWorkoutCalendar(workouts)),
+      tap(() => this.isLoading = false)
+    ))
   )
 }
