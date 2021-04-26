@@ -4,6 +4,23 @@
   font-size: 16px;
 }
 
+.auth-page-spinner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+
+  background-color: var(--default-spinner-container-background);
+  border-radius: 10px;
+}
+
 .auth-page__title-wrapper {
   display: flex;
   align-items: center;
@@ -34,6 +51,8 @@
 }
 
 .auth-page__form {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   max-width: 350px;

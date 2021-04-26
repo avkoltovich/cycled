@@ -6,13 +6,13 @@
     <h2 class="auth-page__title">Регистрация</h2>
   </div>
   <form class="auth-page__form">
-    <button mat-button class="auth-page__button auth-page__button--google" type="button">
-      <img class="auth-page__logo" src="../../../../assets/svg/google-logo.svg" width="24" height="24">
-      Войти через Google
-    </button>
-    <div class="auth-page__divider">
-      <span>или</span>
-    </div>
+    <!--    <button mat-button class="auth-page__button auth-page__button&#45;&#45;google" type="button">-->
+    <!--      <img class="auth-page__logo" src="../../../../assets/svg/google-logo.svg" width="24" height="24">-->
+    <!--      Войти через Google-->
+    <!--    </button>-->
+    <!--    <div class="auth-page__divider">-->
+    <!--      <span>или</span>-->
+    <!--    </div>-->
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput placeholder="user@example.ru" [formControl]="email" required>
@@ -20,7 +20,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Пароль</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" required>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -34,8 +34,17 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-    <button mat-flat-button class="auth-page__button auth-page__button--login" type="button" color="accent">
+    <button
+            mat-flat-button
+            class="auth-page__button auth-page__button--login"
+            type="button"
+            color="accent"
+            (click)="onRegisterButtonClick()"
+    >
       Регистрация
     </button>
+    <div class="auth-page-spinner-container" *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+    </div>
   </form>
 </section>
