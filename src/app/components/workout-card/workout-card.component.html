@@ -18,17 +18,17 @@
             [isOnlyTimeShow]="isOnlyTimeShow"
             [workout]="workout"
     ></app-workout-main-info>
-    <div class="workout-card__members">
-      <mat-icon class="workout-card__members-icon">group</mat-icon>
-      <span class="workout-card__members-text">
-        {{ buildMemberCountString(workout.members.length) }}
-      </span>
-    </div>
+    <!--    <div class="workout-card__members">-->
+    <!--      <mat-icon class="workout-card__members-icon">group</mat-icon>-->
+    <!--      <span class="workout-card__members-text">-->
+    <!--        {{ buildMemberCountString(workout.members.length) }}-->
+    <!--      </span>-->
+    <!--    </div>-->
   </mat-card-content>
   <mat-card-actions>
-    <button mat-flat-button class="workout-card__button workout-card__button--join">
-      <mat-icon class="workout-card__icon" matTooltip="Присоединиться">person_add_alt_1</mat-icon>
-    </button>
+    <!--    <button mat-flat-button class="workout-card__button workout-card__button&#45;&#45;join">-->
+    <!--      <mat-icon class="workout-card__icon" matTooltip="Присоединиться">person_add_alt_1</mat-icon>-->
+    <!--    </button>-->
     <button mat-flat-button class="workout-card__button workout-card__button--share" matTooltip="Поделиться" (click)="onShareButtonClick(workout._id)">
       <mat-icon class="workout-card__icon">share</mat-icon>
     </button>
