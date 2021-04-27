@@ -31,6 +31,7 @@
             type="button"
             color="primary"
             (click)="onLoginButtonClick()"
+            [disabled]="isInvalidForm | async"
     >
       Войти
     </button>

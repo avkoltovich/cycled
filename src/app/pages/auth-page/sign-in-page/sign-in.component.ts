@@ -3,9 +3,9 @@ import { AuthService } from '../../../services/auth.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { Router } from '@angular/router'
 import { FormControl, Validators } from '@angular/forms'
-import { catchError, take, tap } from 'rxjs/operators'
+import { catchError, map, startWith, take, tap } from 'rxjs/operators'
 import { HttpErrorResponse } from '@angular/common/http'
-import { EMPTY } from 'rxjs'
+import { combineLatest, EMPTY } from 'rxjs'
 import { JWT_TOKEN } from '../../../../shared/constants'
 
 @Component({
@@ -18,6 +18,19 @@ export class SignInComponent {
   public isLoading = false
   public email = new FormControl('', [ Validators.required, Validators.email ])
   public password = new FormControl('', [ Validators.required ])
+
+  public isInvalidForm = combineLatest([
+    this.password.valueChanges.pipe(
+      startWith(null)
+    ),
+    this.email.valueChanges.pipe(
+      startWith(null)
+    )
+  ]).pipe(
+    map(() => {
+      return this.email.invalid || this.password.invalid
+    })
+  )
 
   constructor(private authService: AuthService,
               private snackBar: MatSnackBar,
