@@ -1,11 +1,12 @@
 import { Component } from '@angular/core'
 import { FormControl, Validators } from '@angular/forms'
 import { AuthService } from '../../../services/auth.service'
-import { catchError, take, tap } from 'rxjs/operators'
+import { catchError, map, startWith, switchMap, tap } from 'rxjs/operators'
 import { HttpErrorResponse } from '@angular/common/http'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { Router } from '@angular/router'
-import { EMPTY } from 'rxjs'
+import { combineLatest, EMPTY } from 'rxjs'
+import { JWT_TOKEN } from '../../../../shared/constants'
 
 @Component({
   selector: 'app-sign-up-page',
@@ -17,10 +18,32 @@ export class SignUpComponent {
   public isLoading = false
   public email = new FormControl('', [ Validators.required, Validators.email ])
   public password = new FormControl('', [ Validators.required ])
+  public repeatedPassword = new FormControl('', [ Validators.required ])
+
+  public isInvalidForm = combineLatest([
+    this.password.valueChanges.pipe(
+      startWith(null)
+    ),
+    this.repeatedPassword.valueChanges.pipe(
+      startWith(null)
+    ),
+    this.email.valueChanges.pipe(
+      startWith(null)
+    )
+  ]).pipe(
+    map(([ password, repeatedPassword ]: [ string, string, string ]) => {
+      if (password !== repeatedPassword) {
+        this.repeatedPassword.setErrors({ incorrect: true })
+      }
+
+      return this.email.invalid || this.password.invalid || password !== repeatedPassword
+    })
+  )
 
   constructor(private authService: AuthService,
               private snackBar: MatSnackBar,
               private router: Router) {
+    this.isInvalidForm.subscribe()
   }
 
   public getErrorMessage(): string {
@@ -37,12 +60,18 @@ export class SignUpComponent {
       login: this.email.value,
       password: this.password.value
     }).pipe(
-      take(1),
-      tap(() => {
-        this.snackBar.open('Пользователь успешно зарегистрирован', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-        this.isLoading = false
-        this.router.navigate([ '' ])
-      }),
+      switchMap(() => this.authService.login({
+        login: this.email.value,
+        password: this.password.value
+      }).pipe(
+        tap(({ access_token }: { access_token: string }) => {
+          this.snackBar.open('Пользователь успешно зарегистрирован', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          this.isLoading = false
+          window.localStorage.setItem(JWT_TOKEN, access_token)
+          this.authService.isAuthorized.next()
+          this.router.navigate([ '' ])
+        })
+      )),
       catchError((error: HttpErrorResponse) => {
         this.snackBar.open(`${ error.error.message }`, '', { duration: 3000, panelClass: 'cycled-snackbar' })
         this.isLoading = false

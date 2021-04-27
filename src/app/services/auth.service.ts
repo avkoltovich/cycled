@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { API_URL } from '../../shared/constants'
-import { Observable } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
 import { AuthDto } from '../models/auth.dto'
 import { UserModel } from '../models/user.model'
 
@@ -9,6 +9,7 @@ import { UserModel } from '../models/user.model'
   providedIn: 'root'
 })
 export class AuthService {
+  public isAuthorized = new Subject()
 
   constructor(private http: HttpClient) {
   }
@@ -17,5 +18,11 @@ export class AuthService {
     const headers = new HttpHeaders()
 
     return this.http.post<UserModel>(`${ API_URL }/auth/register`, user, { headers })
+  }
+
+  public login(user: AuthDto): Observable<{ access_token: string }> {
+    const headers = new HttpHeaders()
+
+    return this.http.post<{ access_token: string }>(`${ API_URL }/auth/login`, user, { headers })
   }
 }

@@ -28,7 +28,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Повторите пароль</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" required>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="repeatedPassword" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide" tabindex="-1">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -40,6 +40,7 @@
             type="button"
             color="accent"
             (click)="onRegisterButtonClick()"
+            [disabled]="isInvalidForm | async"
     >
       Регистрация
     </button>
