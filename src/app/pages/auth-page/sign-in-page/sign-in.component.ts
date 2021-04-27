@@ -37,6 +37,9 @@ export class SignInComponent {
               private router: Router) {
   }
 
+  /**
+   * TODO: Написать хэндлер на клавишу энтер
+   */
   public onLoginButtonClick(): void {
     this.isLoading = true
     this.authService.login({

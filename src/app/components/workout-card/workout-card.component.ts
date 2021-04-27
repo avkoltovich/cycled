@@ -1,8 +1,11 @@
 import { Component, Input } from '@angular/core'
-import { APP_URL } from 'src/shared/constants'
+import { APP_URL, JWT_TOKEN } from 'src/shared/constants'
 import { WorkoutModel } from '../../models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { AuthService } from '../../services/auth.service'
+import { Observable } from 'rxjs'
+import { map, startWith } from 'rxjs/operators'
 
 @Component({
   selector: 'app-workout-card',
@@ -10,6 +13,11 @@ import { MatSnackBar } from '@angular/material/snack-bar'
   styleUrls: [ './workout-card.component.scss' ]
 })
 export class WorkoutCardComponent {
+  public isAuthorized: Observable<boolean> = this.authService.isAuthorized.pipe(
+    startWith(window.localStorage.getItem(JWT_TOKEN) !== null),
+    map(() => window.localStorage.getItem(JWT_TOKEN) !== null)
+  )
+
   @Input()
   public workout: WorkoutModel | null
 
@@ -17,6 +25,7 @@ export class WorkoutCardComponent {
   public isOnlyTimeShow = true
 
   constructor(private workoutNetworkService: WorkoutNetworkService,
+              private authService: AuthService,
               private snackBar: MatSnackBar) {
   }
 

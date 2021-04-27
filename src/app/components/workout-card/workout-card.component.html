@@ -26,10 +26,15 @@
     <!--    </div>-->
   </mat-card-content>
   <mat-card-actions>
-    <!--    <button mat-flat-button class="workout-card__button workout-card__button&#45;&#45;join">-->
-    <!--      <mat-icon class="workout-card__icon" matTooltip="Присоединиться">person_add_alt_1</mat-icon>-->
-    <!--    </button>-->
-    <button mat-flat-button class="workout-card__button workout-card__button--share" matTooltip="Поделиться" (click)="onShareButtonClick(workout._id)">
+    <button
+            *ngIf="isAuthorized | async"
+            mat-flat-button
+            class="workout-card__button workout-card__button--join"
+    >
+      <mat-icon class="workout-card__icon" matTooltip="Присоединиться">person_add_alt_1</mat-icon>
+    </button>
+    <button mat-flat-button class="workout-card__button workout-card__button--share" matTooltip="Поделиться"
+            (click)="onShareButtonClick(workout._id)">
       <mat-icon class="workout-card__icon">share</mat-icon>
     </button>
   </mat-card-actions>

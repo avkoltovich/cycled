@@ -3,33 +3,36 @@
     <a routerLink="" class="main-menu__link">
       <img src="assets/svg/full-logo.svg" width="120" height="36" alt="Cycled">
     </a>
-    <!--    <button *ngIf="isNotAuthorized | async" class="toolbar__button" mat-icon-button (click)="onClickMenuButton()">-->
-    <!--      <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>-->
-    <!--      <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>-->
-    <!--    </button>-->
+    <button *ngIf="isNotAuthorized | async" class="toolbar__button" mat-icon-button (click)="onClickMenuButton()">
+      <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>
+      <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>
+    </button>
+    <button *ngIf="!(isNotAuthorized | async)" mat-icon-button (click)="onClickLogoutButton()" [matTooltip]="'Выйти'">
+      <mat-icon class="toolbar__icon">logout</mat-icon>
+    </button>
   </mat-toolbar>
-  <!--  <nav [class.header-navigation&#45;&#45;is-open]="isMenuOpen" *ngIf="isNotAuthorized | async" class="header-navigation">-->
-  <!--    <ul class="header-navigation__list">-->
-  <!--      <li class="header-navigation__item">-->
-  <!--        <a-->
-  <!--                mat-raised-button-->
-  <!--                class="header-navigation__link"-->
-  <!--                color="accent"-->
-  <!--                routerLink="register"-->
-  <!--                (click)="onClickMenuButton()"-->
-  <!--        >Регистрация</a>-->
-  <!--      </li>-->
-  <!--      <li class="header-navigation__item">-->
-  <!--        <a-->
-  <!--                mat-raised-button-->
-  <!--                class="header-navigation__link header-navigation__link&#45;&#45;blue"-->
-  <!--                routerLink="login"-->
-  <!--                color="primary"-->
-  <!--                (click)="onClickMenuButton()"-->
-  <!--        >Войти</a>-->
-  <!--      </li>-->
-  <!--    </ul>-->
-  <!--  </nav>-->
+  <nav [class.header-navigation--is-open]="isMenuOpen" *ngIf="isNotAuthorized | async" class="header-navigation">
+    <ul class="header-navigation__list">
+      <li class="header-navigation__item">
+        <a
+                mat-raised-button
+                class="header-navigation__link"
+                color="accent"
+                routerLink="register"
+                (click)="onClickMenuButton()"
+        >Регистрация</a>
+      </li>
+      <li class="header-navigation__item">
+        <a
+                mat-raised-button
+                class="header-navigation__link header-navigation__link--blue"
+                routerLink="login"
+                color="primary"
+                (click)="onClickMenuButton()"
+        >Войти</a>
+      </li>
+    </ul>
+  </nav>
 </div>
 <div
         class="main-menu-background"

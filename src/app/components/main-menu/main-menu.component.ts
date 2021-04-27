@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service'
 import { Observable } from 'rxjs'
 import { map, startWith } from 'rxjs/operators'
 import { JWT_TOKEN } from '../../../shared/constants'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-main-menu',
@@ -16,10 +17,17 @@ export class MainMenuComponent {
     map(() => window.localStorage.getItem(JWT_TOKEN) === null)
   )
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
   public onClickMenuButton(): void {
     this.isMenuOpen = !this.isMenuOpen
+  }
+
+  public onClickLogoutButton(): void {
+    window.localStorage.removeItem(JWT_TOKEN)
+    this.authService.isAuthorized.next()
+    this.router.navigate([ '' ])
   }
 }
