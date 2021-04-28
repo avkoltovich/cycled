@@ -1,3 +1,14 @@
+::ng-deep .main-menu-container {
+  .main-menu__logout-button {
+    background-color: var(--background);
+
+    .mat-menu-item .mat-icon-no-color,
+    mat-icon {
+      color: var(--icon-color);
+    }
+  }
+}
+
 .main-menu-container {
   display: flex;
   flex-direction: column;

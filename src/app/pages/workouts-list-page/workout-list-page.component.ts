@@ -2,6 +2,9 @@ import { Component } from '@angular/core'
 import { map, startWith, switchMap, tap } from 'rxjs/operators'
 import { generateWorkoutCalendar, WorkoutModel } from '../../models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
+import { Observable } from 'rxjs'
+import { JWT_TOKEN } from '../../../shared/constants'
+import { AuthService } from '../../services/auth.service'
 
 
 @Component({
@@ -12,7 +15,13 @@ import { WorkoutNetworkService } from '../../services/workout-network.service'
 export class WorkoutListPageComponent {
   public isLoading = true
 
-  constructor(private workoutNetworkService: WorkoutNetworkService) {
+  public isAuthorized: Observable<boolean> = this.authService.isAuthorized.pipe(
+    startWith(window.localStorage.getItem(JWT_TOKEN) !== null),
+    map(() => window.localStorage.getItem(JWT_TOKEN) !== null)
+  )
+
+  constructor(private workoutNetworkService: WorkoutNetworkService,
+              private authService: AuthService) {
   }
 
   public workoutCalendar = this.workoutNetworkService.updateAll.pipe(

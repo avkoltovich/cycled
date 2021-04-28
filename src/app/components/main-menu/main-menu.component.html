@@ -7,7 +7,8 @@
       <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>
       <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>
     </button>
-    <button *ngIf="!(isNotAuthorized | async)" mat-icon-button (click)="onClickLogoutButton()" [matTooltip]="'Выйти'">
+    <button class="main-menu__logout-button" mat-flat-button *ngIf="!(isNotAuthorized | async)"
+            (click)="onClickLogoutButton()" [matTooltip]="'Выйти'">
       <mat-icon class="toolbar__icon">logout</mat-icon>
     </button>
   </mat-toolbar>

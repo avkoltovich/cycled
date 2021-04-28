@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable, Subject } from 'rxjs'
 import { WorkoutModel } from '../models/workout.model'
-import { API_URL } from '../../shared/constants'
+import { API_URL, JWT_TOKEN } from '../../shared/constants'
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,8 @@ export class WorkoutNetworkService {
   }
 
   public create(body: Omit<WorkoutModel, '_id'>): Observable<WorkoutModel> {
-    const headers = new HttpHeaders()
+    const jwtToken = window.localStorage.getItem(JWT_TOKEN)
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${ jwtToken }`)
 
     return this.http.post<WorkoutModel>(`${ API_URL }/workout/create`, body, { headers })
   }
@@ -28,11 +29,15 @@ export class WorkoutNetworkService {
   }
 
   public delete(id: string): Observable<WorkoutModel[] | null> {
-    return this.http.delete<WorkoutModel[] | null>(`${ API_URL }/workout/${ id }`)
+    const jwtToken = window.localStorage.getItem(JWT_TOKEN)
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${ jwtToken }`)
+
+    return this.http.delete<WorkoutModel[] | null>(`${ API_URL }/workout/${ id }`, { headers })
   }
 
   public update(id: string, body: Omit<WorkoutModel, '_id'>): Observable<WorkoutModel> {
-    const headers = new HttpHeaders()
+    const jwtToken = window.localStorage.getItem(JWT_TOKEN)
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${ jwtToken }`)
 
     return this.http.patch<WorkoutModel>(`${ API_URL }/workout/${ id }`, body, { headers })
   }
