@@ -4,6 +4,7 @@ import { API_URL } from '../../shared/constants'
 import { Observable, Subject } from 'rxjs'
 import { AuthDto } from '../models/auth.dto'
 import { UserModel } from '../models/user.model'
+import { AuthModel } from '../models/auth.model'
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +21,9 @@ export class AuthService {
     return this.http.post<UserModel>(`${ API_URL }/auth/register`, user, { headers })
   }
 
-  public login(user: AuthDto): Observable<{ access_token: string }> {
+  public login(user: AuthDto): Observable<AuthModel> {
     const headers = new HttpHeaders()
 
-    return this.http.post<{ access_token: string }>(`${ API_URL }/auth/login`, user, { headers })
+    return this.http.post<AuthModel>(`${ API_URL }/auth/login`, user, { headers })
   }
 }

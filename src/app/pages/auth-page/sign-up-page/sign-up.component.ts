@@ -6,7 +6,8 @@ import { HttpErrorResponse } from '@angular/common/http'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { Router } from '@angular/router'
 import { combineLatest, EMPTY } from 'rxjs'
-import { JWT_TOKEN } from '../../../../shared/constants'
+import { JWT_TOKEN, USER_EMAIL, USER_ID } from '../../../../shared/constants'
+import { AuthModel } from '../../../models/auth.model'
 
 @Component({
   selector: 'app-sign-up-page',
@@ -64,10 +65,12 @@ export class SignUpComponent {
         login: this.email.value,
         password: this.password.value
       }).pipe(
-        tap(({ access_token }: { access_token: string }) => {
+        tap((authPayload: AuthModel) => {
           this.snackBar.open('Пользователь успешно зарегистрирован', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.isLoading = false
-          window.localStorage.setItem(JWT_TOKEN, access_token)
+          window.localStorage.setItem(JWT_TOKEN, authPayload.accessToken)
+          window.localStorage.setItem(USER_EMAIL, authPayload.email)
+          window.localStorage.setItem(USER_ID, authPayload.userId)
           this.authService.isAuthorized.next()
           this.router.navigate([ '' ])
         })

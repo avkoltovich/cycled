@@ -6,7 +6,8 @@ import { FormControl, Validators } from '@angular/forms'
 import { catchError, map, startWith, take, tap } from 'rxjs/operators'
 import { HttpErrorResponse } from '@angular/common/http'
 import { combineLatest, EMPTY } from 'rxjs'
-import { JWT_TOKEN, USER_EMAIL } from '../../../../shared/constants'
+import { JWT_TOKEN, USER_EMAIL, USER_ID } from '../../../../shared/constants'
+import { AuthModel } from '../../../models/auth.model'
 
 @Component({
   selector: 'app-sign-in-page',
@@ -47,11 +48,12 @@ export class SignInComponent {
       password: this.password.value
     }).pipe(
       take(1),
-      tap(({ access_token }: { access_token: string }) => {
+      tap((authPayload: AuthModel) => {
         this.snackBar.open('Вы успешно авторизованы', '', { duration: 3000, panelClass: 'cycled-snackbar' })
         this.isLoading = false
-        window.localStorage.setItem(JWT_TOKEN, access_token)
-        window.localStorage.setItem(USER_EMAIL, this.email.value)
+        window.localStorage.setItem(JWT_TOKEN, authPayload.accessToken)
+        window.localStorage.setItem(USER_EMAIL, authPayload.email)
+        window.localStorage.setItem(USER_ID, authPayload.userId)
         this.authService.isAuthorized.next()
         this.router.navigate([ '' ])
       }),

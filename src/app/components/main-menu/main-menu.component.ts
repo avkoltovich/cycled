@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { AuthService } from '../../services/auth.service'
 import { Observable } from 'rxjs'
 import { map, startWith } from 'rxjs/operators'
-import { JWT_TOKEN, USER_EMAIL } from '../../../shared/constants'
+import { JWT_TOKEN, USER_EMAIL, USER_ID } from '../../../shared/constants'
 import { Router } from '@angular/router'
 
 @Component({
@@ -32,6 +32,7 @@ export class MainMenuComponent {
   public onClickLogoutButton(): void {
     window.localStorage.removeItem(JWT_TOKEN)
     window.localStorage.removeItem(USER_EMAIL)
+    window.localStorage.removeItem(USER_ID)
     this.authService.isAuthorized.next()
     this.router.navigate([ '' ])
   }
