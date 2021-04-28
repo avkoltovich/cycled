@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { AuthService } from '../../services/auth.service'
 import { Observable } from 'rxjs'
 import { map, startWith } from 'rxjs/operators'
-import { JWT_TOKEN } from '../../../shared/constants'
+import { JWT_TOKEN, USER_EMAIL } from '../../../shared/constants'
 import { Router } from '@angular/router'
 
 @Component({
@@ -12,9 +12,13 @@ import { Router } from '@angular/router'
 })
 export class MainMenuComponent {
   public isMenuOpen = false
+  public userEmail = window.localStorage.getItem(USER_EMAIL)
   public isNotAuthorized: Observable<boolean> = this.authService.isAuthorized.pipe(
     startWith(window.localStorage.getItem(JWT_TOKEN) === null),
-    map(() => window.localStorage.getItem(JWT_TOKEN) === null)
+    map(() => {
+      this.userEmail = window.localStorage.getItem(USER_EMAIL)
+      return window.localStorage.getItem(JWT_TOKEN) === null
+    })
   )
 
   constructor(private authService: AuthService,
@@ -27,6 +31,7 @@ export class MainMenuComponent {
 
   public onClickLogoutButton(): void {
     window.localStorage.removeItem(JWT_TOKEN)
+    window.localStorage.removeItem(USER_EMAIL)
     this.authService.isAuthorized.next()
     this.router.navigate([ '' ])
   }

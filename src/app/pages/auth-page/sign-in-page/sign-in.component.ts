@@ -6,7 +6,7 @@ import { FormControl, Validators } from '@angular/forms'
 import { catchError, map, startWith, take, tap } from 'rxjs/operators'
 import { HttpErrorResponse } from '@angular/common/http'
 import { combineLatest, EMPTY } from 'rxjs'
-import { JWT_TOKEN } from '../../../../shared/constants'
+import { JWT_TOKEN, USER_EMAIL } from '../../../../shared/constants'
 
 @Component({
   selector: 'app-sign-in-page',
@@ -51,6 +51,7 @@ export class SignInComponent {
         this.snackBar.open('Вы успешно авторизованы', '', { duration: 3000, panelClass: 'cycled-snackbar' })
         this.isLoading = false
         window.localStorage.setItem(JWT_TOKEN, access_token)
+        window.localStorage.setItem(USER_EMAIL, this.email.value)
         this.authService.isAuthorized.next()
         this.router.navigate([ '' ])
       }),

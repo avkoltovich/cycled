@@ -3,17 +3,16 @@
     <a routerLink="" class="main-menu__link">
       <img src="assets/svg/full-logo.svg" width="120" height="36" alt="Cycled">
     </a>
-    <button *ngIf="isNotAuthorized | async" class="toolbar__button" mat-icon-button (click)="onClickMenuButton()">
+    <button
+            mat-icon-button
+            class="toolbar__button"
+            (click)="onClickMenuButton()">
       <mat-icon *ngIf="!isMenuOpen" class="toolbar__icon">menu</mat-icon>
       <mat-icon *ngIf="isMenuOpen" class="toolbar__icon">clear</mat-icon>
     </button>
-    <button class="main-menu__logout-button" mat-flat-button *ngIf="!(isNotAuthorized | async)"
-            (click)="onClickLogoutButton()" [matTooltip]="'Выйти'">
-      <mat-icon class="toolbar__icon">logout</mat-icon>
-    </button>
   </mat-toolbar>
-  <nav [class.header-navigation--is-open]="isMenuOpen" *ngIf="isNotAuthorized | async" class="header-navigation">
-    <ul class="header-navigation__list">
+  <nav [class.header-navigation--is-open]="isMenuOpen" class="header-navigation">
+    <ul *ngIf="isNotAuthorized | async" class="header-navigation__list">
       <li class="header-navigation__item">
         <a
                 mat-raised-button
@@ -33,6 +32,20 @@
         >Войти</a>
       </li>
     </ul>
+    <div *ngIf="!(isNotAuthorized | async)" class="main-menu__user-controls user-controls">
+      <span class="user-controls__email-wrapper">
+        <mat-icon class="user-controls__icon user-controls__icon--user">person</mat-icon>
+        <span class="main-menu__email">{{ userEmail }}</span>
+      </span>
+      <button
+              mat-raised-button
+              color="primary"
+              class="header-navigation__link header-navigation__link--blue"
+              (click)="onClickLogoutButton()"
+      >
+        Выйти
+      </button>
+    </div>
   </nav>
 </div>
 <div
