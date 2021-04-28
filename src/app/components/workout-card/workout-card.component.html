@@ -1,5 +1,5 @@
 <mat-card class="workout-card" *ngIf="workout !== null">
-  <button *ngIf="isAuthorized | async" class="workout-card__context-menu-button" mat-icon-button
+  <button *ngIf="isMyWorkout | async" class="workout-card__context-menu-button" mat-icon-button
           [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
@@ -19,20 +19,24 @@
             [isOnlyTimeShow]="isOnlyTimeShow"
             [workout]="workout"
     ></app-workout-main-info>
-    <!--    <div class="workout-card__members">-->
-    <!--      <mat-icon class="workout-card__members-icon">group</mat-icon>-->
-    <!--      <span class="workout-card__members-text">-->
-    <!--        {{ buildMemberCountString(workout.members.length) }}-->
-    <!--      </span>-->
-    <!--    </div>-->
+    <div class="workout-card__members">
+      <mat-icon class="workout-card__members-icon">group</mat-icon>
+      <span class="workout-card__members-text">
+            {{ buildMemberCountString(workout.members.length) }}
+      </span>
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button
+            [class.workout-card__button--joined]="isCurrentlyJoinedToWorkout"
             *ngIf="isAuthorized | async"
             mat-flat-button
             class="workout-card__button workout-card__button--join"
+            (click)="onJoinButtonClick(workout)"
+            [matTooltip]="isCurrentlyJoinedToWorkout ? 'Отменить участие' : 'Присоединиться'"
     >
-      <mat-icon class="workout-card__icon" matTooltip="Присоединиться">person_add_alt_1</mat-icon>
+      <mat-icon *ngIf="!isCurrentlyJoinedToWorkout" class="workout-card__icon">person_add_alt_1</mat-icon>
+      <mat-icon *ngIf="isCurrentlyJoinedToWorkout" class="workout-card__icon">check</mat-icon>
     </button>
     <button mat-flat-button class="workout-card__button workout-card__button--share" matTooltip="Поделиться"
             (click)="onShareButtonClick(workout._id)">

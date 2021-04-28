@@ -1,6 +1,5 @@
 import { checkEqualDates } from '../utils/date'
 import { ISO8601 } from './base.model'
-import { UserModel } from './user.model'
 
 export const enum WorkoutType {
   rc = 'RC',
@@ -54,7 +53,7 @@ export interface WorkoutModel {
   speed: number | null
   duration: number | null
   bikeType: BikeType
-  members: UserModel[]
+  members: string[]
   authorId: string
 }
 

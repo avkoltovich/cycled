@@ -54,6 +54,15 @@
   .workout-card__button:last-child {
     margin-right: 0;
   }
+
+  .workout-card__button--joined {
+    background-color: var(--green);
+
+    .mat-menu-item .mat-icon-no-color,
+    mat-icon {
+      color: white;
+    }
+  }
 }
 
 ::ng-deep {

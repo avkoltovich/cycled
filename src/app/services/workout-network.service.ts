@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable, Subject } from 'rxjs'
 import { WorkoutModel } from '../models/workout.model'
-import { API_URL, JWT_TOKEN } from '../../shared/constants'
+import { API_URL, JWT_TOKEN, USER_ID } from '../../shared/constants'
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +40,26 @@ export class WorkoutNetworkService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${ jwtToken }`)
 
     return this.http.patch<WorkoutModel>(`${ API_URL }/workout/${ id }`, body, { headers })
+  }
+
+  public joinToWorkout(body: WorkoutModel): Observable<WorkoutModel> {
+    const jwtToken = window.localStorage.getItem(JWT_TOKEN)
+    const userId = window.localStorage.getItem(USER_ID)
+    body.members.push(userId)
+
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${ jwtToken }`)
+
+    return this.http.patch<WorkoutModel>(`${ API_URL }/workout/${ body._id }/add-member`, body, { headers })
+  }
+
+  public unjoinWorkout(body: WorkoutModel): Observable<WorkoutModel> {
+    const jwtToken = window.localStorage.getItem(JWT_TOKEN)
+    const userId = window.localStorage.getItem(USER_ID)
+    const index = body.members.findIndex((item) => item === userId)
+    body.members.splice(index, 1)
+
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${ jwtToken }`)
+
+    return this.http.patch<WorkoutModel>(`${ API_URL }/workout/${ body._id }/add-member`, body, { headers })
   }
 }

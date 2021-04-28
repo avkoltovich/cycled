@@ -1,32 +1,43 @@
-import { Component, Input } from '@angular/core'
-import { APP_URL, JWT_TOKEN } from 'src/shared/constants'
+import { Component, Input, OnChanges } from '@angular/core'
+import { APP_URL, JWT_TOKEN, USER_ID } from 'src/shared/constants'
 import { WorkoutModel } from '../../models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { AuthService } from '../../services/auth.service'
 import { Observable } from 'rxjs'
-import { map, startWith } from 'rxjs/operators'
+import { map, startWith, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-workout-card',
   templateUrl: './workout-card.component.html',
   styleUrls: [ './workout-card.component.scss' ]
 })
-export class WorkoutCardComponent {
-  public isAuthorized: Observable<boolean> = this.authService.isAuthorized.pipe(
-    startWith(window.localStorage.getItem(JWT_TOKEN) !== null),
-    map(() => window.localStorage.getItem(JWT_TOKEN) !== null)
-  )
-
+export class WorkoutCardComponent implements OnChanges {
   @Input()
   public workout: WorkoutModel | null
 
   @Input()
   public isOnlyTimeShow = true
 
+  public isMyWorkout: Observable<boolean> = this.authService.isAuthorized.pipe(
+    startWith(window.localStorage.getItem(JWT_TOKEN) !== null),
+    map(() => window.localStorage.getItem(JWT_TOKEN) !== null && window.localStorage.getItem(USER_ID) === this.workout.authorId)
+  )
+
+  public isAuthorized: Observable<boolean> = this.authService.isAuthorized.pipe(
+    startWith(window.localStorage.getItem(JWT_TOKEN) !== null),
+    map(() => window.localStorage.getItem(JWT_TOKEN) !== null)
+  )
+
+  public isCurrentlyJoinedToWorkout = false
+
   constructor(private workoutNetworkService: WorkoutNetworkService,
               private authService: AuthService,
               private snackBar: MatSnackBar) {
+  }
+
+  public ngOnChanges(): void {
+    this.isCurrentlyJoinedToWorkout = this.workout.members.includes(window.localStorage.getItem(USER_ID))
   }
 
   public buildMemberCountString(count: number): string {
@@ -35,6 +46,26 @@ export class WorkoutCardComponent {
     }
 
     return (count % 10 === 1) ? `${ count } участник` : `${ count } участника`
+  }
+
+  public onJoinButtonClick(workout: WorkoutModel): void {
+    const userId = window.localStorage.getItem(USER_ID)
+
+    if (workout.members.includes(userId)) {
+      this.workoutNetworkService.unjoinWorkout(workout).pipe(
+        tap(() => {
+          this.snackBar.open('Заявка на участие отменена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          this.workoutNetworkService.updateAll.next()
+        })
+      ).subscribe()
+    } else {
+      this.workoutNetworkService.joinToWorkout(workout).pipe(
+        tap(() => {
+          this.snackBar.open('Заявка на участие принята', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          this.workoutNetworkService.updateAll.next()
+        })
+      ).subscribe()
+    }
   }
 
   public onShareButtonClick(id: string): void {
