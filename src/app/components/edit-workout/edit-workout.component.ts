@@ -8,6 +8,7 @@ import { BikeType, bikeTypeMap, WorkoutModel } from 'src/app/models/workout.mode
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { Router } from '@angular/router'
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { USER_ID } from '../../../shared/constants'
 
 
 @Component({
@@ -97,7 +98,7 @@ export class EditWorkoutComponent implements OnInit {
     duration: null,
     bikeType: null,
     members: [],
-    authorId: '1234'
+    authorId: window.localStorage.getItem(USER_ID)
   }
 
   @Input()
