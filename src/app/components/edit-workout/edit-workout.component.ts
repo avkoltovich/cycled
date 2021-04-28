@@ -82,7 +82,7 @@ export class EditWorkoutComponent implements OnInit {
         speed: detailsForm.speed,
         duration: detailsForm.duration,
         bikeType: typeForm.bikeType,
-        members: [],
+        members: this.workout.members,
       }
     })
   )
@@ -97,7 +97,7 @@ export class EditWorkoutComponent implements OnInit {
     speed: null,
     duration: null,
     bikeType: null,
-    members: [],
+    members: [ window.localStorage.getItem(USER_ID) ],
     authorId: window.localStorage.getItem(USER_ID)
   }
 
@@ -134,6 +134,7 @@ export class EditWorkoutComponent implements OnInit {
     this.detailsFormGroup.get('distance').patchValue(workout.distance)
     this.detailsFormGroup.get('speed').patchValue(workout.speed)
     this.detailsFormGroup.get('duration').patchValue(workout.duration)
+    this.workout.members = workout.members
   }
 
   public ngOnInit(): void {
