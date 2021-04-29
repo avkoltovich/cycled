@@ -50,41 +50,21 @@ export class WorkoutCardComponent implements OnChanges {
   }
 
   public onJoinButtonClick(workout: WorkoutModel): void {
-    const userId = window.localStorage.getItem(USER_ID)
+    this.workoutNetworkService.updateWorkoutMembers(workout._id).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 401) {
+          this.authService.logout()
 
-    if (workout.members.includes(userId)) {
-      this.workoutNetworkService.unjoinWorkout(workout).pipe(
-        catchError((error: HttpErrorResponse) => {
-          if (error.status === 401) {
-            this.authService.logout()
+          this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+        }
 
-            this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          }
-
-          return EMPTY
-        }),
-        tap(() => {
-          this.snackBar.open('Заявка на участие отменена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          this.workoutNetworkService.updateAll.next()
-        })
-      ).subscribe()
-    } else {
-      this.workoutNetworkService.joinToWorkout(workout).pipe(
-        catchError((error: HttpErrorResponse) => {
-          if (error.status === 401) {
-            this.authService.logout()
-
-            this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          }
-
-          return EMPTY
-        }),
-        tap(() => {
-          this.snackBar.open('Заявка на участие принята', '', { duration: 3000, panelClass: 'cycled-snackbar' })
-          this.workoutNetworkService.updateAll.next()
-        })
-      ).subscribe()
-    }
+        return EMPTY
+      }),
+      tap(() => {
+        this.snackBar.open('Заявка на участие отменена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+        this.workoutNetworkService.updateAll.next()
+      })
+    ).subscribe()
   }
 
   public onShareButtonClick(id: string): void {
