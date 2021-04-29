@@ -31,16 +31,31 @@
       <mat-step [stepControl]="routeFormGroup">
         <form [formGroup]="routeFormGroup">
           <ng-template matStepLabel>Маршрут</ng-template>
+
+          <div class="edit-workout__route route">
+            <div class="route__point" *ngFor="let point of routePoints">
+              <span class="route__point-name">{{ point }}</span>
+              <button
+                      class="edit-workout__route-add-button"
+                      mat-icon-button
+                      (click)="onRemoveRoutePoint(point)"
+              >
+                <mat-icon class="edit-workout__route-add-button-icon">remove_circle_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+
           <div class="edit-workout__input-wrapper edit-workout__input-wrapper--route">
             <mat-form-field class="edit-workout__route-form">
               <mat-label>Точка маршрута</mat-label>
-              <input matInput placeholder="Введите точку старта" formControlName="from" required>
+              <input matInput placeholder="Введите точку маршрута" formControlName="point">
             </mat-form-field>
             <button
                     class="edit-workout__route-add-button"
                     mat-icon-button
+                    (click)="onAddRoutePoint()"
             >
-              <mat-icon class="toolbar__icon">add_circle_outline</mat-icon>
+              <mat-icon class="edit-workout__route-add-button-icon">add_circle_outline</mat-icon>
             </button>
           </div>
           <button mat-button matStepperPrevious>Назад</button>

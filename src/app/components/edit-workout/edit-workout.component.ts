@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms'
 import { catchError, tap } from 'rxjs/operators'
 import { combineLatest, EMPTY } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
@@ -12,6 +12,13 @@ import { USER_ID } from '../../../shared/constants'
 import { HttpErrorResponse } from '@angular/common/http'
 import { AuthService } from '../../services/auth.service'
 
+
+export function routePointsValidator(routePoints: string[]): ValidatorFn {
+  return (control: AbstractControl): { [ key: string ]: any } | null => {
+    const isEmpty = routePoints.length === 0
+    return isEmpty ? { routePoints: { value: control.value } } : null
+  }
+}
 
 @Component({
   selector: 'app-edit-workout',
@@ -33,15 +40,15 @@ export class EditWorkoutComponent implements OnInit {
   public bikeTypes = Object.keys(this.bikeTypeMap)
   private currentStepElement: HTMLElement | null = null
 
+  public routePoints: string[] = []
+
   public dateFormGroup = new FormGroup({
     date: new FormControl(null, Validators.required),
     time: new FormControl(null, Validators.required)
   })
 
   public routeFormGroup = new FormGroup({
-    from: new FormControl(null, Validators.required),
-    to: new FormControl(null, Validators.required),
-    isCycledRoute: new FormControl(false)
+    point: new FormControl(null, routePointsValidator(this.routePoints))
   })
 
   public venueFormGroup = new FormGroup({
@@ -147,7 +154,24 @@ export class EditWorkoutComponent implements OnInit {
       this.dateFormGroup.get('date').patchValue(new Date())
       this.dateFormGroup.get('time').patchValue('08:00')
       this.bikeTypeFormGroup.get('bikeType').patchValue(BikeType.any)
+      this.routeFormGroup.setErrors({ incorrect: true })
     }
+  }
+
+  public onAddRoutePoint(): void {
+    const pointValue = this.routeFormGroup.get('point').value
+
+    if (pointValue !== null && pointValue !== '') {
+      this.routePoints.push(pointValue)
+      this.routeFormGroup.get('point').patchValue('')
+    }
+  }
+
+  public onRemoveRoutePoint(routePoint: string): void {
+    const index = this.routePoints.findIndex((point) => routePoint === point)
+    this.routePoints.splice(index, 1)
+
+    this.routeFormGroup.get('point').patchValue(this.routeFormGroup.get('point').value)
   }
 
   public onSelectionChange(event: StepperSelectionEvent): void {
