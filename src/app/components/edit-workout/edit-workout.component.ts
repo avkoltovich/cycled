@@ -64,13 +64,18 @@ export class EditWorkoutComponent implements OnInit {
     duration: new FormControl(null)
   })
 
+  public commentFormGroup = new FormGroup({
+    comment: new FormControl(null)
+  })
+
   public workoutSummary = combineLatest([
     this.dateFormGroup.valueChanges,
     this.venueFormGroup.valueChanges,
     this.bikeTypeFormGroup.valueChanges,
-    this.detailsFormGroup.valueChanges
+    this.detailsFormGroup.valueChanges,
+    this.commentFormGroup.valueChanges
   ]).pipe(
-    tap(([ dateForm, venueForm, typeForm, detailsForm ]) => {
+    tap(([ dateForm, venueForm, typeForm, detailsForm, commentForm ]) => {
       const dateObject = {
         year: dateForm.date.getFullYear(),
         month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
@@ -90,7 +95,10 @@ export class EditWorkoutComponent implements OnInit {
         duration: detailsForm.duration,
         bikeType: typeForm.bikeType,
         members: this.workout.members,
+        comment: commentForm.comment
       }
+
+      console.log(this.workout)
     })
   )
 
@@ -105,7 +113,8 @@ export class EditWorkoutComponent implements OnInit {
     duration: null,
     bikeType: null,
     members: [ window.localStorage.getItem(USER_ID) ],
-    authorId: window.localStorage.getItem(USER_ID)
+    authorId: window.localStorage.getItem(USER_ID),
+    comment: null
   }
 
   @Input()
@@ -142,6 +151,15 @@ export class EditWorkoutComponent implements OnInit {
     this.detailsFormGroup.get('speed').patchValue(workout.speed)
     this.detailsFormGroup.get('duration').patchValue(workout.duration)
     this.workout.members = workout.members
+
+    if (typeof workout.comment === 'undefined') {
+      /**
+       * Временная мера, чтобы обновить комментарии во всех тренировках
+       */
+      this.workout.comment = null
+    } else {
+      this.commentFormGroup.get('comment').patchValue(workout.comment)
+    }
   }
 
   public ngOnInit(): void {
@@ -151,6 +169,7 @@ export class EditWorkoutComponent implements OnInit {
       this.dateFormGroup.get('date').patchValue(new Date())
       this.dateFormGroup.get('time').patchValue('08:00')
       this.bikeTypeFormGroup.get('bikeType').patchValue(BikeType.any)
+      this.commentFormGroup.get('comment').patchValue(null)
     }
   }
 

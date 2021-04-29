@@ -1,13 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core'
 import { PowerZonesDialogComponent } from '../../dialogs/power-zones-dialog/power-zones-dialog.component'
 import { MatDialog } from '@angular/material/dialog'
-import {
-  bikeTypeMap,
-  workoutFullTypeMap,
-  WorkoutModel,
-  workoutShortTypeMap,
-  WorkoutType
-} from '../../models/workout.model'
+import { bikeTypeMap, workoutFullTypeMap, WorkoutModel, workoutShortTypeMap, WorkoutType } from '../../models/workout.model'
 
 @Component({
   selector: 'app-workout-main-info',
@@ -23,6 +17,7 @@ export class WorkoutMainInfoComponent implements OnChanges {
   public workoutDateString: string
   public workoutFullType: string
   public bikeTypeMap = bikeTypeMap
+  public isCommentVisible = false
 
   @Input()
   public workout: Omit<WorkoutModel, '_id'> | null
@@ -40,6 +35,8 @@ export class WorkoutMainInfoComponent implements OnChanges {
     if (typeof this.workout === 'undefined' || this.workout === null) {
       this.isCardHidden = true
     } else {
+      this.isCommentVisible = this.workout.comment !== null && typeof this.workout.comment !== 'undefined' && this.workout.comment !== ''
+
       if (typeof this.workout.workoutType === 'undefined' || this.workout.workoutType === null) {
         if (this.isNumberValueNotEmpty(this.workout.speed)) {
           this.workout = {

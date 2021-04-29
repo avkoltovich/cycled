@@ -15,11 +15,11 @@
     <span class="route__point-name" [matTooltip]="point">{{ point }}</span>
   </div>
 </div>
-<div class="workout-main-info__venue">
+<div class="workout-main-info__textarea">
   <mat-icon>place</mat-icon>
-  <div class="workout-main-info__venue-details">
+  <span>
     <b>Сбор:</b><span class="workout-main-info__details">{{ workout.venue }}</span>
-  </div>
+  </span>
 </div>
 <dl>
   <div class="workout-main-info__dl-inner" *ngIf="!isSpeedHidden">
@@ -51,3 +51,9 @@
     <dd>{{ bikeTypeMap[workout.bikeType] }}</dd>
   </div>
 </dl>
+<div class="workout-main-info__textarea" *ngIf="isCommentVisible">
+  <mat-icon>message</mat-icon>
+  <span>
+    <b>Комментарий:</b><span class="workout-main-info__details">{{ workout.comment }}</span>
+  </span>
+</div>

@@ -67,7 +67,7 @@
       <mat-step [stepControl]="venueFormGroup">
         <form [formGroup]="venueFormGroup">
           <ng-template matStepLabel>Место сбора</ng-template>
-          <div class="edit-workout__input-wrapper">
+          <div class="edit-workout__input-wrapper edit-workout__input-wrapper--venue">
             <mat-form-field class="edit-workout__venue-form">
               <mat-label>Место сбора</mat-label>
               <textarea matInput formControlName="place"></textarea>
@@ -112,6 +112,19 @@
               <mat-label>Длительность, мин</mat-label>
               <input type="number" matInput placeholder="Введите длительность" min="0"
                      formControlName="duration">
+            </mat-form-field>
+          </div>
+          <button mat-button matStepperPrevious>Назад</button>
+          <button mat-flat-button matStepperNext color="primary">Далее</button>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="commentFormGroup">
+        <form [formGroup]="commentFormGroup">
+          <ng-template matStepLabel>Комментарий</ng-template>
+          <div class="edit-workout__input-wrapper edit-workout__input-wrapper--comment">
+            <mat-form-field class="edit-workout__comment-form">
+              <mat-label>Комментарий</mat-label>
+              <textarea matInput formControlName="comment"></textarea>
             </mat-form-field>
           </div>
           <button mat-button matStepperPrevious>Назад</button>
