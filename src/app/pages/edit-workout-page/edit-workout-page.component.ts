@@ -18,11 +18,7 @@ export class EditWorkoutPageComponent {
       take(1),
       map((paramMap: ParamMap) => paramMap.get('id')),
       switchMap((id: string) => this.workoutNetworkService.getById(id)),
-      tap((workouts: WorkoutModel[]) => {
-        const [ workout ] = workouts
-
-        this.workout = workout
-      })
+      tap((workout: WorkoutModel) => this.workout = workout)
     ).subscribe()
   }
 }

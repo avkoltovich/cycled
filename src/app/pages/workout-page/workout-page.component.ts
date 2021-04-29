@@ -13,13 +13,13 @@ import { Observable } from 'rxjs'
 export class WorkoutPageComponent {
 
   public workoutList: Observable<WorkoutListByDay> = this.activatedRoute.paramMap.pipe(
-          map((paramMap: ParamMap) => paramMap.get('id')),
-          switchMap((id: string) => this.workoutNetworkService.getById(id)),
-          map((workouts: WorkoutModel[]) => {
-            const [ workoutListByDate ] = generateWorkoutCalendar(workouts)
+    map((paramMap: ParamMap) => paramMap.get('id')),
+    switchMap((id: string) => this.workoutNetworkService.getById(id)),
+    map((workout: WorkoutModel) => {
+      const [ workoutListByDate ] = generateWorkoutCalendar([ workout ])
 
-            return workoutListByDate
-          })
+      return workoutListByDate
+    })
   )
 
   constructor(private activatedRoute: ActivatedRoute,

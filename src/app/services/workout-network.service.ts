@@ -24,8 +24,8 @@ export class WorkoutNetworkService {
     return this.http.get<WorkoutModel[]>(`${ API_URL }/workout/list`)
   }
 
-  public getById(id: string): Observable<WorkoutModel[]> {
-    return this.http.get<WorkoutModel[]>(`${ API_URL }/workout/${ id }`)
+  public getById(id: string): Observable<WorkoutModel> {
+    return this.http.get<WorkoutModel>(`${ API_URL }/workout/${ id }`)
   }
 
   public delete(id: string): Observable<WorkoutModel[] | null> {
