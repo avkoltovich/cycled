@@ -4,8 +4,9 @@ import { WorkoutModel } from '../../models/workout.model'
 import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { AuthService } from '../../services/auth.service'
-import { Observable } from 'rxjs'
-import { map, startWith, tap } from 'rxjs/operators'
+import { EMPTY, Observable } from 'rxjs'
+import { catchError, map, startWith, tap } from 'rxjs/operators'
+import { HttpErrorResponse } from '@angular/common/http'
 
 @Component({
   selector: 'app-workout-card',
@@ -53,6 +54,15 @@ export class WorkoutCardComponent implements OnChanges {
 
     if (workout.members.includes(userId)) {
       this.workoutNetworkService.unjoinWorkout(workout).pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 401) {
+            this.authService.logout()
+
+            this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          }
+
+          return EMPTY
+        }),
         tap(() => {
           this.snackBar.open('Заявка на участие отменена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutNetworkService.updateAll.next()
@@ -60,6 +70,15 @@ export class WorkoutCardComponent implements OnChanges {
       ).subscribe()
     } else {
       this.workoutNetworkService.joinToWorkout(workout).pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 401) {
+            this.authService.logout()
+
+            this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          }
+
+          return EMPTY
+        }),
         tap(() => {
           this.snackBar.open('Заявка на участие принята', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutNetworkService.updateAll.next()
@@ -75,11 +94,20 @@ export class WorkoutCardComponent implements OnChanges {
   }
 
   public onDeleteButtonClick(id: string): void {
-    this.workoutNetworkService.delete(id).subscribe({
-      next: () => {
+    this.workoutNetworkService.delete(id).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 401) {
+          this.authService.logout()
+
+          this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+        }
+
+        return EMPTY
+      }),
+      tap(() => {
         this.snackBar.open('Тренировка успешно удалена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
         this.workoutNetworkService.updateAll.next()
-      }
-    })
+      })
+    ).subscribe()
   }
 }

@@ -2,8 +2,8 @@ import { Component } from '@angular/core'
 import { AuthService } from '../../services/auth.service'
 import { Observable } from 'rxjs'
 import { map, startWith } from 'rxjs/operators'
-import { JWT_TOKEN, USER_EMAIL, USER_ID } from '../../../shared/constants'
-import { Router } from '@angular/router'
+import { JWT_TOKEN, USER_EMAIL } from '../../../shared/constants'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-main-menu',
@@ -22,7 +22,7 @@ export class MainMenuComponent {
   )
 
   constructor(private authService: AuthService,
-              private router: Router) {
+              private snackBar: MatSnackBar) {
   }
 
   public onClickMenuButton(): void {
@@ -30,10 +30,8 @@ export class MainMenuComponent {
   }
 
   public onClickLogoutButton(): void {
-    window.localStorage.removeItem(JWT_TOKEN)
-    window.localStorage.removeItem(USER_EMAIL)
-    window.localStorage.removeItem(USER_ID)
-    this.authService.isAuthorized.next()
-    this.router.navigate([ '' ])
+    this.authService.logout()
+
+    this.snackBar.open('Вы успешно вышли из учетной записи', '', { duration: 3000, panelClass: 'cycled-snackbar' })
   }
 }

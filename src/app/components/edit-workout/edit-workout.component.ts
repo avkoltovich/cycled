@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { tap } from 'rxjs/operators'
-import { combineLatest } from 'rxjs'
+import { catchError, tap } from 'rxjs/operators'
+import { combineLatest, EMPTY } from 'rxjs'
 import { STEPPER_GLOBAL_OPTIONS, StepperSelectionEvent } from '@angular/cdk/stepper'
 import { ISO8601 } from '../../models/base.model'
 import { BikeType, bikeTypeMap, WorkoutModel } from 'src/app/models/workout.model'
@@ -9,6 +9,8 @@ import { WorkoutNetworkService } from '../../services/workout-network.service'
 import { Router } from '@angular/router'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { USER_ID } from '../../../shared/constants'
+import { HttpErrorResponse } from '@angular/common/http'
+import { AuthService } from '../../services/auth.service'
 
 
 @Component({
@@ -109,6 +111,7 @@ export class EditWorkoutComponent implements OnInit {
 
   constructor(private workoutNetworkService: WorkoutNetworkService,
               private snackBar: MatSnackBar,
+              private authService: AuthService,
               private router: Router) {
     this.workoutSummary.subscribe()
     this.minDate = new Date()
@@ -158,27 +161,45 @@ export class EditWorkoutComponent implements OnInit {
     }
   }
 
-  public onSubmit(): void {
+  public onSaveButtonClick(): void {
     if (this.existWorkout === null) {
       this.isLoading = true
-      this.workoutNetworkService.create(this.workout).subscribe({
-        next: () => {
+      this.workoutNetworkService.create(this.workout).pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 401) {
+            this.authService.logout()
+
+            this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          }
+
+          return EMPTY
+        }),
+        tap(() => {
           this.isLoading = false
           this.snackBar.open('Тренировка успешно добавлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutNetworkService.updateAll.next()
           this.router.navigate([ '' ])
-        }
-      })
+        })
+      ).subscribe()
     } else {
       this.isLoading = true
-      this.workoutNetworkService.update(this.existWorkout._id, this.workout).subscribe({
-        next: () => {
+      this.workoutNetworkService.update(this.existWorkout._id, this.workout).pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === 401) {
+            this.authService.logout()
+
+            this.snackBar.open('Ошибка авторизации', '', { duration: 3000, panelClass: 'cycled-snackbar' })
+          }
+
+          return EMPTY
+        }),
+        tap(() => {
           this.isLoading = false
           this.snackBar.open('Тренировка успешно обновлена', '', { duration: 3000, panelClass: 'cycled-snackbar' })
           this.workoutNetworkService.updateAll.next()
           this.router.navigate([ '' ])
-        }
-      })
+        })
+      ).subscribe()
     }
   }
 }
