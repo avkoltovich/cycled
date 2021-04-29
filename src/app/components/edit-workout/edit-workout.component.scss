@@ -125,6 +125,16 @@
   .edit-workout__input-wrapper {
     display: grid;
     width: 180px;
+
+    &--route {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+    }
+  }
+
+  .edit-workout__route-add-button {
+    margin-left: 16px;
   }
 
   .edit-workout__checkbox-wrapper {
