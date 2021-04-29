@@ -13,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http'
 import { AuthService } from '../../services/auth.service'
 
 
-export function routePointsValidator(routePoints: string[]): ValidatorFn {
+export const routePointsValidator = (routePoints: string[]): ValidatorFn => {
   return (control: AbstractControl): { [ key: string ]: any } | null => {
     const isEmpty = routePoints.length === 0
     return isEmpty ? { routePoints: { value: control.value } } : null
@@ -34,12 +34,11 @@ export function routePointsValidator(routePoints: string[]): ValidatorFn {
   ]
 })
 export class EditWorkoutComponent implements OnInit {
+  private currentStepElement: HTMLElement | null = null
   public isLoading = false
   public minDate: Date
   public bikeTypeMap = bikeTypeMap
   public bikeTypes = Object.keys(this.bikeTypeMap)
-  private currentStepElement: HTMLElement | null = null
-
   public routePoints: string[] = []
 
   public dateFormGroup = new FormGroup({
@@ -67,12 +66,11 @@ export class EditWorkoutComponent implements OnInit {
 
   public workoutSummary = combineLatest([
     this.dateFormGroup.valueChanges,
-    this.routeFormGroup.valueChanges,
     this.venueFormGroup.valueChanges,
     this.bikeTypeFormGroup.valueChanges,
     this.detailsFormGroup.valueChanges
   ]).pipe(
-    tap(([ dateForm, routeForm, venueForm, typeForm, detailsForm ]) => {
+    tap(([ dateForm, venueForm, typeForm, detailsForm ]) => {
       const dateObject = {
         year: dateForm.date.getFullYear(),
         month: (dateForm.date.getMonth() + 1).toString().padStart(2, '0'),
@@ -84,7 +82,7 @@ export class EditWorkoutComponent implements OnInit {
         ...this.workout,
         workoutType: null,
         date: new Date(dateString).toISOString() as ISO8601,
-        routePoints: routeForm.isCycledRoute ? [ routeForm.from, routeForm.to, routeForm.from ] : [ routeForm.from, routeForm.to ],
+        routePoints: this.routePoints,
         oneWayRoute: false,
         venue: venueForm.place,
         distance: detailsForm.distance,
@@ -126,21 +124,20 @@ export class EditWorkoutComponent implements OnInit {
 
   private setExistWorkout(workout: WorkoutModel): void {
     const date = new Date(workout.date)
+    this.routePoints = workout.routePoints
+
+    /**
+     * Хак, чтобы подменить контекст для функции валидатора
+     */
+    this.routeFormGroup.get('point').setValidators(routePointsValidator(this.routePoints))
 
     this.dateFormGroup.get('date').patchValue(date)
     this.dateFormGroup.get('time').patchValue(new Intl.DateTimeFormat('ru-RU', {
       hour: 'numeric',
       minute: 'numeric'
     }).format(date))
-
     this.bikeTypeFormGroup.get('bikeType').patchValue(workout.bikeType)
-
-    this.routeFormGroup.get('from').patchValue(workout.routePoints[ 0 ])
-    this.routeFormGroup.get('to').patchValue(workout.routePoints[ 1 ])
-    this.routeFormGroup.get('isCycledRoute').patchValue(!workout.oneWayRoute)
-
     this.venueFormGroup.get('place').patchValue(workout.venue)
-
     this.detailsFormGroup.get('distance').patchValue(workout.distance)
     this.detailsFormGroup.get('speed').patchValue(workout.speed)
     this.detailsFormGroup.get('duration').patchValue(workout.duration)
@@ -154,8 +151,11 @@ export class EditWorkoutComponent implements OnInit {
       this.dateFormGroup.get('date').patchValue(new Date())
       this.dateFormGroup.get('time').patchValue('08:00')
       this.bikeTypeFormGroup.get('bikeType').patchValue(BikeType.any)
-      this.routeFormGroup.setErrors({ incorrect: true })
     }
+  }
+
+  public checkWorkoutRoute(): boolean {
+    return this.routePoints.length !== 0
   }
 
   public onAddRoutePoint(): void {
