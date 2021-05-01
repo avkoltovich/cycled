@@ -97,8 +97,6 @@ export class EditWorkoutComponent implements OnInit {
         members: this.workout.members,
         comment: commentForm.comment
       }
-
-      console.log(this.workout)
     })
   )
 
