@@ -65,7 +65,7 @@ export class EditWorkoutComponent implements OnInit {
   })
 
   public commentFormGroup = new FormGroup({
-    comment: new FormControl(null)
+    comment: new FormControl('')
   })
 
   public workoutSummary = combineLatest([
