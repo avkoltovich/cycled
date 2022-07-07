@@ -65,8 +65,11 @@ export interface WorkoutListByDay {
 
 export const generateWorkoutCalendar = (workouts: WorkoutModel[]): WorkoutListByDay[] => {
   const currentTime = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()).getTime()
-  const sortedWorkouts = workouts.slice().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-  const filteredWorkouts = sortedWorkouts.filter((item) => new Date(item.date).getTime() >= currentTime)
+  const sortedWorkouts = workouts.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+
+  // const filteredWorkouts = sortedWorkouts.filter((item) => new Date(item.date).getTime() >= currentTime)
+  const filteredWorkouts = sortedWorkouts
   const workoutCalendar: WorkoutListByDay[] = []
 
   let currentDate = null
