@@ -65,6 +65,10 @@ export class CustomDateAdapter extends NativeDateAdapter {
     const dtf = new Intl.DateTimeFormat(this.locale, displayFormat)
     return dtf.format(date).replace(/[\u200e\u200f]/g, '')
   }
+
+  getFirstDayOfWeek(): number {
+    return 1
+  }
 }
 
 @NgModule({
